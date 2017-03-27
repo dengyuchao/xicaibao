@@ -23,11 +23,11 @@ class ChatViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // MARK: 判断使用是否登录,如果没有登录，先弹出登录界面
-        LoginManager.defaultManager.checkForLogin(target: self, onSuccess: { 
-            
-        }) { 
-            
-        }
+//        LoginManager.defaultManager.checkForLogin(target: self, onSuccess: { 
+//            
+//        }) { 
+//            
+//        }
     
     }
     

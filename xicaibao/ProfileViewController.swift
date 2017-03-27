@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileTableViewController: UITableViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,23 +16,25 @@ class ProfileViewController: UIViewController {
         // 导航栏颜色、标题颜色
         self.navigationController?.navigationBar.barTintColor = UIColor.kThemeColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        tableView.tableFooterView = UIView()
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension ProfileTableViewController {
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 4
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section == 0 {
+            return 1
+        } else {
+            return 2
+        }
     }
-    */
-
 }
