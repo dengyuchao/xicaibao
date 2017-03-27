@@ -1,0 +1,6 @@
+framework module Pods_xicaibao {
+  umbrella header "Pods-xicaibao-umbrella.h"
+
+  export *
+  module * { export * }
+}

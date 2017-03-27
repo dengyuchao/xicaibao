@@ -1,0 +1,862 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9CC0C7ABE1BB9BBF1C82A92C /* Pods_xicaibao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFD874E9B4AB94DB10BEF63 /* Pods_xicaibao.framework */; };
+		9D41C9A61E835D080083FF65 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A51E835D080083FF65 /* User.swift */; };
+		9D41C9A81E8360710083FF65 /* ModelErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A71E8360710083FF65 /* ModelErrorManager.swift */; };
+		9D41C9AA1E8364520083FF65 /* AppSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A91E8364520083FF65 /* AppSecrets.swift */; };
+		9D60329C1E83D38600240B7B /* SignupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D60329B1E83D38600240B7B /* SignupTableViewController.swift */; };
+		9D60329F1E83D3C400240B7B /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D60329E1E83D3C400240B7B /* Signup.storyboard */; };
+		9D6B77641E825313001AB48C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77631E825313001AB48C /* AppDelegate.swift */; };
+		9D6B77661E825313001AB48C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77651E825313001AB48C /* MainViewController.swift */; };
+		9D6B776B1E825313001AB48C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B776A1E825313001AB48C /* Assets.xcassets */; };
+		9D6B776E1E825313001AB48C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B776C1E825313001AB48C /* LaunchScreen.storyboard */; };
+		9D6B777C1E825857001AB48C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B777B1E825857001AB48C /* ProfileViewController.swift */; };
+		9D6B777E1E825879001AB48C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B777D1E825879001AB48C /* Profile.storyboard */; };
+		9D6B77801E825908001AB48C /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B777F1E825908001AB48C /* ContactViewController.swift */; };
+		9D6B77821E825925001AB48C /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B77811E825925001AB48C /* Contact.storyboard */; };
+		9D6B77841E825972001AB48C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77831E825972001AB48C /* ChatViewController.swift */; };
+		9D6B77861E825986001AB48C /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B77851E825986001AB48C /* Chat.storyboard */; };
+		9D6B77891E8259BE001AB48C /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77881E8259BE001AB48C /* CardViewController.swift */; };
+		9D6B778B1E8259D3001AB48C /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B778A1E8259D3001AB48C /* Card.storyboard */; };
+		9D6B778E1E825C0F001AB48C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B778C1E825C0F001AB48C /* Main.storyboard */; };
+		9D6B77911E8270F4001AB48C /* ColorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77901E8270F4001AB48C /* ColorValue.swift */; };
+		9DB71FE81E83CE6800D375C1 /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71FE71E83CE6800D375C1 /* LoginNavigationController.swift */; };
+		9DCA455A1E837CC300653D48 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA45591E837CC300653D48 /* LoginManager.swift */; };
+		9DCA455C1E83959400653D48 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA455B1E83959400653D48 /* ApiManager.swift */; };
+		9DCA455E1E83B77F00653D48 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA455D1E83B77F00653D48 /* LoginTableViewController.swift */; };
+		9DCA45601E83B7FA00653D48 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCA455F1E83B7FA00653D48 /* Login.storyboard */; };
+		9DFF8FD31E84C22F004A5E00 /* ResetPasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFF8FD21E84C22F004A5E00 /* ResetPasswordTableViewController.swift */; };
+		9DFF8FD51E84C24F004A5E00 /* ResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFF8FD41E84C24F004A5E00 /* ResetPassword.storyboard */; };
+		9DFF8FDD1E84F773004A5E00 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B777B1E825857001AB48C /* ProfileViewController.swift */; };
+		9DFF8FDE1E84F773004A5E00 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B777F1E825908001AB48C /* ContactViewController.swift */; };
+		9DFF8FDF1E84F773004A5E00 /* ColorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77901E8270F4001AB48C /* ColorValue.swift */; };
+		9DFF8FE01E84F773004A5E00 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77881E8259BE001AB48C /* CardViewController.swift */; };
+		9DFF8FE11E84F773004A5E00 /* SignupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D60329B1E83D38600240B7B /* SignupTableViewController.swift */; };
+		9DFF8FE21E84F773004A5E00 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA455B1E83959400653D48 /* ApiManager.swift */; };
+		9DFF8FE31E84F773004A5E00 /* LoginTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA455D1E83B77F00653D48 /* LoginTableViewController.swift */; };
+		9DFF8FE41E84F773004A5E00 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A51E835D080083FF65 /* User.swift */; };
+		9DFF8FE51E84F773004A5E00 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77651E825313001AB48C /* MainViewController.swift */; };
+		9DFF8FE61E84F773004A5E00 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77831E825972001AB48C /* ChatViewController.swift */; };
+		9DFF8FE71E84F773004A5E00 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA45591E837CC300653D48 /* LoginManager.swift */; };
+		9DFF8FE81E84F773004A5E00 /* AppSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A91E8364520083FF65 /* AppSecrets.swift */; };
+		9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77631E825313001AB48C /* AppDelegate.swift */; };
+		9DFF8FEA1E84F773004A5E00 /* ModelErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A71E8360710083FF65 /* ModelErrorManager.swift */; };
+		9DFF8FEB1E84F773004A5E00 /* ResetPasswordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFF8FD21E84C22F004A5E00 /* ResetPasswordTableViewController.swift */; };
+		9DFF8FEC1E84F773004A5E00 /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71FE71E83CE6800D375C1 /* LoginNavigationController.swift */; };
+		9DFF8FEE1E84F773004A5E00 /* Pods_xicaibao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFD874E9B4AB94DB10BEF63 /* Pods_xicaibao.framework */; };
+		9DFF8FF11E84F773004A5E00 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCA455F1E83B7FA00653D48 /* Login.storyboard */; };
+		9DFF8FF21E84F773004A5E00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B778C1E825C0F001AB48C /* Main.storyboard */; };
+		9DFF8FF31E84F773004A5E00 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B77851E825986001AB48C /* Chat.storyboard */; };
+		9DFF8FF41E84F773004A5E00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B776C1E825313001AB48C /* LaunchScreen.storyboard */; };
+		9DFF8FF51E84F773004A5E00 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D60329E1E83D3C400240B7B /* Signup.storyboard */; };
+		9DFF8FF61E84F773004A5E00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B776A1E825313001AB48C /* Assets.xcassets */; };
+		9DFF8FF71E84F773004A5E00 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B777D1E825879001AB48C /* Profile.storyboard */; };
+		9DFF8FF81E84F773004A5E00 /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B778A1E8259D3001AB48C /* Card.storyboard */; };
+		9DFF8FF91E84F773004A5E00 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B77811E825925001AB48C /* Contact.storyboard */; };
+		9DFF8FFA1E84F773004A5E00 /* ResetPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFF8FD41E84C24F004A5E00 /* ResetPassword.storyboard */; };
+		9DFF90021E84F936004A5E00 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B776F1E825313001AB48C /* Info.plist */; };
+		9DFF90031E84F939004A5E00 /* xicaibao-QA.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9DFF90011E84F773004A5E00 /* xicaibao-QA.plist */; };
+		9DFF90141E84FFEF004A5E00 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF900F1E84FFEF004A5E00 /* SMS_SDK.framework */; };
+		9DFF90151E84FFEF004A5E00 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF900F1E84FFEF004A5E00 /* SMS_SDK.framework */; };
+		9DFF90171E85019B004A5E00 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF90161E85019B004A5E00 /* libz.tbd */; };
+		9DFF90191E8501AA004A5E00 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF90181E8501AA004A5E00 /* libicucore.tbd */; };
+		9DFF901B1E8501BB004A5E00 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF901A1E8501BB004A5E00 /* MessageUI.framework */; };
+		9DFF901D1E8501C4004A5E00 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF901C1E8501C4004A5E00 /* JavaScriptCore.framework */; };
+		9DFF90231E8501D9004A5E00 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF90201E8501D9004A5E00 /* libstdc++.tbd */; };
+		9DFF90271E850537004A5E00 /* libicucore.A.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF90261E850537004A5E00 /* libicucore.A.tbd */; };
+		9DFF90281E85055D004A5E00 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF901E1E8501D9004A5E00 /* libstdc++.6.0.9.tbd */; };
+		9DFF90291E85055D004A5E00 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF901F1E8501D9004A5E00 /* libstdc++.6.tbd */; };
+		9DFF902C1E85058F004A5E00 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF902A1E85058F004A5E00 /* MOBFoundation.framework */; };
+		9DFF902D1E85058F004A5E00 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF902A1E85058F004A5E00 /* MOBFoundation.framework */; };
+		9DFF902E1E85058F004A5E00 /* MOBFoundationEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF902B1E85058F004A5E00 /* MOBFoundationEx.framework */; };
+		9DFF902F1E85058F004A5E00 /* MOBFoundationEx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF902B1E85058F004A5E00 /* MOBFoundationEx.framework */; };
+		9DFF90301E8505B2004A5E00 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF90161E85019B004A5E00 /* libz.tbd */; };
+		9DFF90311E8505BD004A5E00 /* libicucore.A.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF90261E850537004A5E00 /* libicucore.A.tbd */; };
+		9DFF90321E8505BD004A5E00 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF90181E8501AA004A5E00 /* libicucore.tbd */; };
+		9DFF90331E8505C8004A5E00 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF901A1E8501BB004A5E00 /* MessageUI.framework */; };
+		9DFF90341E8505D0004A5E00 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF901C1E8501C4004A5E00 /* JavaScriptCore.framework */; };
+		9DFF90351E8505DC004A5E00 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DFF90201E8501D9004A5E00 /* libstdc++.tbd */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3886C8DED2A8FE9817224C40 /* Pods-xicaibao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xicaibao.release.xcconfig"; path = "Pods/Target Support Files/Pods-xicaibao/Pods-xicaibao.release.xcconfig"; sourceTree = "<group>"; };
+		9D41C9A51E835D080083FF65 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9D41C9A71E8360710083FF65 /* ModelErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelErrorManager.swift; sourceTree = "<group>"; };
+		9D41C9A91E8364520083FF65 /* AppSecrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSecrets.swift; sourceTree = "<group>"; };
+		9D41C9AB1E8365EA0083FF65 /* xicaibao-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "xicaibao-Bridging-Header.h"; sourceTree = "<group>"; };
+		9D60329B1E83D38600240B7B /* SignupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupTableViewController.swift; sourceTree = "<group>"; };
+		9D60329E1E83D3C400240B7B /* Signup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		9D6B77601E825313001AB48C /* xicaibao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xicaibao.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D6B77631E825313001AB48C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9D6B77651E825313001AB48C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9D6B776A1E825313001AB48C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9D6B776D1E825313001AB48C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9D6B776F1E825313001AB48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D6B777B1E825857001AB48C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9D6B777D1E825879001AB48C /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		9D6B777F1E825908001AB48C /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		9D6B77811E825925001AB48C /* Contact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
+		9D6B77831E825972001AB48C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		9D6B77851E825986001AB48C /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		9D6B77881E8259BE001AB48C /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		9D6B778A1E8259D3001AB48C /* Card.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
+		9D6B778D1E825C0F001AB48C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D6B77901E8270F4001AB48C /* ColorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorValue.swift; sourceTree = "<group>"; };
+		9DB71FE71E83CE6800D375C1 /* LoginNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
+		9DCA45591E837CC300653D48 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		9DCA455B1E83959400653D48 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		9DCA455D1E83B77F00653D48 /* LoginTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTableViewController.swift; sourceTree = "<group>"; };
+		9DCA455F1E83B7FA00653D48 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9DFF8FD21E84C22F004A5E00 /* ResetPasswordTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordTableViewController.swift; sourceTree = "<group>"; };
+		9DFF8FD41E84C24F004A5E00 /* ResetPassword.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ResetPassword.storyboard; sourceTree = "<group>"; };
+		9DFF90001E84F773004A5E00 /* xicaibao-QA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xicaibao-QA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DFF90011E84F773004A5E00 /* xicaibao-QA.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "xicaibao-QA.plist"; path = "/Users/impressly/ios/xicaibao/xicaibao-QA.plist"; sourceTree = "<absolute>"; };
+		9DFF900F1E84FFEF004A5E00 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		9DFF90161E85019B004A5E00 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9DFF90181E8501AA004A5E00 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		9DFF901A1E8501BB004A5E00 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9DFF901C1E8501C4004A5E00 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		9DFF901E1E8501D9004A5E00 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		9DFF901F1E8501D9004A5E00 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		9DFF90201E8501D9004A5E00 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		9DFF90241E850513004A5E00 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		9DFF90261E850537004A5E00 /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = usr/lib/libicucore.A.tbd; sourceTree = SDKROOT; };
+		9DFF902A1E85058F004A5E00 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		9DFF902B1E85058F004A5E00 /* MOBFoundationEx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundationEx.framework; sourceTree = "<group>"; };
+		ADFD874E9B4AB94DB10BEF63 /* Pods_xicaibao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_xicaibao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5A376B9107E136309052847 /* Pods-xicaibao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-xicaibao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-xicaibao/Pods-xicaibao.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9D6B775D1E825313001AB48C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFF90281E85055D004A5E00 /* libstdc++.6.0.9.tbd in Frameworks */,
+				9DFF902C1E85058F004A5E00 /* MOBFoundation.framework in Frameworks */,
+				9DFF90291E85055D004A5E00 /* libstdc++.6.tbd in Frameworks */,
+				9DFF90231E8501D9004A5E00 /* libstdc++.tbd in Frameworks */,
+				9DFF90271E850537004A5E00 /* libicucore.A.tbd in Frameworks */,
+				9DFF90191E8501AA004A5E00 /* libicucore.tbd in Frameworks */,
+				9DFF90171E85019B004A5E00 /* libz.tbd in Frameworks */,
+				9DFF901D1E8501C4004A5E00 /* JavaScriptCore.framework in Frameworks */,
+				9DFF901B1E8501BB004A5E00 /* MessageUI.framework in Frameworks */,
+				9DFF90141E84FFEF004A5E00 /* SMS_SDK.framework in Frameworks */,
+				9CC0C7ABE1BB9BBF1C82A92C /* Pods_xicaibao.framework in Frameworks */,
+				9DFF902E1E85058F004A5E00 /* MOBFoundationEx.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFF8FED1E84F773004A5E00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFF90351E8505DC004A5E00 /* libstdc++.tbd in Frameworks */,
+				9DFF90341E8505D0004A5E00 /* JavaScriptCore.framework in Frameworks */,
+				9DFF90331E8505C8004A5E00 /* MessageUI.framework in Frameworks */,
+				9DFF90311E8505BD004A5E00 /* libicucore.A.tbd in Frameworks */,
+				9DFF90321E8505BD004A5E00 /* libicucore.tbd in Frameworks */,
+				9DFF90301E8505B2004A5E00 /* libz.tbd in Frameworks */,
+				9DFF902D1E85058F004A5E00 /* MOBFoundation.framework in Frameworks */,
+				9DFF90151E84FFEF004A5E00 /* SMS_SDK.framework in Frameworks */,
+				9DFF8FEE1E84F773004A5E00 /* Pods_xicaibao.framework in Frameworks */,
+				9DFF902F1E85058F004A5E00 /* MOBFoundationEx.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9D41C9A41E835CAD0083FF65 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9DCA455D1E83B77F00653D48 /* LoginTableViewController.swift */,
+				9DCA455F1E83B7FA00653D48 /* Login.storyboard */,
+				9DB71FE71E83CE6800D375C1 /* LoginNavigationController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		9D60329D1E83D3AF00240B7B /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				9D60329B1E83D38600240B7B /* SignupTableViewController.swift */,
+				9D60329E1E83D3C400240B7B /* Signup.storyboard */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
+		9D6B77571E825313001AB48C = {
+			isa = PBXGroup;
+			children = (
+				9DFF900B1E84FFC3004A5E00 /* Vendors */,
+				9D6B77621E825313001AB48C /* xicaibao */,
+				9D6B77611E825313001AB48C /* Products */,
+				A6F24B7CFBF41F0540EDA08C /* Pods */,
+				EB65AFB6D5DE77BADFEEC078 /* Frameworks */,
+				9DFF90011E84F773004A5E00 /* xicaibao-QA.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		9D6B77611E825313001AB48C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D6B77601E825313001AB48C /* xicaibao.app */,
+				9DFF90001E84F773004A5E00 /* xicaibao-QA.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D6B77621E825313001AB48C /* xicaibao */ = {
+			isa = PBXGroup;
+			children = (
+				9D6B778F1E826FFD001AB48C /* Helpers */,
+				9D6B77771E825398001AB48C /* Views */,
+				9D6B77761E825375001AB48C /* Models */,
+				9D6B77751E825357001AB48C /* ViewControllers */,
+				9D6B77631E825313001AB48C /* AppDelegate.swift */,
+				9D41C9A91E8364520083FF65 /* AppSecrets.swift */,
+				9D41C9AB1E8365EA0083FF65 /* xicaibao-Bridging-Header.h */,
+				9D6B776A1E825313001AB48C /* Assets.xcassets */,
+				9D6B776C1E825313001AB48C /* LaunchScreen.storyboard */,
+				9D6B776F1E825313001AB48C /* Info.plist */,
+			);
+			path = xicaibao;
+			sourceTree = "<group>";
+		};
+		9D6B77751E825357001AB48C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9D6B77871E8259AC001AB48C /* Card */,
+				9D6B777A1E825502001AB48C /* Profile */,
+				9D6B77791E8254E5001AB48C /* Contact */,
+				9D6B77781E82546A001AB48C /* Chat */,
+				9D6B77651E825313001AB48C /* MainViewController.swift */,
+				9D6B778C1E825C0F001AB48C /* Main.storyboard */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9D6B77761E825375001AB48C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9D41C9A51E835D080083FF65 /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9D6B77771E825398001AB48C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		9D6B77781E82546A001AB48C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				9D6B77831E825972001AB48C /* ChatViewController.swift */,
+				9D6B77851E825986001AB48C /* Chat.storyboard */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		9D6B77791E8254E5001AB48C /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				9D6B777F1E825908001AB48C /* ContactViewController.swift */,
+				9D6B77811E825925001AB48C /* Contact.storyboard */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
+		9D6B777A1E825502001AB48C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9DFF8FD11E84C18B004A5E00 /* ResetPassword */,
+				9D60329D1E83D3AF00240B7B /* Signup */,
+				9D41C9A41E835CAD0083FF65 /* Login */,
+				9D6B777D1E825879001AB48C /* Profile.storyboard */,
+				9D6B777B1E825857001AB48C /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		9D6B77871E8259AC001AB48C /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				9D6B77881E8259BE001AB48C /* CardViewController.swift */,
+				9D6B778A1E8259D3001AB48C /* Card.storyboard */,
+			);
+			name = Card;
+			sourceTree = "<group>";
+		};
+		9D6B778F1E826FFD001AB48C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9D41C9A71E8360710083FF65 /* ModelErrorManager.swift */,
+				9D6B77901E8270F4001AB48C /* ColorValue.swift */,
+				9DCA45591E837CC300653D48 /* LoginManager.swift */,
+				9DCA455B1E83959400653D48 /* ApiManager.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		9DFF8FD11E84C18B004A5E00 /* ResetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				9DFF8FD21E84C22F004A5E00 /* ResetPasswordTableViewController.swift */,
+				9DFF8FD41E84C24F004A5E00 /* ResetPassword.storyboard */,
+			);
+			name = ResetPassword;
+			sourceTree = "<group>";
+		};
+		9DFF900B1E84FFC3004A5E00 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				9DFF900C1E84FFEF004A5E00 /* SMS_SDK */,
+			);
+			name = Vendors;
+			path = xicaibao/Vendors;
+			sourceTree = "<group>";
+		};
+		9DFF900C1E84FFEF004A5E00 /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				9DFF902A1E85058F004A5E00 /* MOBFoundation.framework */,
+				9DFF902B1E85058F004A5E00 /* MOBFoundationEx.framework */,
+				9DFF900F1E84FFEF004A5E00 /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		A6F24B7CFBF41F0540EDA08C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D5A376B9107E136309052847 /* Pods-xicaibao.debug.xcconfig */,
+				3886C8DED2A8FE9817224C40 /* Pods-xicaibao.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EB65AFB6D5DE77BADFEEC078 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DFF90261E850537004A5E00 /* libicucore.A.tbd */,
+				9DFF90241E850513004A5E00 /* libz.1.tbd */,
+				9DFF901E1E8501D9004A5E00 /* libstdc++.6.0.9.tbd */,
+				9DFF901F1E8501D9004A5E00 /* libstdc++.6.tbd */,
+				9DFF90201E8501D9004A5E00 /* libstdc++.tbd */,
+				9DFF901C1E8501C4004A5E00 /* JavaScriptCore.framework */,
+				9DFF901A1E8501BB004A5E00 /* MessageUI.framework */,
+				9DFF90181E8501AA004A5E00 /* libicucore.tbd */,
+				9DFF90161E85019B004A5E00 /* libz.tbd */,
+				ADFD874E9B4AB94DB10BEF63 /* Pods_xicaibao.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9D6B775F1E825313001AB48C /* xicaibao */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9D6B77721E825313001AB48C /* Build configuration list for PBXNativeTarget "xicaibao" */;
+			buildPhases = (
+				EC873E54B5052FA54048DA11 /* [CP] Check Pods Manifest.lock */,
+				9D6B775C1E825313001AB48C /* Sources */,
+				9D6B775D1E825313001AB48C /* Frameworks */,
+				9D6B775E1E825313001AB48C /* Resources */,
+				E5193B8E411DD344EB15AA19 /* [CP] Embed Pods Frameworks */,
+				60CA84D1DBFD5B358656723B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = xicaibao;
+			productName = xicaibao;
+			productReference = 9D6B77601E825313001AB48C /* xicaibao.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9DFF8FDA1E84F773004A5E00 /* xicaibao-QA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DFF8FFD1E84F773004A5E00 /* Build configuration list for PBXNativeTarget "xicaibao-QA" */;
+			buildPhases = (
+				9DFF8FDB1E84F773004A5E00 /* [CP] Check Pods Manifest.lock */,
+				9DFF8FDC1E84F773004A5E00 /* Sources */,
+				9DFF8FED1E84F773004A5E00 /* Frameworks */,
+				9DFF8FF01E84F773004A5E00 /* Resources */,
+				9DFF8FFB1E84F773004A5E00 /* [CP] Embed Pods Frameworks */,
+				9DFF8FFC1E84F773004A5E00 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "xicaibao-QA";
+			productName = xicaibao;
+			productReference = 9DFF90001E84F773004A5E00 /* xicaibao-QA.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9D6B77581E825313001AB48C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = impressly;
+				TargetAttributes = {
+					9D6B775F1E825313001AB48C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = ZUHYDF6KZU;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					9DFF8FDA1E84F773004A5E00 = {
+						DevelopmentTeam = ZUHYDF6KZU;
+					};
+				};
+			};
+			buildConfigurationList = 9D6B775B1E825313001AB48C /* Build configuration list for PBXProject "xicaibao" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9D6B77571E825313001AB48C;
+			productRefGroup = 9D6B77611E825313001AB48C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9D6B775F1E825313001AB48C /* xicaibao */,
+				9DFF8FDA1E84F773004A5E00 /* xicaibao-QA */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9D6B775E1E825313001AB48C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DCA45601E83B7FA00653D48 /* Login.storyboard in Resources */,
+				9D6B778E1E825C0F001AB48C /* Main.storyboard in Resources */,
+				9D6B77861E825986001AB48C /* Chat.storyboard in Resources */,
+				9D6B776E1E825313001AB48C /* LaunchScreen.storyboard in Resources */,
+				9D60329F1E83D3C400240B7B /* Signup.storyboard in Resources */,
+				9D6B776B1E825313001AB48C /* Assets.xcassets in Resources */,
+				9D6B777E1E825879001AB48C /* Profile.storyboard in Resources */,
+				9D6B778B1E8259D3001AB48C /* Card.storyboard in Resources */,
+				9DFF90021E84F936004A5E00 /* Info.plist in Resources */,
+				9D6B77821E825925001AB48C /* Contact.storyboard in Resources */,
+				9DFF8FD51E84C24F004A5E00 /* ResetPassword.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFF8FF01E84F773004A5E00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFF8FF11E84F773004A5E00 /* Login.storyboard in Resources */,
+				9DFF8FF21E84F773004A5E00 /* Main.storyboard in Resources */,
+				9DFF90031E84F939004A5E00 /* xicaibao-QA.plist in Resources */,
+				9DFF8FF31E84F773004A5E00 /* Chat.storyboard in Resources */,
+				9DFF8FF41E84F773004A5E00 /* LaunchScreen.storyboard in Resources */,
+				9DFF8FF51E84F773004A5E00 /* Signup.storyboard in Resources */,
+				9DFF8FF61E84F773004A5E00 /* Assets.xcassets in Resources */,
+				9DFF8FF71E84F773004A5E00 /* Profile.storyboard in Resources */,
+				9DFF8FF81E84F773004A5E00 /* Card.storyboard in Resources */,
+				9DFF8FF91E84F773004A5E00 /* Contact.storyboard in Resources */,
+				9DFF8FFA1E84F773004A5E00 /* ResetPassword.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60CA84D1DBFD5B358656723B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xicaibao/Pods-xicaibao-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DFF8FDB1E84F773004A5E00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9DFF8FFB1E84F773004A5E00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xicaibao/Pods-xicaibao-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DFF8FFC1E84F773004A5E00 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xicaibao/Pods-xicaibao-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5193B8E411DD344EB15AA19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-xicaibao/Pods-xicaibao-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC873E54B5052FA54048DA11 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9D6B775C1E825313001AB48C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D6B777C1E825857001AB48C /* ProfileViewController.swift in Sources */,
+				9D6B77801E825908001AB48C /* ContactViewController.swift in Sources */,
+				9D6B77911E8270F4001AB48C /* ColorValue.swift in Sources */,
+				9D6B77891E8259BE001AB48C /* CardViewController.swift in Sources */,
+				9D60329C1E83D38600240B7B /* SignupTableViewController.swift in Sources */,
+				9DCA455C1E83959400653D48 /* ApiManager.swift in Sources */,
+				9DCA455E1E83B77F00653D48 /* LoginTableViewController.swift in Sources */,
+				9D41C9A61E835D080083FF65 /* User.swift in Sources */,
+				9D6B77661E825313001AB48C /* MainViewController.swift in Sources */,
+				9D6B77841E825972001AB48C /* ChatViewController.swift in Sources */,
+				9DCA455A1E837CC300653D48 /* LoginManager.swift in Sources */,
+				9D41C9AA1E8364520083FF65 /* AppSecrets.swift in Sources */,
+				9D6B77641E825313001AB48C /* AppDelegate.swift in Sources */,
+				9D41C9A81E8360710083FF65 /* ModelErrorManager.swift in Sources */,
+				9DFF8FD31E84C22F004A5E00 /* ResetPasswordTableViewController.swift in Sources */,
+				9DB71FE81E83CE6800D375C1 /* LoginNavigationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DFF8FDC1E84F773004A5E00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DFF8FDD1E84F773004A5E00 /* ProfileViewController.swift in Sources */,
+				9DFF8FDE1E84F773004A5E00 /* ContactViewController.swift in Sources */,
+				9DFF8FDF1E84F773004A5E00 /* ColorValue.swift in Sources */,
+				9DFF8FE01E84F773004A5E00 /* CardViewController.swift in Sources */,
+				9DFF8FE11E84F773004A5E00 /* SignupTableViewController.swift in Sources */,
+				9DFF8FE21E84F773004A5E00 /* ApiManager.swift in Sources */,
+				9DFF8FE31E84F773004A5E00 /* LoginTableViewController.swift in Sources */,
+				9DFF8FE41E84F773004A5E00 /* User.swift in Sources */,
+				9DFF8FE51E84F773004A5E00 /* MainViewController.swift in Sources */,
+				9DFF8FE61E84F773004A5E00 /* ChatViewController.swift in Sources */,
+				9DFF8FE71E84F773004A5E00 /* LoginManager.swift in Sources */,
+				9DFF8FE81E84F773004A5E00 /* AppSecrets.swift in Sources */,
+				9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */,
+				9DFF8FEA1E84F773004A5E00 /* ModelErrorManager.swift in Sources */,
+				9DFF8FEB1E84F773004A5E00 /* ResetPasswordTableViewController.swift in Sources */,
+				9DFF8FEC1E84F773004A5E00 /* LoginNavigationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9D6B776C1E825313001AB48C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D6B776D1E825313001AB48C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		9D6B778C1E825C0F001AB48C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D6B778D1E825C0F001AB48C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9D6B77701E825313001AB48C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9D6B77711E825313001AB48C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9D6B77731E825313001AB48C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5A376B9107E136309052847 /* Pods-xicaibao.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZUHYDF6KZU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/xicaibao/Vendors/SMS_SDK",
+				);
+				INFOPLIST_FILE = xicaibao/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DPRODUCTION_API";
+				PRODUCT_BUNDLE_IDENTIFIER = com.onthetall.xicaibao;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "xicaibao/xicaibao-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9D6B77741E825313001AB48C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3886C8DED2A8FE9817224C40 /* Pods-xicaibao.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZUHYDF6KZU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/xicaibao/Vendors/SMS_SDK",
+				);
+				INFOPLIST_FILE = xicaibao/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-DPRODUCTION_API";
+				PRODUCT_BUNDLE_IDENTIFIER = com.onthetall.xicaibao;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "xicaibao/xicaibao-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9DFF8FFE1E84F773004A5E00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5A376B9107E136309052847 /* Pods-xicaibao.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZUHYDF6KZU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/xicaibao/Vendors/SMS_SDK",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/xicaibao-QA.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onthetall.xicaibao-QA";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "xicaibao/xicaibao-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9DFF8FFF1E84F773004A5E00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3886C8DED2A8FE9817224C40 /* Pods-xicaibao.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = ZUHYDF6KZU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/xicaibao/Vendors/SMS_SDK",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/xicaibao-QA.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.onthetall.xicaibao-QA";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "xicaibao/xicaibao-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D6B775B1E825313001AB48C /* Build configuration list for PBXProject "xicaibao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D6B77701E825313001AB48C /* Debug */,
+				9D6B77711E825313001AB48C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9D6B77721E825313001AB48C /* Build configuration list for PBXNativeTarget "xicaibao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D6B77731E825313001AB48C /* Debug */,
+				9D6B77741E825313001AB48C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DFF8FFD1E84F773004A5E00 /* Build configuration list for PBXNativeTarget "xicaibao-QA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DFF8FFE1E84F773004A5E00 /* Debug */,
+				9DFF8FFF1E84F773004A5E00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9D6B77581E825313001AB48C /* Project object */;
+}

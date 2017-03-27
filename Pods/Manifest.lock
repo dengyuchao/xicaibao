@@ -1,0 +1,19 @@
+PODS:
+  - Alamofire (4.0.1)
+  - AlamofireImage (3.1.0):
+    - Alamofire (~> 4.0)
+  - SAMKeychain (1.5.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - SAMKeychain
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireImage: bb8c8351c51cb1633bb6be69b6dbbaff37ce65b7
+  SAMKeychain: 1865333198217411f35327e8da61b43de79b635b
+
+PODFILE CHECKSUM: 8a6b62504b6d7433251524ebb4cb8c045dab0eca
+
+COCOAPODS: 1.2.0
