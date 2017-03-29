@@ -196,6 +196,116 @@ class ApiManager {
             }
         }
     }
+    
+    // MARK:获取用户信息
+    // GET /profile
+    func getProfile(_ uuid: String, token: String, successBlock: @escaping ((_ user: User) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
+        let requestURL = URL(string: "\(self.apiUrl)/profile/")!
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        Alamofire.request(requestURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager getProfile] Error: " + error.localizedDescription)
+                errorBlock(error as Error)
+                return
+            }
+            
+            if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
+                
+                let user = try! User.fromJson(json: jsonObj)
+                successBlock(user)
+                
+            } else {
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                print("[ApiManager getProfile] response json error: " + error.localizedDescription)
+                errorBlock(error)
+            }
+            
+        }
+    }
+    
+    
+    // 更新用户信息
+    // MARK: PATCH/ profile
+    func patchProfile(_ user: User, uuid: String, token: String, successBlock: @escaping ((_ user: User) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/profile/update")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        let params: Dictionary<String, AnyObject> = ["user": user.toJson() as AnyObject]
+        
+        Alamofire.request(requestURL, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager patchProfile] Error: " + error.localizedDescription)
+                errorBlock(error as Error)
+                return
+            }
+            
+            if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
+                
+                let user = try! User.fromJson(json: jsonObj)
+                successBlock(user)
+                
+            } else {
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                print("[ApiManager patchProfile] response json error: " + error.localizedDescription)
+                errorBlock(error)
+            }
+            
+        }
+    }
+
+    
+    
+    // 上传照片到服务器
+    func patchProfilePhoto(_ photoImage: Data, uuid: String, token: String, successBlock: @escaping ((_ user: User) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/profile/update")!
+        let headers = ApiManager.headersForm(uuid, token: token)
+        
+        
+        let formDataBlock: (MultipartFormData) -> Void = {multipartFormData in
+            // append imageData
+            multipartFormData.append(photoImage, withName: "user[avatar]", fileName: "avatar.jpg", mimeType: "image/jpeg")
+        }
+        
+        
+        let encodingBlock: (SessionManager.MultipartFormDataEncodingResult) -> Void = {
+            encodingResult in
+            switch encodingResult {
+            case .success(let upload, _, _):
+                upload.responseJSON { response in
+                    if let error = response.result.error {
+                        errorBlock(error as Error)
+                        return
+                    }
+                    
+                    if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
+                        
+                        let user = try! User.fromJson(json: jsonObj)
+                        successBlock(user)
+                        
+                    } else {
+                        let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                        print("[ApiManager patchProfilePhoto] response json error: " + error.localizedDescription)
+                        errorBlock(error)
+                    }
+                }
+            case .failure(let encodingError):
+                print("[ApiManager patchProfilePhoto] encoding error: \(encodingError)")
+                let error = ModelErrorManager.errorWithType(ModelDataError.entityNotValid)
+                errorBlock(error)
+            }
+            
+        }
+        
+        Alamofire.upload(multipartFormData: formDataBlock, to: requestURL, method: .patch, headers: headers, encodingCompletion: encodingBlock)
+    }
+    
+    
+
 
 }
 

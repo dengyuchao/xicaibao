@@ -2,7 +2,7 @@
 //  ModelDataError.swift
 //  Youli
 //
-//  Created by JERRY LIU on 15/10/2015.
+//  Created by dengyuchao on 15/10/2015.
 //  Copyright © 2015 ONTHETALL. All rights reserved.
 //
 

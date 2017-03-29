@@ -27,6 +27,12 @@
 		9D6B778B1E8259D3001AB48C /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B778A1E8259D3001AB48C /* Card.storyboard */; };
 		9D6B778E1E825C0F001AB48C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B778C1E825C0F001AB48C /* Main.storyboard */; };
 		9D6B77911E8270F4001AB48C /* ColorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77901E8270F4001AB48C /* ColorValue.swift */; };
+		9DA96CC01E8A304F00666981 /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA96CBF1E8A304F00666981 /* UserInfoTableViewController.swift */; };
+		9DA96CC11E8A304F00666981 /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA96CBF1E8A304F00666981 /* UserInfoTableViewController.swift */; };
+		9DA96CC31E8A30DD00666981 /* EditNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA96CC21E8A30DD00666981 /* EditNameTableViewController.swift */; };
+		9DA96CC41E8A30DD00666981 /* EditNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA96CC21E8A30DD00666981 /* EditNameTableViewController.swift */; };
+		9DA96CC61E8A3D6A00666981 /* SystemPathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA96CC51E8A3D6A00666981 /* SystemPathHelper.swift */; };
+		9DA96CC71E8A3D6A00666981 /* SystemPathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA96CC51E8A3D6A00666981 /* SystemPathHelper.swift */; };
 		9DB71FE81E83CE6800D375C1 /* LoginNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB71FE71E83CE6800D375C1 /* LoginNavigationController.swift */; };
 		9DCA455A1E837CC300653D48 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA45591E837CC300653D48 /* LoginManager.swift */; };
 		9DCA455C1E83959400653D48 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA455B1E83959400653D48 /* ApiManager.swift */; };
@@ -109,6 +115,9 @@
 		9D6B778A1E8259D3001AB48C /* Card.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
 		9D6B778D1E825C0F001AB48C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D6B77901E8270F4001AB48C /* ColorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorValue.swift; sourceTree = "<group>"; };
+		9DA96CBF1E8A304F00666981 /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
+		9DA96CC21E8A30DD00666981 /* EditNameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNameTableViewController.swift; sourceTree = "<group>"; };
+		9DA96CC51E8A3D6A00666981 /* SystemPathHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPathHelper.swift; sourceTree = "<group>"; };
 		9DB71FE71E83CE6800D375C1 /* LoginNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginNavigationController.swift; sourceTree = "<group>"; };
 		9DCA45591E837CC300653D48 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		9DCA455B1E83959400653D48 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -285,6 +294,8 @@
 				9D41C9A41E835CAD0083FF65 /* Login */,
 				9D6B777D1E825879001AB48C /* Profile.storyboard */,
 				9D6B777B1E825857001AB48C /* ProfileViewController.swift */,
+				9DA96CBF1E8A304F00666981 /* UserInfoTableViewController.swift */,
+				9DA96CC21E8A30DD00666981 /* EditNameTableViewController.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -301,6 +312,7 @@
 		9D6B778F1E826FFD001AB48C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9DA96CC51E8A3D6A00666981 /* SystemPathHelper.swift */,
 				9D41C9A71E8360710083FF65 /* ModelErrorManager.swift */,
 				9D6B77901E8270F4001AB48C /* ColorValue.swift */,
 				9DCA45591E837CC300653D48 /* LoginManager.swift */,
@@ -585,6 +597,7 @@
 			files = (
 				9D6B777C1E825857001AB48C /* ProfileViewController.swift in Sources */,
 				9D6B77801E825908001AB48C /* ContactViewController.swift in Sources */,
+				9DA96CC01E8A304F00666981 /* UserInfoTableViewController.swift in Sources */,
 				9D6B77911E8270F4001AB48C /* ColorValue.swift in Sources */,
 				9D6B77891E8259BE001AB48C /* CardViewController.swift in Sources */,
 				9D60329C1E83D38600240B7B /* SignupTableViewController.swift in Sources */,
@@ -598,6 +611,8 @@
 				9D6B77641E825313001AB48C /* AppDelegate.swift in Sources */,
 				9D41C9A81E8360710083FF65 /* ModelErrorManager.swift in Sources */,
 				9DFF8FD31E84C22F004A5E00 /* ResetPasswordTableViewController.swift in Sources */,
+				9DA96CC31E8A30DD00666981 /* EditNameTableViewController.swift in Sources */,
+				9DA96CC61E8A3D6A00666981 /* SystemPathHelper.swift in Sources */,
 				9DB71FE81E83CE6800D375C1 /* LoginNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +623,7 @@
 			files = (
 				9DFF8FDD1E84F773004A5E00 /* ProfileViewController.swift in Sources */,
 				9DFF8FDE1E84F773004A5E00 /* ContactViewController.swift in Sources */,
+				9DA96CC11E8A304F00666981 /* UserInfoTableViewController.swift in Sources */,
 				9DFF8FDF1E84F773004A5E00 /* ColorValue.swift in Sources */,
 				9DFF8FE01E84F773004A5E00 /* CardViewController.swift in Sources */,
 				9DFF8FE11E84F773004A5E00 /* SignupTableViewController.swift in Sources */,
@@ -621,6 +637,8 @@
 				9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */,
 				9DFF8FEA1E84F773004A5E00 /* ModelErrorManager.swift in Sources */,
 				9DFF8FEB1E84F773004A5E00 /* ResetPasswordTableViewController.swift in Sources */,
+				9DA96CC41E8A30DD00666981 /* EditNameTableViewController.swift in Sources */,
+				9DA96CC71E8A3D6A00666981 /* SystemPathHelper.swift in Sources */,
 				9DFF8FEC1E84F773004A5E00 /* LoginNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
