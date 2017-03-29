@@ -305,7 +305,69 @@ class ApiManager {
     }
     
     
+    // 创建名片post
+    func postCard(card: Card, forUser uuid: String, token: String, successBlock: @escaping ((_ card: Card)->Void), errorBlock: @escaping (_ error: Error) -> Void) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/card")!
+        // authentication headers
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        let params: Dictionary<String, AnyObject> = card.toJson()
+        
+        Alamofire.request(requestURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager postCard] error: \(error.localizedDescription)")
+                errorBlock(error as Error)
+                return
+            }
+            
+            //parse JSON response
+            if let jsonObj = response.result.value as? Dictionary<String,AnyObject> {
+                
+                let card = try! Card.fromJson(json: jsonObj)
+                successBlock(card)
+                
+            } else {
+                print("[ApiManager postCard] response json error")
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                errorBlock(error)
+            }
+            
+        }
 
+    }
+    
+    // 更新名片信息  patch
+    func patchCard(card: Card, forUser uuid: String, token: String, successBlock: @escaping ((_ card: Card)->Void), errorBlock: @escaping (_ error: Error) -> Void) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/card/\(card.key)")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        let params: Dictionary<String, AnyObject> = card.toJson()
+        
+        Alamofire.request(requestURL, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager patchCard] error: \(error.localizedDescription)")
+                errorBlock(error as Error)
+                return
+            }
+            
+            //parse JSON response
+            if let jsonObj = response.result.value as? Dictionary<String,AnyObject> {
+                
+                let card = try! Card.fromJson(json: jsonObj)
+                successBlock(card)
+                
+            } else {
+                print("[ApiManager patchCard] resonse json error")
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                errorBlock(error)
+            }
+        }
+    }
 
 }
 

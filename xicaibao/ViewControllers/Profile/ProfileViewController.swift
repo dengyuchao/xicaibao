@@ -83,7 +83,6 @@ class ProfileTableViewController: UITableViewController{
                 userInfoVC.user = user
             }
         }
-        
     }
 }
 
@@ -98,6 +97,27 @@ extension ProfileTableViewController {
             return 1
         } else {
             return 2
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 创建&&编辑名片
+        if indexPath.section == 2 && indexPath.row == 0 {
+//            if self.user?.card == nil {
+//                
+//            }
+            
+            // 创建名片
+            let storyBoard = UIStoryboard(name: "CreateCard", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: "idCreate") as! CreateCardTableViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            
+//            // 编辑名片
+//            let storyBoard = UIStoryboard(name: "CreateCard", bundle: nil)
+//            let vc = storyBoard.instantiateViewController(withIdentifier: "idEdit") as! EditCardTableViewController
+//            vc.card = self.user?.card
+//            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

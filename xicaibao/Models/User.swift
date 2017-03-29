@@ -16,16 +16,19 @@ class User {
     var userTel: String?
     var imageUrl: String?
     
+    var card: Card?
+    
     // init methods
     init(uuid: String) {
         self.uuid = uuid
     }
     
-    init(uuid: String, userName: String?, userTel: String?, imageUrl:String?) {
+    init(uuid: String, userName: String?, userTel: String?, imageUrl:String?, card: Card?) {
         self.uuid = uuid
         self.userName = userName
         self.userTel = userTel
         self.imageUrl = imageUrl
+        self.card = card
     }
     
     // MARK: instantiate from json
@@ -38,8 +41,13 @@ class User {
         let userTel = dict["user_tel"] as? String
         let imageUrl = dict["image_url"] as? String
         
+        var card: Card? = nil
         
-        let user = User(uuid: uuid, userName: userName, userTel: userTel, imageUrl: imageUrl)
+        if let cardDict = dict["card"] as? Dictionary<String, AnyObject> {
+            card = try Card.fromJson(json: cardDict)
+        }
+        
+        let user = User(uuid: uuid, userName: userName, userTel: userTel, imageUrl: imageUrl,card: card)
         
         return user
     }
