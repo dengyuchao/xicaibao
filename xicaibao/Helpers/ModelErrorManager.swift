@@ -45,11 +45,14 @@ class ModelErrorManager : NSObject {
             let error = NSError(domain: ModelErrorManager.domain, code: code, userInfo: userInfo)
             return error
             
+            // todo: 账号在别的设备登录
+            
         default:
             let code = -999
             let userInfo = ModelErrorManager.localizedUserInfo("Unknown Error Happened", reason: "Unknown reason", recovery: "Debug like hell")
             let error = NSError(domain: ModelErrorManager.domain, code: code, userInfo: userInfo)
             return error
+            
             
         }
     }

@@ -9,6 +9,7 @@
 import UIKit
 import Photos
 import AlamofireImage
+import MessageUI
 
 
 class UserInfoTableViewController: UITableViewController {
@@ -201,7 +202,7 @@ extension UserInfoTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // 上传头像
-        if indexPath.section == 0 && indexPath.row == 0 {
+        if indexPath.section == 0 {
             self.avatarAction()
         }
     }
@@ -230,6 +231,7 @@ extension UserInfoTableViewController: EditNameTableViewControllerDelegate {
         nameLabel.text = name
     }
 }
+
 
 // AvatarSize
 struct UserUpload {

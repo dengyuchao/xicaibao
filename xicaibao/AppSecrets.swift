@@ -16,6 +16,12 @@ struct AppSecrets {
     // TODO：上线生产版本需要重新生成
     static let MOB_SMS_APP_KEY = "1c65c274df111"
     static let MOB_SMS_APP_SECRET = "e085c0bba93e6d2e783f847b7374bc1c"
+    
+    // 跳转到APP store 评分
+    static let kAppItunesURL = ""
+    
+    //  Feedback Email  公司邮箱 接收意见
+    static let kSetToRecipients = "543940962@qq.com"
 
     #else
     
@@ -24,6 +30,12 @@ struct AppSecrets {
     // SMS verification SDK
     static let MOB_SMS_APP_KEY = "1c65c274df111"
     static let MOB_SMS_APP_SECRET = "e085c0bba93e6d2e783f847b7374bc1c"
+    
+    // 跳转到APP store 评分
+    static let kAppItunesURL = ""
+    
+    //  Feedback Email  公司邮箱 接收意见
+    static let kSetToRecipients = "543940962@qq.com"
     
     #endif
     

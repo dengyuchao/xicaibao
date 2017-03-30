@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import MessageUI
 
 class ProfileTableViewController: UITableViewController{
     
@@ -75,12 +76,40 @@ class ProfileTableViewController: UITableViewController{
         }
     }
     
+    
+    // 意见反馈，发送邮件
+    public func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            
+            guard let uuid = LoginManager.defaultManager.uuid else {
+                return
+            }
+            let mailPicker = SendMailHelper.createMFMailComposeViewController(uuid: uuid)
+            mailPicker.mailComposeDelegate = self
+            present(mailPicker, animated: true, completion: nil)
+            
+        } else {
+            let alertController = UIAlertController(title: "提示", message: "您还没有设置登录邮箱", preferredStyle: UIAlertControllerStyle.alert)
+            let confirmAction = UIAlertAction(title: "好", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
+            })
+            alertController.addAction(confirmAction)
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+
+    
     // segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "userInfoVC" {
             if let userInfoVC = segue.destination as? UserInfoTableViewController {
                 guard let user = self.user else { return }
                 userInfoVC.user = user
+            }
+        }
+        
+        if segue.identifier == "accountVC" {
+            if let accountVC = segue.destination as? AccountSettingTableViewController {
+                accountVC.user = self.user
             }
         }
     }
@@ -118,6 +147,21 @@ extension ProfileTableViewController {
 //            let vc = storyBoard.instantiateViewController(withIdentifier: "idEdit") as! EditCardTableViewController
 //            vc.card = self.user?.card
 //            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        // 意见反馈
+        if indexPath.section == 3 && indexPath.row == 0 {
+            self.sendEmail()
+        }
+    }
+}
+
+extension ProfileTableViewController: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        let alert = SendMailHelper.alertFromMFMailComposeResult(result: result)
+        controller.dismiss(animated: true) { () -> Void in
+            print(alert)
         }
     }
 }

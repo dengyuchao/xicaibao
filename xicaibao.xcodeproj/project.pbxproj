@@ -12,6 +12,10 @@
 		9D6B77641E825313001AB48C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77631E825313001AB48C /* AppDelegate.swift */; };
 		9D6B776B1E825313001AB48C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B776A1E825313001AB48C /* Assets.xcassets */; };
 		9D6B776E1E825313001AB48C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B776C1E825313001AB48C /* LaunchScreen.storyboard */; };
+		9DB57F821E8CFB32007AC25F /* SendMailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */; };
+		9DB57F831E8CFB32007AC25F /* SendMailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */; };
+		9DB57F851E8D090B007AC25F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F841E8D090B007AC25F /* AboutViewController.swift */; };
+		9DB57F861E8D090B007AC25F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F841E8D090B007AC25F /* AboutViewController.swift */; };
 		9DECCAAB1E8B52F90012CAA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAAA1E8B52F90012CAA4 /* User.swift */; };
 		9DECCAB31E8B53330012CAA4 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAAD1E8B53330012CAA4 /* ApiManager.swift */; };
 		9DECCAB41E8B53330012CAA4 /* ColorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAAE1E8B53330012CAA4 /* ColorValue.swift */; };
@@ -45,6 +49,14 @@
 		9DECCAF21E8B86C70012CAA4 /* CreateCard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DECCAF01E8B86C70012CAA4 /* CreateCard.storyboard */; };
 		9DECCAF41E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAF31E8B86EA0012CAA4 /* EditCardTableViewController.swift */; };
 		9DECCAF51E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAF31E8B86EA0012CAA4 /* EditCardTableViewController.swift */; };
+		9DECCAFB1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAFA1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift */; };
+		9DECCAFC1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAFA1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift */; };
+		9DECCAFE1E8BA8D70012CAA4 /* AccountSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DECCAFD1E8BA8D70012CAA4 /* AccountSetting.storyboard */; };
+		9DECCAFF1E8BA8D70012CAA4 /* AccountSetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DECCAFD1E8BA8D70012CAA4 /* AccountSetting.storyboard */; };
+		9DECCB0A1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB091E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift */; };
+		9DECCB0B1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB091E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift */; };
+		9DECCB0D1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */; };
+		9DECCB0E1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */; };
 		9DFF8FE81E84F773004A5E00 /* AppSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A91E8364520083FF65 /* AppSecrets.swift */; };
 		9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77631E825313001AB48C /* AppDelegate.swift */; };
 		9DFF8FEE1E84F773004A5E00 /* Pods_xicaibao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFD874E9B4AB94DB10BEF63 /* Pods_xicaibao.framework */; };
@@ -83,6 +95,8 @@
 		9D6B776A1E825313001AB48C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D6B776D1E825313001AB48C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D6B776F1E825313001AB48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailHelper.swift; sourceTree = "<group>"; };
+		9DB57F841E8D090B007AC25F /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9DECCAAA1E8B52F90012CAA4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9DECCAAD1E8B53330012CAA4 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		9DECCAAE1E8B53330012CAA4 /* ColorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorValue.swift; sourceTree = "<group>"; };
@@ -113,6 +127,10 @@
 		9DECCAED1E8B86A50012CAA4 /* CreateCardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateCardTableViewController.swift; sourceTree = "<group>"; };
 		9DECCAF01E8B86C70012CAA4 /* CreateCard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateCard.storyboard; sourceTree = "<group>"; };
 		9DECCAF31E8B86EA0012CAA4 /* EditCardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCardTableViewController.swift; sourceTree = "<group>"; };
+		9DECCAFA1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingTableViewController.swift; sourceTree = "<group>"; };
+		9DECCAFD1E8BA8D70012CAA4 /* AccountSetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AccountSetting.storyboard; sourceTree = "<group>"; };
+		9DECCB091E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageSettingTableViewController.swift; sourceTree = "<group>"; };
+		9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoMessageSettingTableViewController.swift; sourceTree = "<group>"; };
 		9DFF90001E84F773004A5E00 /* xicaibao-QA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xicaibao-QA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFF90011E84F773004A5E00 /* xicaibao-QA.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "xicaibao-QA.plist"; path = "/Users/impressly/ios/xicaibao/xicaibao-QA.plist"; sourceTree = "<absolute>"; };
 		9DFF900F1E84FFEF004A5E00 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
@@ -234,6 +252,7 @@
 				9DECCAB01E8B53330012CAA4 /* LoginManager.swift */,
 				9DECCAB11E8B53330012CAA4 /* ModelErrorManager.swift */,
 				9DECCAB21E8B53330012CAA4 /* SystemPathHelper.swift */,
+				9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -291,6 +310,7 @@
 		9DECCAC61E8B56850012CAA4 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9DECCAF91E8BA87E0012CAA4 /* AccountSetting */,
 				9DECCAEC1E8B85B40012CAA4 /* CreateCard */,
 				9DECCAC81E8B56850012CAA4 /* Login */,
 				9DECCACE1E8B56850012CAA4 /* ResetPassword */,
@@ -345,6 +365,18 @@
 				9DECCAF01E8B86C70012CAA4 /* CreateCard.storyboard */,
 			);
 			path = CreateCard;
+			sourceTree = "<group>";
+		};
+		9DECCAF91E8BA87E0012CAA4 /* AccountSetting */ = {
+			isa = PBXGroup;
+			children = (
+				9DECCAFA1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift */,
+				9DECCAFD1E8BA8D70012CAA4 /* AccountSetting.storyboard */,
+				9DECCB091E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift */,
+				9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */,
+				9DB57F841E8D090B007AC25F /* AboutViewController.swift */,
+			);
+			path = AccountSetting;
 			sourceTree = "<group>";
 		};
 		9DFF900B1E84FFC3004A5E00 /* Vendors */ = {
@@ -492,6 +524,7 @@
 				9DECCAD91E8B56850012CAA4 /* Chat.storyboard in Resources */,
 				9DFF90021E84F936004A5E00 /* Info.plist in Resources */,
 				9DECCAE41E8B56850012CAA4 /* ResetPassword.storyboard in Resources */,
+				9DECCAFE1E8BA8D70012CAA4 /* AccountSetting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFF90031E84F939004A5E00 /* xicaibao-QA.plist in Resources */,
+				9DECCAFF1E8BA8D70012CAA4 /* AccountSetting.storyboard in Resources */,
 				9DFF8FF41E84F773004A5E00 /* LaunchScreen.storyboard in Resources */,
 				9DECCAF21E8B86C70012CAA4 /* CreateCard.storyboard in Resources */,
 				9DFF8FF61E84F773004A5E00 /* Assets.xcassets in Resources */,
@@ -609,16 +643,21 @@
 				9DECCAE51E8B56850012CAA4 /* ResetPasswordTableViewController.swift in Sources */,
 				9DECCAE71E8B56850012CAA4 /* SignupTableViewController.swift in Sources */,
 				9DECCAB61E8B53330012CAA4 /* LoginManager.swift in Sources */,
+				9DECCB0A1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
 				9DECCADE1E8B56850012CAA4 /* MainViewController.swift in Sources */,
+				9DECCAFB1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
 				9DECCAAB1E8B52F90012CAA4 /* User.swift in Sources */,
 				9DECCADA1E8B56850012CAA4 /* ChatViewController.swift in Sources */,
 				9DECCAB71E8B53330012CAA4 /* ModelErrorManager.swift in Sources */,
 				9DECCAE81E8B56850012CAA4 /* EditNameTableViewController.swift in Sources */,
+				9DB57F851E8D090B007AC25F /* AboutViewController.swift in Sources */,
 				9DECCAE11E8B56850012CAA4 /* LoginTableViewController.swift in Sources */,
 				9DECCAE31E8B56850012CAA4 /* ProfileViewController.swift in Sources */,
 				9DECCAE91E8B56850012CAA4 /* UserInfoTableViewController.swift in Sources */,
+				9DECCB0D1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */,
 				9DECCAF41E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */,
 				9DECCAB51E8B53330012CAA4 /* FormatHelper.swift in Sources */,
+				9DB57F821E8CFB32007AC25F /* SendMailHelper.swift in Sources */,
 				9DECCADC1E8B56850012CAA4 /* ContactViewController.swift in Sources */,
 				9DECCAB41E8B53330012CAA4 /* ColorValue.swift in Sources */,
 				9DECCAB31E8B53330012CAA4 /* ApiManager.swift in Sources */,
@@ -636,10 +675,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9DECCB0E1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */,
 				9DFF8FE81E84F773004A5E00 /* AppSecrets.swift in Sources */,
 				9DECCAF51E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */,
+				9DB57F861E8D090B007AC25F /* AboutViewController.swift in Sources */,
 				9DECCAEF1E8B86A50012CAA4 /* CreateCardTableViewController.swift in Sources */,
+				9DB57F831E8CFB32007AC25F /* SendMailHelper.swift in Sources */,
 				9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */,
+				9DECCAFC1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
+				9DECCB0B1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

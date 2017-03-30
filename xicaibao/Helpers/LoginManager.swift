@@ -165,7 +165,7 @@ class LoginManager: NSObject {
             
             let deviceToken = LoginManager.dataToHex(deviceTokenData)
             
-            let params = ["device": ["platform": "ios", "token": deviceToken]]
+            let params = ["device": [ ]]
             
             print("[LoginManager registerDevice] post device..... deviceToken: \(deviceToken)")
             let apiManager = ApiManager()
