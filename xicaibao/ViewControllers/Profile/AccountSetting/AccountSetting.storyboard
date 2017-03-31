@@ -12,7 +12,7 @@
         <!--Account Setting Table View Controller-->
         <scene sceneID="JnU-WX-nOP">
             <objects>
-                <tableViewController id="eN5-M7-KrG" customClass="AccountSettingTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="eN5-M7-KrG" customClass="AccountSettingTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="8Fc-4g-SZi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -158,7 +158,7 @@
         <!--Account Setting Table View Controller-->
         <scene sceneID="tJ5-Dp-tew">
             <objects>
-                <tableViewController id="rkS-g5-8z5" customClass="AccountSettingTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="rkS-g5-8z5" customClass="AccountSettingTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="nAF-f7-07S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,7 +230,7 @@
         <!--No Message Setting Table View Controller-->
         <scene sceneID="QH0-kL-lv3">
             <objects>
-                <tableViewController id="iMH-RC-Xc1" customClass="NoMessageSettingTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="iMH-RC-Xc1" customClass="NoMessageSettingTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="YGR-1E-ftw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

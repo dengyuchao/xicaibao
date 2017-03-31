@@ -115,6 +115,9 @@
                                                 <constraint firstItem="8C5-mx-4cw" firstAttribute="centerY" secondItem="C8L-Zc-hHd" secondAttribute="centerY" id="qsT-kn-RIn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AAB-es-ldl" kind="show" identifier="walletVC" id="ORe-oF-OMH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -259,6 +262,14 @@
             </objects>
             <point key="canvasLocation" x="1512.8" y="-194.75262368815595"/>
         </scene>
+        <!--Wallet-->
+        <scene sceneID="4QT-VH-0kq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Wallet" id="AAB-es-ldl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIy-mJ-dEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1956" y="-354"/>
+        </scene>
         <!--AccountSetting-->
         <scene sceneID="og2-fp-bZX">
             <objects>
@@ -270,7 +281,7 @@
         <!--个人信息-->
         <scene sceneID="kun-Th-TPd">
             <objects>
-                <tableViewController id="8LI-HN-pcX" customClass="UserInfoTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="8LI-HN-pcX" customClass="UserInfoTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ggp-67-m7m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -397,7 +408,7 @@
         <!--昵称修改-->
         <scene sceneID="HdV-bi-nN1">
             <objects>
-                <tableViewController id="ABf-x7-uCl" customClass="EditNameTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="ABf-x7-uCl" customClass="EditNameTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9sV-W4-Hux">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -472,7 +483,7 @@
         <!--About View Controller-->
         <scene sceneID="ptF-CG-hxS">
             <objects>
-                <viewController id="1T9-6h-5ei" customClass="AboutViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="1T9-6h-5ei" customClass="AboutViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ngr-0v-JbK"/>
                         <viewControllerLayoutGuide type="bottom" id="QYh-Z8-anF"/>

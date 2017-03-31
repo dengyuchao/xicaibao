@@ -13,7 +13,7 @@
         <!--创建名片-->
         <scene sceneID="Nl3-GG-tcs">
             <objects>
-                <tableViewController storyboardIdentifier="idCreate" id="NRS-FP-nH4" customClass="CreateCardTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="idCreate" hidesBottomBarWhenPushed="YES" id="NRS-FP-nH4" customClass="CreateCardTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7mP-Z8-7eA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,7 +262,7 @@
         <!--编辑名片-->
         <scene sceneID="9gz-7Z-ah7">
             <objects>
-                <tableViewController storyboardIdentifier="idEdit" id="CCv-Oe-gEM" customClass="EditCardTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="idEdit" hidesBottomBarWhenPushed="YES" id="CCv-Oe-gEM" customClass="EditCardTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gAK-CR-JnM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

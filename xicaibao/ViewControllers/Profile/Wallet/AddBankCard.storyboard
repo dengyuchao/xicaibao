@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2ha-Bi-Uer">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Bank Card View Controller-->
+        <scene sceneID="LLv-Gb-41z">
+            <objects>
+                <viewController id="2ha-Bi-Uer" customClass="AddBankCardViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BD0-qK-d3j"/>
+                        <viewControllerLayoutGuide type="bottom" id="tKk-ER-jGD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JOt-Af-mEO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCP-hv-yTb">
+                                <rect key="frame" x="0.0" y="36" width="375" height="52"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入银行卡号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7MM-D2-cRQ">
+                                        <rect key="frame" x="102" y="18" width="257" height="17"/>
+                                        <color key="textColor" red="0.32156862749999998" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="银行卡号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEq-vs-4A7">
+                                        <rect key="frame" x="16" y="16" width="70" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="TEq-vs-4A7" firstAttribute="centerY" secondItem="yCP-hv-yTb" secondAttribute="centerY" id="BJv-3l-2DJ"/>
+                                    <constraint firstItem="7MM-D2-cRQ" firstAttribute="leading" secondItem="TEq-vs-4A7" secondAttribute="trailing" constant="16" id="D0R-b3-zUm"/>
+                                    <constraint firstItem="TEq-vs-4A7" firstAttribute="leading" secondItem="yCP-hv-yTb" secondAttribute="leading" constant="16" id="Gh3-fZ-Rrj"/>
+                                    <constraint firstItem="7MM-D2-cRQ" firstAttribute="centerY" secondItem="yCP-hv-yTb" secondAttribute="centerY" id="YBR-GD-Bml"/>
+                                    <constraint firstAttribute="height" constant="52" id="ZAz-0b-u1X"/>
+                                    <constraint firstAttribute="trailing" secondItem="7MM-D2-cRQ" secondAttribute="trailing" constant="16" id="rBK-KK-OxQ"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jim-nQ-Kam">
+                                <rect key="frame" x="32" y="140" width="311" height="44"/>
+                                <color key="backgroundColor" red="0.43137254899999999" green="0.69803921570000005" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nFw-1K-nU7"/>
+                                </constraints>
+                                <state key="normal" title="下一步">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeE-mn-yFy">
+                                <rect key="frame" x="251" y="192" width="92" height="30"/>
+                                <state key="normal" title="查看支持银行"/>
+                                <connections>
+                                    <segue destination="bo7-h6-VL4" kind="show" id="577-MK-vMq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yCP-hv-yTb" firstAttribute="centerX" secondItem="JOt-Af-mEO" secondAttribute="centerX" id="19l-08-Jc9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jim-nQ-Kam" secondAttribute="trailing" constant="16" id="MyF-hV-raV"/>
+                            <constraint firstItem="yCP-hv-yTb" firstAttribute="width" secondItem="JOt-Af-mEO" secondAttribute="width" id="ZIF-89-SM8"/>
+                            <constraint firstItem="jim-nQ-Kam" firstAttribute="top" secondItem="yCP-hv-yTb" secondAttribute="bottom" constant="52" id="ebY-gZ-Idj"/>
+                            <constraint firstItem="yCP-hv-yTb" firstAttribute="top" secondItem="BD0-qK-d3j" secondAttribute="bottom" constant="16" id="q8d-tx-mb4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IeE-mn-yFy" secondAttribute="trailing" constant="16" id="uSz-7J-zoZ"/>
+                            <constraint firstItem="jim-nQ-Kam" firstAttribute="leading" secondItem="JOt-Af-mEO" secondAttribute="leadingMargin" constant="16" id="vz5-fP-Z34"/>
+                            <constraint firstItem="IeE-mn-yFy" firstAttribute="top" secondItem="jim-nQ-Kam" secondAttribute="bottom" constant="8" id="y5d-TN-RZY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="jim-nQ-Kam" id="eyI-Qd-tKD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="027-ho-Fns" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792.79999999999995" y="-3.1484257871064472"/>
+        </scene>
+        <!--Bank Card List Table View Controller-->
+        <scene sceneID="AtG-CL-zYB">
+            <objects>
+                <tableViewController id="bo7-h6-VL4" customClass="BankCardListTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Hxl-Oi-en3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="bankCardListCell" id="vdf-pR-PhU">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vdf-pR-PhU" id="mw7-dj-lqN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="bo7-h6-VL4" id="N3z-vM-OB0"/>
+                            <outlet property="delegate" destination="bo7-h6-VL4" id="tzn-4g-iWJ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LBa-TM-FMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1503" y="2"/>
+        </scene>
+    </scenes>
+</document>

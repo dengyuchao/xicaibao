@@ -112,6 +112,12 @@ class ProfileTableViewController: UITableViewController{
                 accountVC.user = self.user
             }
         }
+        
+        if segue.identifier == "walletVC" {
+            if let walletVC = segue.destination as? WalletTableViewController {
+                walletVC.user = self.user
+            }
+        }
     }
 }
 
