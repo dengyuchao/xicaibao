@@ -36,6 +36,18 @@
 		9DCE92351E8E4A6000198FA7 /* Crash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE92331E8E4A6000198FA7 /* Crash.storyboard */; };
 		9DCE92371E8E4A8900198FA7 /* CrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92361E8E4A8900198FA7 /* CrashViewController.swift */; };
 		9DCE92381E8E4A8900198FA7 /* CrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92361E8E4A8900198FA7 /* CrashViewController.swift */; };
+		9DCE923A1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92391E8E527900198FA7 /* CardDetailTableViewController.swift */; };
+		9DCE923B1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92391E8E527900198FA7 /* CardDetailTableViewController.swift */; };
+		9DCE923D1E8E528C00198FA7 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE923C1E8E528C00198FA7 /* CardTableViewController.swift */; };
+		9DCE923E1E8E528C00198FA7 /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE923C1E8E528C00198FA7 /* CardTableViewController.swift */; };
+		9DCE92411E8E52EC00198FA7 /* CardListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE92401E8E52EC00198FA7 /* CardListCellTableViewCell.xib */; };
+		9DCE92421E8E52EC00198FA7 /* CardListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE92401E8E52EC00198FA7 /* CardListCellTableViewCell.xib */; };
+		9DCE92441E8E535600198FA7 /* CardListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92431E8E535600198FA7 /* CardListCellTableViewCell.swift */; };
+		9DCE92451E8E535600198FA7 /* CardListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92431E8E535600198FA7 /* CardListCellTableViewCell.swift */; };
+		9DCE92471E8E555600198FA7 /* LiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92461E8E555600198FA7 /* LiveTableViewController.swift */; };
+		9DCE92481E8E555600198FA7 /* LiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92461E8E555600198FA7 /* LiveTableViewController.swift */; };
+		9DCE924A1E8E556E00198FA7 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE92491E8E556E00198FA7 /* Live.storyboard */; };
+		9DCE924B1E8E556E00198FA7 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE92491E8E556E00198FA7 /* Live.storyboard */; };
 		9DECCAAB1E8B52F90012CAA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAAA1E8B52F90012CAA4 /* User.swift */; };
 		9DECCAB31E8B53330012CAA4 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAAD1E8B53330012CAA4 /* ApiManager.swift */; };
 		9DECCAB41E8B53330012CAA4 /* ColorValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAAE1E8B53330012CAA4 /* ColorValue.swift */; };
@@ -44,7 +56,6 @@
 		9DECCAB71E8B53330012CAA4 /* ModelErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAB11E8B53330012CAA4 /* ModelErrorManager.swift */; };
 		9DECCAB81E8B53330012CAA4 /* SystemPathHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAB21E8B53330012CAA4 /* SystemPathHelper.swift */; };
 		9DECCAD71E8B56850012CAA4 /* Card.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DECCABB1E8B56850012CAA4 /* Card.storyboard */; };
-		9DECCAD81E8B56850012CAA4 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCABC1E8B56850012CAA4 /* CardViewController.swift */; };
 		9DECCAD91E8B56850012CAA4 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DECCABE1E8B56850012CAA4 /* Chat.storyboard */; };
 		9DECCADA1E8B56850012CAA4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCABF1E8B56850012CAA4 /* ChatViewController.swift */; };
 		9DECCADB1E8B56850012CAA4 /* Contact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DECCAC11E8B56850012CAA4 /* Contact.storyboard */; };
@@ -127,6 +138,12 @@
 		9DCE92301E8E490100198FA7 /* AddBankCard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddBankCard.storyboard; sourceTree = "<group>"; };
 		9DCE92331E8E4A6000198FA7 /* Crash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Crash.storyboard; sourceTree = "<group>"; };
 		9DCE92361E8E4A8900198FA7 /* CrashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrashViewController.swift; sourceTree = "<group>"; };
+		9DCE92391E8E527900198FA7 /* CardDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDetailTableViewController.swift; sourceTree = "<group>"; };
+		9DCE923C1E8E528C00198FA7 /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
+		9DCE92401E8E52EC00198FA7 /* CardListCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardListCellTableViewCell.xib; sourceTree = "<group>"; };
+		9DCE92431E8E535600198FA7 /* CardListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardListCellTableViewCell.swift; sourceTree = "<group>"; };
+		9DCE92461E8E555600198FA7 /* LiveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveTableViewController.swift; sourceTree = "<group>"; };
+		9DCE92491E8E556E00198FA7 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		9DECCAAA1E8B52F90012CAA4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9DECCAAD1E8B53330012CAA4 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		9DECCAAE1E8B53330012CAA4 /* ColorValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorValue.swift; sourceTree = "<group>"; };
@@ -135,7 +152,6 @@
 		9DECCAB11E8B53330012CAA4 /* ModelErrorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelErrorManager.swift; sourceTree = "<group>"; };
 		9DECCAB21E8B53330012CAA4 /* SystemPathHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemPathHelper.swift; sourceTree = "<group>"; };
 		9DECCABB1E8B56850012CAA4 /* Card.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Card.storyboard; sourceTree = "<group>"; };
-		9DECCABC1E8B56850012CAA4 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		9DECCABE1E8B56850012CAA4 /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		9DECCABF1E8B56850012CAA4 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		9DECCAC11E8B56850012CAA4 /* Contact.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contact.storyboard; sourceTree = "<group>"; };
@@ -262,7 +278,7 @@
 				9DECCAAC1E8B53330012CAA4 /* Helpers */,
 				9DECCAA91E8B52F90012CAA4 /* Models */,
 				9DECCAB91E8B56850012CAA4 /* ViewControllers */,
-				9D6B77771E825398001AB48C /* Views */,
+				9DCE923F1E8E52CA00198FA7 /* Views */,
 				9D6B77631E825313001AB48C /* AppDelegate.swift */,
 				9D41C9A91E8364520083FF65 /* AppSecrets.swift */,
 				9D41C9AB1E8365EA0083FF65 /* xicaibao-Bridging-Header.h */,
@@ -273,11 +289,13 @@
 			path = xicaibao;
 			sourceTree = "<group>";
 		};
-		9D6B77771E825398001AB48C /* Views */ = {
+		9DCE923F1E8E52CA00198FA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9DCE92431E8E535600198FA7 /* CardListCellTableViewCell.swift */,
+				9DCE92401E8E52EC00198FA7 /* CardListCellTableViewCell.xib */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9DECCAA91E8B52F90012CAA4 /* Models */ = {
@@ -324,7 +342,8 @@
 			isa = PBXGroup;
 			children = (
 				9DECCABB1E8B56850012CAA4 /* Card.storyboard */,
-				9DECCABC1E8B56850012CAA4 /* CardViewController.swift */,
+				9DCE923C1E8E528C00198FA7 /* CardTableViewController.swift */,
+				9DCE92391E8E527900198FA7 /* CardDetailTableViewController.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -350,6 +369,8 @@
 		9DECCAC31E8B56850012CAA4 /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				9DCE92461E8E555600198FA7 /* LiveTableViewController.swift */,
+				9DCE92491E8E556E00198FA7 /* Live.storyboard */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -561,6 +582,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DECCADF1E8B56850012CAA4 /* Login.storyboard in Resources */,
+				9DCE924A1E8E556E00198FA7 /* Live.storyboard in Resources */,
 				9D0DCE8B1E8DE7C500F392D7 /* Wallet.storyboard in Resources */,
 				9DECCADD1E8B56850012CAA4 /* Main.storyboard in Resources */,
 				9DECCAF11E8B86C70012CAA4 /* CreateCard.storyboard in Resources */,
@@ -577,6 +599,7 @@
 				9D0DCE941E8E081800F392D7 /* Recharge.storyboard in Resources */,
 				9DECCAE41E8B56850012CAA4 /* ResetPassword.storyboard in Resources */,
 				9DECCAFE1E8BA8D70012CAA4 /* AccountSetting.storyboard in Resources */,
+				9DCE92411E8E52EC00198FA7 /* CardListCellTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +608,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D0DCE951E8E081800F392D7 /* Recharge.storyboard in Resources */,
+				9DCE92421E8E52EC00198FA7 /* CardListCellTableViewCell.xib in Resources */,
+				9DCE924B1E8E556E00198FA7 /* Live.storyboard in Resources */,
 				9DFF90031E84F939004A5E00 /* xicaibao-QA.plist in Resources */,
 				9DECCAFF1E8BA8D70012CAA4 /* AccountSetting.storyboard in Resources */,
 				9DFF8FF41E84F773004A5E00 /* LaunchScreen.storyboard in Resources */,
@@ -702,6 +727,8 @@
 				9DECCB0A1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
 				9DECCADE1E8B56850012CAA4 /* MainViewController.swift in Sources */,
 				9DECCAFB1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
+				9DCE923A1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */,
+				9DCE92441E8E535600198FA7 /* CardListCellTableViewCell.swift in Sources */,
 				9DCE92371E8E4A8900198FA7 /* CrashViewController.swift in Sources */,
 				9D0DCE911E8E07C700F392D7 /* RechargeViewController.swift in Sources */,
 				9DECCAAB1E8B52F90012CAA4 /* User.swift in Sources */,
@@ -713,8 +740,10 @@
 				9DECCAE31E8B56850012CAA4 /* ProfileViewController.swift in Sources */,
 				9DECCAE91E8B56850012CAA4 /* UserInfoTableViewController.swift in Sources */,
 				9DECCB0D1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */,
+				9DCE92471E8E555600198FA7 /* LiveTableViewController.swift in Sources */,
 				9DECCAF41E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */,
 				9DECCAB51E8B53330012CAA4 /* FormatHelper.swift in Sources */,
+				9DCE923D1E8E528C00198FA7 /* CardTableViewController.swift in Sources */,
 				9DB57F821E8CFB32007AC25F /* SendMailHelper.swift in Sources */,
 				9DECCADC1E8B56850012CAA4 /* ContactViewController.swift in Sources */,
 				9DECCAB41E8B53330012CAA4 /* ColorValue.swift in Sources */,
@@ -726,7 +755,6 @@
 				9DCE922B1E8E3F0700198FA7 /* BankCardListTableViewController.swift in Sources */,
 				9DECCAEB1E8B5FA30012CAA4 /* Card.swift in Sources */,
 				9D6B77641E825313001AB48C /* AppDelegate.swift in Sources */,
-				9DECCAD81E8B56850012CAA4 /* CardViewController.swift in Sources */,
 				9DECCAB81E8B53330012CAA4 /* SystemPathHelper.swift in Sources */,
 				9DECCAE01E8B56850012CAA4 /* LoginNavigationController.swift in Sources */,
 				9DECCAEE1E8B86A50012CAA4 /* CreateCardTableViewController.swift in Sources */,
@@ -739,15 +767,19 @@
 			files = (
 				9DECCB0E1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */,
 				9DFF8FE81E84F773004A5E00 /* AppSecrets.swift in Sources */,
+				9DCE923B1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */,
 				9DECCAF51E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */,
 				9D0DCE921E8E07C700F392D7 /* RechargeViewController.swift in Sources */,
 				9DB57F861E8D090B007AC25F /* AboutViewController.swift in Sources */,
 				9DECCAEF1E8B86A50012CAA4 /* CreateCardTableViewController.swift in Sources */,
+				9DCE92451E8E535600198FA7 /* CardListCellTableViewCell.swift in Sources */,
 				9DB57F831E8CFB32007AC25F /* SendMailHelper.swift in Sources */,
+				9DCE92481E8E555600198FA7 /* LiveTableViewController.swift in Sources */,
 				9DCE922F1E8E419B00198FA7 /* BankCardData.swift in Sources */,
 				9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */,
 				9D0DCE981E8E366F00F392D7 /* AddBankCardViewController.swift in Sources */,
 				9DECCAFC1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
+				9DCE923E1E8E528C00198FA7 /* CardTableViewController.swift in Sources */,
 				9DCE922C1E8E3F0700198FA7 /* BankCardListTableViewController.swift in Sources */,
 				9D0DCE8F1E8E046800F392D7 /* WalletTableViewController.swift in Sources */,
 				9DCE92381E8E4A8900198FA7 /* CrashViewController.swift in Sources */,
