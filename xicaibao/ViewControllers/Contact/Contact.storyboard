@@ -1,56 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tsp-Lr-y7E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8ab-C1-TCb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--通讯录-->
-        <scene sceneID="vVA-n2-KR7">
+        <scene sceneID="5Vm-ZR-9bJ">
             <objects>
-                <viewController id="uIv-xJ-lOT" customClass="ContactViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cYa-h6-5c5"/>
-                        <viewControllerLayoutGuide type="bottom" id="bvD-BG-tZP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T3T-sa-uwU">
+                <tableViewController id="aK5-Zb-HMu" customClass="ContactViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lQx-zB-Lxc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="通讯录" id="tit-kR-iit"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TWm-mL-W9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1176.8" y="120.98950524737631"/>
-        </scene>
-        <!--通讯录-->
-        <scene sceneID="XSL-Fv-ZP8">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C97-MH-3p6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tsp-Lr-y7E" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="通讯录" image="contact_icon" selectedImage="contact_icon_hover" id="iWe-tr-LI4"/>
-                    <toolbarItems/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="搜索" id="Dvg-pd-72A">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="aK5-Zb-HMu" id="CL5-rp-d45"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" rowHeight="52" id="k3C-Q7-6dU">
+                                <rect key="frame" x="0.0" y="72" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k3C-Q7-6dU" id="lDt-vm-gn1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tongxunlu_touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="sPn-7B-Rae">
+                                            <rect key="frame" x="24" y="6" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="sPn-7B-Rae" secondAttribute="height" multiplier="1:1" id="YFu-B4-o5D"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新朋友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMt-1j-Yqb">
+                                            <rect key="frame" x="80" y="15.5" width="52" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="sPn-7B-Rae" firstAttribute="leading" secondItem="lDt-vm-gn1" secondAttribute="leadingMargin" constant="16" id="CTM-3W-09g"/>
+                                        <constraint firstItem="sPn-7B-Rae" firstAttribute="centerY" secondItem="lDt-vm-gn1" secondAttribute="centerY" id="Rwp-y5-sjI"/>
+                                        <constraint firstItem="XMt-1j-Yqb" firstAttribute="leading" secondItem="sPn-7B-Rae" secondAttribute="trailing" constant="16" id="SGm-YL-oFZ"/>
+                                        <constraint firstItem="XMt-1j-Yqb" firstAttribute="centerY" secondItem="lDt-vm-gn1" secondAttribute="centerY" id="dJ1-jy-okb"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="aK5-Zb-HMu" id="QpB-0G-zEZ"/>
+                            <outlet property="delegate" destination="aK5-Zb-HMu" id="bUq-3m-kyA"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="通讯录" image="contact_icon" selectedImage="contact_icon_hover" id="wVV-pz-pGc"/>
+                    <navigationItem key="navigationItem" id="DAf-Qq-h4b"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Dj-0n-vs0">
+                    <connections>
+                        <outlet property="searchBar" destination="Dvg-pd-72A" id="Qib-fW-Zre"/>
+                        <segue destination="ro3-rF-jAB" kind="presentation" identifier="searchVC" id="1a2-aQ-H3E"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXI-i8-c9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991.20000000000005" y="-49.925037481259373"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="HXJ-iO-89y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="ro3-rF-jAB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FMI-Fa-HPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1654" y="-148"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VL5-VP-V1U">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8ab-C1-TCb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4LC-T7-Wd8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uIv-xJ-lOT" kind="relationship" relationship="rootViewController" id="Wz8-An-Jmg"/>
+                        <segue destination="aK5-Zb-HMu" kind="relationship" relationship="rootViewController" id="LhH-4Y-GEJ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iGD-73-ioT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="237.59999999999999" y="120.98950524737631"/>
+            <point key="canvasLocation" x="52" y="-50.824587706146929"/>
         </scene>
     </scenes>
     <resources>
         <image name="contact_icon" width="22" height="22"/>
         <image name="contact_icon_hover" width="22" height="22"/>
+        <image name="tongxunlu_touxiang" width="40" height="40"/>
     </resources>
 </document>

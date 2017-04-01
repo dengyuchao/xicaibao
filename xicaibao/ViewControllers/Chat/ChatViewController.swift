@@ -8,14 +8,20 @@
 
 import UIKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: UITableViewController {
 
+    @IBOutlet weak var addButtonItem: UIBarButtonItem!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 导航栏颜色、标题颜色
         self.navigationController?.navigationBar.barTintColor = UIColor.kThemeColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = 74
         
     }
 
@@ -31,15 +37,69 @@ class ChatViewController: UIViewController {
     
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "charSearchVC" {
+            
+//            if let searchVC = segue.destination as? ChatSearchViewController {
+//        
+//            }
+        }
     }
-    */
+    
+    
+    // action 弹出菜单按钮
+    @IBAction func addBtAction(_ sender: UIBarButtonItem) {
+        
+        var menuItems = [KxMenuItem]()
+        
+        // TODO: 添加对应的 target action
+        let chatMenuItem = KxMenuItem.init("发起聊天", image: UIImage(named: "startchat_icon"), target: self, action: nil)
+        let groupMenuItem = KxMenuItem.init("创建群组", image: UIImage(named: "creategroup_icon"), target: self, action: nil)
+        let addFriendMenuItem = KxMenuItem.init("添加好友", image: UIImage(named: "addfriend_icon"), target: self, action: nil)
+        
+        menuItems.append(chatMenuItem!)
+        menuItems.append(groupMenuItem!)
+        menuItems.append(addFriendMenuItem!)
+        
+        // 设置菜单frame
+        let view = self.addButtonItem.value(forKey: "view") as! UIView
+        var targetFrame = view.frame
+        targetFrame.origin.y += 15
+        
+        KxMenu.setTitleFont(UIFont.systemFont(ofSize: 17))
+        KxMenu.setTintColor(UIColor.black)
+        KxMenu.show(in: self.view.window, from: targetFrame, menuItems: menuItems)
+    }
+    
+}
 
+extension ChatViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 3
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chatListCell", for: indexPath)
+        
+        return cell
+    }
+}
+
+extension ChatViewController: UISearchBarDelegate {
+    
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        
+        performSegue(withIdentifier: "charSearchVC", sender: "nil")
+        
+        return false
+    }
 }

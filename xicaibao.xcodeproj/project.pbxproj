@@ -44,8 +44,8 @@
 		9DCE92421E8E52EC00198FA7 /* CardListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE92401E8E52EC00198FA7 /* CardListCellTableViewCell.xib */; };
 		9DCE92441E8E535600198FA7 /* CardListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92431E8E535600198FA7 /* CardListCellTableViewCell.swift */; };
 		9DCE92451E8E535600198FA7 /* CardListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92431E8E535600198FA7 /* CardListCellTableViewCell.swift */; };
-		9DCE92471E8E555600198FA7 /* LiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92461E8E555600198FA7 /* LiveTableViewController.swift */; };
-		9DCE92481E8E555600198FA7 /* LiveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92461E8E555600198FA7 /* LiveTableViewController.swift */; };
+		9DCE92471E8E555600198FA7 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92461E8E555600198FA7 /* LiveViewController.swift */; };
+		9DCE92481E8E555600198FA7 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE92461E8E555600198FA7 /* LiveViewController.swift */; };
 		9DCE924A1E8E556E00198FA7 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE92491E8E556E00198FA7 /* Live.storyboard */; };
 		9DCE924B1E8E556E00198FA7 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DCE92491E8E556E00198FA7 /* Live.storyboard */; };
 		9DECCAAB1E8B52F90012CAA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCAAA1E8B52F90012CAA4 /* User.swift */; };
@@ -88,6 +88,20 @@
 		9DECCB0B1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB091E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift */; };
 		9DECCB0D1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */; };
 		9DECCB0E1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */; };
+		9DFEE8871E8F44DB0098C54F /* ChatSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE8861E8F44DB0098C54F /* ChatSearchViewController.swift */; };
+		9DFEE8881E8F44DB0098C54F /* ChatSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE8861E8F44DB0098C54F /* ChatSearchViewController.swift */; };
+		9DFEE88C1E8F59CD0098C54F /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE88B1E8F59CD0098C54F /* KxMenu.m */; };
+		9DFEE88D1E8F59CD0098C54F /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE88B1E8F59CD0098C54F /* KxMenu.m */; };
+		9DFEE8901E8F5A6B0098C54F /* UIColor+RCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE88F1E8F5A6B0098C54F /* UIColor+RCColor.m */; };
+		9DFEE8911E8F5A6B0098C54F /* UIColor+RCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE88F1E8F5A6B0098C54F /* UIColor+RCColor.m */; };
+		9DFEE8941E8F5A970098C54F /* UIImage+RCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE8931E8F5A970098C54F /* UIImage+RCImage.m */; };
+		9DFEE8951E8F5A970098C54F /* UIImage+RCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE8931E8F5A970098C54F /* UIImage+RCImage.m */; };
+		9DFEE8971E8F8DF50098C54F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFEE8961E8F8DF50098C54F /* Search.storyboard */; };
+		9DFEE8981E8F8DF50098C54F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFEE8961E8F8DF50098C54F /* Search.storyboard */; };
+		9DFEE89D1E8F97360098C54F /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE89A1E8F97360098C54F /* CarouselView.swift */; };
+		9DFEE89E1E8F97360098C54F /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE89A1E8F97360098C54F /* CarouselView.swift */; };
+		9DFEE8A11E8F97360098C54F /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFEE89C1E8F97360098C54F /* CarouselView.xib */; };
+		9DFEE8A21E8F97360098C54F /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFEE89C1E8F97360098C54F /* CarouselView.xib */; };
 		9DFF8FE81E84F773004A5E00 /* AppSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A91E8364520083FF65 /* AppSecrets.swift */; };
 		9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77631E825313001AB48C /* AppDelegate.swift */; };
 		9DFF8FEE1E84F773004A5E00 /* Pods_xicaibao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADFD874E9B4AB94DB10BEF63 /* Pods_xicaibao.framework */; };
@@ -142,7 +156,7 @@
 		9DCE923C1E8E528C00198FA7 /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
 		9DCE92401E8E52EC00198FA7 /* CardListCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardListCellTableViewCell.xib; sourceTree = "<group>"; };
 		9DCE92431E8E535600198FA7 /* CardListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardListCellTableViewCell.swift; sourceTree = "<group>"; };
-		9DCE92461E8E555600198FA7 /* LiveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveTableViewController.swift; sourceTree = "<group>"; };
+		9DCE92461E8E555600198FA7 /* LiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		9DCE92491E8E556E00198FA7 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Live.storyboard; sourceTree = "<group>"; };
 		9DECCAAA1E8B52F90012CAA4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9DECCAAD1E8B53330012CAA4 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
@@ -177,6 +191,16 @@
 		9DECCAFD1E8BA8D70012CAA4 /* AccountSetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AccountSetting.storyboard; sourceTree = "<group>"; };
 		9DECCB091E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageSettingTableViewController.swift; sourceTree = "<group>"; };
 		9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoMessageSettingTableViewController.swift; sourceTree = "<group>"; };
+		9DFEE8861E8F44DB0098C54F /* ChatSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatSearchViewController.swift; sourceTree = "<group>"; };
+		9DFEE88A1E8F59CD0098C54F /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		9DFEE88B1E8F59CD0098C54F /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		9DFEE88E1E8F5A6B0098C54F /* UIColor+RCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RCColor.h"; sourceTree = "<group>"; };
+		9DFEE88F1E8F5A6B0098C54F /* UIColor+RCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RCColor.m"; sourceTree = "<group>"; };
+		9DFEE8921E8F5A970098C54F /* UIImage+RCImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RCImage.h"; sourceTree = "<group>"; };
+		9DFEE8931E8F5A970098C54F /* UIImage+RCImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RCImage.m"; sourceTree = "<group>"; };
+		9DFEE8961E8F8DF50098C54F /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		9DFEE89A1E8F97360098C54F /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		9DFEE89C1E8F97360098C54F /* CarouselView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
 		9DFF90001E84F773004A5E00 /* xicaibao-QA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xicaibao-QA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFF90011E84F773004A5E00 /* xicaibao-QA.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "xicaibao-QA.plist"; path = "/Users/impressly/ios/xicaibao/xicaibao-QA.plist"; sourceTree = "<absolute>"; };
 		9DFF900F1E84FFEF004A5E00 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
@@ -353,6 +377,8 @@
 			children = (
 				9DECCABE1E8B56850012CAA4 /* Chat.storyboard */,
 				9DECCABF1E8B56850012CAA4 /* ChatViewController.swift */,
+				9DFEE8961E8F8DF50098C54F /* Search.storyboard */,
+				9DFEE8861E8F44DB0098C54F /* ChatSearchViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -369,7 +395,7 @@
 		9DECCAC31E8B56850012CAA4 /* Live */ = {
 			isa = PBXGroup;
 			children = (
-				9DCE92461E8E555600198FA7 /* LiveTableViewController.swift */,
+				9DCE92461E8E555600198FA7 /* LiveViewController.swift */,
 				9DCE92491E8E556E00198FA7 /* Live.storyboard */,
 			);
 			path = Live;
@@ -448,9 +474,33 @@
 			path = AccountSetting;
 			sourceTree = "<group>";
 		};
+		9DFEE8891E8F59CD0098C54F /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				9DFEE8921E8F5A970098C54F /* UIImage+RCImage.h */,
+				9DFEE8931E8F5A970098C54F /* UIImage+RCImage.m */,
+				9DFEE88E1E8F5A6B0098C54F /* UIColor+RCColor.h */,
+				9DFEE88F1E8F5A6B0098C54F /* UIColor+RCColor.m */,
+				9DFEE88A1E8F59CD0098C54F /* KxMenu.h */,
+				9DFEE88B1E8F59CD0098C54F /* KxMenu.m */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		9DFEE8991E8F97360098C54F /* CarouselView */ = {
+			isa = PBXGroup;
+			children = (
+				9DFEE89A1E8F97360098C54F /* CarouselView.swift */,
+				9DFEE89C1E8F97360098C54F /* CarouselView.xib */,
+			);
+			path = CarouselView;
+			sourceTree = "<group>";
+		};
 		9DFF900B1E84FFC3004A5E00 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				9DFEE8991E8F97360098C54F /* CarouselView */,
+				9DFEE8891E8F59CD0098C54F /* Menu */,
 				9DFF900C1E84FFEF004A5E00 /* SMS_SDK */,
 			);
 			name = Vendors;
@@ -583,6 +633,7 @@
 			files = (
 				9DECCADF1E8B56850012CAA4 /* Login.storyboard in Resources */,
 				9DCE924A1E8E556E00198FA7 /* Live.storyboard in Resources */,
+				9DFEE8A11E8F97360098C54F /* CarouselView.xib in Resources */,
 				9D0DCE8B1E8DE7C500F392D7 /* Wallet.storyboard in Resources */,
 				9DECCADD1E8B56850012CAA4 /* Main.storyboard in Resources */,
 				9DECCAF11E8B86C70012CAA4 /* CreateCard.storyboard in Resources */,
@@ -595,6 +646,7 @@
 				9DECCAE21E8B56850012CAA4 /* Profile.storyboard in Resources */,
 				9DECCAD91E8B56850012CAA4 /* Chat.storyboard in Resources */,
 				9DFF90021E84F936004A5E00 /* Info.plist in Resources */,
+				9DFEE8971E8F8DF50098C54F /* Search.storyboard in Resources */,
 				9DCE92311E8E490100198FA7 /* AddBankCard.storyboard in Resources */,
 				9D0DCE941E8E081800F392D7 /* Recharge.storyboard in Resources */,
 				9DECCAE41E8B56850012CAA4 /* ResetPassword.storyboard in Resources */,
@@ -608,6 +660,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D0DCE951E8E081800F392D7 /* Recharge.storyboard in Resources */,
+				9DFEE8A21E8F97360098C54F /* CarouselView.xib in Resources */,
 				9DCE92421E8E52EC00198FA7 /* CardListCellTableViewCell.xib in Resources */,
 				9DCE924B1E8E556E00198FA7 /* Live.storyboard in Resources */,
 				9DFF90031E84F939004A5E00 /* xicaibao-QA.plist in Resources */,
@@ -617,6 +670,7 @@
 				9DCE92351E8E4A6000198FA7 /* Crash.storyboard in Resources */,
 				9DECCAF21E8B86C70012CAA4 /* CreateCard.storyboard in Resources */,
 				9DFF8FF61E84F773004A5E00 /* Assets.xcassets in Resources */,
+				9DFEE8981E8F8DF50098C54F /* Search.storyboard in Resources */,
 				9D0DCE8C1E8DE7C500F392D7 /* Wallet.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,7 +777,9 @@
 			files = (
 				9DECCAE51E8B56850012CAA4 /* ResetPasswordTableViewController.swift in Sources */,
 				9DECCAE71E8B56850012CAA4 /* SignupTableViewController.swift in Sources */,
+				9DFEE8871E8F44DB0098C54F /* ChatSearchViewController.swift in Sources */,
 				9DECCAB61E8B53330012CAA4 /* LoginManager.swift in Sources */,
+				9DFEE89D1E8F97360098C54F /* CarouselView.swift in Sources */,
 				9DECCB0A1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
 				9DECCADE1E8B56850012CAA4 /* MainViewController.swift in Sources */,
 				9DECCAFB1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
@@ -736,15 +792,18 @@
 				9DECCAB71E8B53330012CAA4 /* ModelErrorManager.swift in Sources */,
 				9DECCAE81E8B56850012CAA4 /* EditNameTableViewController.swift in Sources */,
 				9DB57F851E8D090B007AC25F /* AboutViewController.swift in Sources */,
+				9DFEE8901E8F5A6B0098C54F /* UIColor+RCColor.m in Sources */,
 				9DECCAE11E8B56850012CAA4 /* LoginTableViewController.swift in Sources */,
+				9DFEE8941E8F5A970098C54F /* UIImage+RCImage.m in Sources */,
 				9DECCAE31E8B56850012CAA4 /* ProfileViewController.swift in Sources */,
 				9DECCAE91E8B56850012CAA4 /* UserInfoTableViewController.swift in Sources */,
 				9DECCB0D1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */,
-				9DCE92471E8E555600198FA7 /* LiveTableViewController.swift in Sources */,
+				9DCE92471E8E555600198FA7 /* LiveViewController.swift in Sources */,
 				9DECCAF41E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */,
 				9DECCAB51E8B53330012CAA4 /* FormatHelper.swift in Sources */,
 				9DCE923D1E8E528C00198FA7 /* CardTableViewController.swift in Sources */,
 				9DB57F821E8CFB32007AC25F /* SendMailHelper.swift in Sources */,
+				9DFEE88C1E8F59CD0098C54F /* KxMenu.m in Sources */,
 				9DECCADC1E8B56850012CAA4 /* ContactViewController.swift in Sources */,
 				9DECCAB41E8B53330012CAA4 /* ColorValue.swift in Sources */,
 				9DCE922E1E8E419B00198FA7 /* BankCardData.swift in Sources */,
@@ -769,20 +828,25 @@
 				9DFF8FE81E84F773004A5E00 /* AppSecrets.swift in Sources */,
 				9DCE923B1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */,
 				9DECCAF51E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */,
+				9DFEE8911E8F5A6B0098C54F /* UIColor+RCColor.m in Sources */,
+				9DFEE88D1E8F59CD0098C54F /* KxMenu.m in Sources */,
 				9D0DCE921E8E07C700F392D7 /* RechargeViewController.swift in Sources */,
 				9DB57F861E8D090B007AC25F /* AboutViewController.swift in Sources */,
 				9DECCAEF1E8B86A50012CAA4 /* CreateCardTableViewController.swift in Sources */,
 				9DCE92451E8E535600198FA7 /* CardListCellTableViewCell.swift in Sources */,
 				9DB57F831E8CFB32007AC25F /* SendMailHelper.swift in Sources */,
-				9DCE92481E8E555600198FA7 /* LiveTableViewController.swift in Sources */,
+				9DCE92481E8E555600198FA7 /* LiveViewController.swift in Sources */,
 				9DCE922F1E8E419B00198FA7 /* BankCardData.swift in Sources */,
 				9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */,
 				9D0DCE981E8E366F00F392D7 /* AddBankCardViewController.swift in Sources */,
 				9DECCAFC1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
+				9DFEE8881E8F44DB0098C54F /* ChatSearchViewController.swift in Sources */,
 				9DCE923E1E8E528C00198FA7 /* CardTableViewController.swift in Sources */,
 				9DCE922C1E8E3F0700198FA7 /* BankCardListTableViewController.swift in Sources */,
 				9D0DCE8F1E8E046800F392D7 /* WalletTableViewController.swift in Sources */,
+				9DFEE8951E8F5A970098C54F /* UIImage+RCImage.m in Sources */,
 				9DCE92381E8E4A8900198FA7 /* CrashViewController.swift in Sources */,
+				9DFEE89E1E8F97360098C54F /* CarouselView.swift in Sources */,
 				9DECCB0B1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
