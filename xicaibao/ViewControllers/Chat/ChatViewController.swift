@@ -19,6 +19,7 @@ class ChatViewController: UITableViewController {
         // 导航栏颜色、标题颜色
         self.navigationController?.navigationBar.barTintColor = UIColor.kThemeColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 74
@@ -54,9 +55,10 @@ class ChatViewController: UITableViewController {
         var menuItems = [KxMenuItem]()
         
         // TODO: 添加对应的 target action
-        let chatMenuItem = KxMenuItem.init("发起聊天", image: UIImage(named: "startchat_icon"), target: self, action: nil)
-        let groupMenuItem = KxMenuItem.init("创建群组", image: UIImage(named: "creategroup_icon"), target: self, action: nil)
-        let addFriendMenuItem = KxMenuItem.init("添加好友", image: UIImage(named: "addfriend_icon"), target: self, action: nil)
+        let chatMenuItem = KxMenuItem.init("发起聊天", image: UIImage(named: "startchat_icon"), target: self, action: #selector(ChatViewController.pushChat))
+        
+        let groupMenuItem = KxMenuItem.init("创建群组", image: UIImage(named: "creategroup_icon"), target: self, action: #selector(ChatViewController.createGroup))
+        let addFriendMenuItem = KxMenuItem.init("添加好友", image: UIImage(named: "addfriend_icon"), target: self, action: #selector(ChatViewController.addFriend))
         
         menuItems.append(chatMenuItem!)
         menuItems.append(groupMenuItem!)
@@ -72,6 +74,37 @@ class ChatViewController: UITableViewController {
         KxMenu.show(in: self.view.window, from: targetFrame, menuItems: menuItems)
     }
     
+    // actions
+    
+    // 发起聊天
+    public func pushChat() {
+        
+        let storyboard = UIStoryboard.init(name: "InitiateChat", bundle: nil)
+        let initiateChatVC = storyboard.instantiateViewController(withIdentifier: "idInitiateChat") as! InitiateChatTableViewController
+        initiateChatVC.title = "发起聊天"
+        
+        // TODO:传值
+        self.navigationController?.pushViewController(initiateChatVC, animated: true)
+    }
+    
+    // 创建群组
+    public func createGroup() {
+        
+        let storyboard = UIStoryboard.init(name: "InitiateChat", bundle: nil)
+        let initiateChatVC = storyboard.instantiateViewController(withIdentifier: "idInitiateChat") as! InitiateChatTableViewController
+        initiateChatVC.title = "选择联系人"
+        
+        // TODO:传值
+        self.navigationController?.pushViewController(initiateChatVC, animated: true)
+    }
+    
+    // 添加好友
+    public func addFriend() {
+        let storyboard = UIStoryboard.init(name: "AddFriend", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "idAddFriend") as! AddFriendTableViewController
+        // TODO:传值
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension ChatViewController {

@@ -17,6 +17,8 @@ class ContactViewController: UITableViewController {
         // 导航栏颜色、标题颜色
         self.navigationController?.navigationBar.barTintColor = UIColor.kThemeColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+
         
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 52

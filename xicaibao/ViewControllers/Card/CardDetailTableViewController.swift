@@ -48,6 +48,5 @@ class CardDetailTableViewController: UITableViewController {
         nameBackView.layer.cornerRadius = 10
         comButton.layer.cornerRadius = 25
         photoImageView.layer.cornerRadius = photoImageView.bounds.height / 2.0
-        
     }
 }

@@ -11,7 +11,7 @@
         <!--Chat Search View Controller-->
         <scene sceneID="2NU-dM-0Mg">
             <objects>
-                <viewController id="xax-l2-g4T" customClass="ChatSearchViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="idSearch" id="xax-l2-g4T" customClass="ChatSearchViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="b3B-K7-a3T"/>
                         <viewControllerLayoutGuide type="bottom" id="Hf5-ed-u75"/>
