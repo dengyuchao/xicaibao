@@ -20,6 +20,7 @@ class AccountSettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "账号设置"
+        cacheLabel.text = caculateCache()
     }
     
     //计算缓存大小
@@ -27,9 +28,7 @@ class AccountSettingTableViewController: UITableViewController {
         let basePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory,FileManager.SearchPathDomainMask.userDomainMask,true).first
         
         let fileManager = FileManager.default
-        print("cache＝ \(basePath)")
-        
-        
+    
         var total:Float = 0
         if fileManager.fileExists(atPath: basePath!){
             let childrenPath = fileManager.subpaths(atPath: basePath!)

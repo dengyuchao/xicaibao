@@ -11,7 +11,7 @@ import Foundation
 class Card {
     
     // model variables
-    var key: String = NSUUID().uuidString
+    var CardKey: String?
     
     var name: String?
     var tel: String?
@@ -20,10 +20,12 @@ class Card {
     var email: String?
     var com: String?  // 公司名称
     
-    init(name: String?, tel: String?, job: String?, address: String?,email: String?, com: String?) {
+    init(key: String) {
+        self.CardKey = key
+    }
+    init(key: String, name: String?, tel: String?, job: String?, address: String?,email: String?, com: String?) {
         
-        self.key = NSUUID().uuidString
-        
+        self.CardKey = key
         self.name = name
         self.tel = tel
         self.job = job
@@ -45,9 +47,8 @@ class Card {
         let email = dict["card_email"] as? String
         let com = dict["card_com"] as? String
         
-        let card = Card(name: name, tel: tel, job: job, address: address, email: email, com: com)
+        let card = Card(key:key, name: name, tel: tel, job: job, address: address, email: email, com: com)
         
-        card.key = key
         
         return card
     }
@@ -55,6 +56,10 @@ class Card {
     public func toJson() -> Dictionary<String, AnyObject> {
         
         var json: Dictionary<String, AnyObject> = [:]
+        
+        if let cardKey = self.CardKey {
+            json["key"] = cardKey as AnyObject
+        }
         
         if let name = self.name {
             json["card_name"] = name as AnyObject
@@ -88,7 +93,7 @@ class Card {
 extension Card: Equatable{}
 func == (lhs: Card, rhs: Card) -> Bool {
     
-    return lhs.key == rhs.key
+    return lhs.CardKey == rhs.CardKey
 }
 
 extension Card: Hashable {
@@ -96,7 +101,7 @@ extension Card: Hashable {
     var hashValue: Int {
         
         get {
-            return self.key.hashValue
+            return self.CardKey!.hashValue
         }
     }
 }

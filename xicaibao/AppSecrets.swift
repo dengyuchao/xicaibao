@@ -12,7 +12,7 @@ struct AppSecrets {
     
     #if PRODUCTION_API
     // production
-    static let API_URL = ""
+    static let API_URL = "http://118.178.84.167/xcb-api/"
     // TODO：上线生产版本需要重新生成
     static let MOB_SMS_APP_KEY = "1c65c274df111"
     static let MOB_SMS_APP_SECRET = "e085c0bba93e6d2e783f847b7374bc1c"

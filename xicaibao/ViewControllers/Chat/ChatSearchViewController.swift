@@ -27,7 +27,7 @@ class ChatSearchViewController: UIViewController {
         let uiButton = searchBar.value(forKey: "cancelButton") as! UIButton
         uiButton.setTitle("取消", for: .normal)
         uiButton.setTitleColor(UIColor.white, for: .normal)
-}
+    }
 
 
 }

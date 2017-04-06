@@ -50,10 +50,10 @@ class CardTableViewController: UITableViewController {
     // test data
     private func getCards(){
         
-        let card1 = Card(name: "张三", tel: "13656265656", job: "CEO", address: "上海市徐汇区番禺路888号方糖小镇405",email: "123456@163.com",com: "飞创信息科技有限公司")
-        let card2 = Card(name: "李四", tel: "18689852365", job: "CFO", address: "广东省广州市天河区", email: "hello123@163.com",com: "天山实业有限公司")
-        let card3 = Card(name: "王五", tel: "12653562356", job: "CTO", address: "广东省广州市花都区", email: "world345@163.com",com: "三菱汽车制造有限公司")
-        let card4 = Card(name: "赵六", tel: "15625855252", job: "BOSS", address: "广东省广州市越秀区", email: "nice098@163.com", com: "如来重金属有限公司")
+        let card1 = Card(key: "", name: "张三", tel: "13656265656", job: "CEO", address: "上海市徐汇区番禺路888号方糖小镇405",email: "123456@163.com",com: "飞创信息科技有限公司")
+        let card2 = Card(key: "",name: "李四", tel: "18689852365", job: "CFO", address: "广东省广州市天河区", email: "hello123@163.com",com: "天山实业有限公司")
+        let card3 = Card(key: "",name: "王五", tel: "12653562356", job: "CTO", address: "广东省广州市花都区", email: "world345@163.com",com: "三菱汽车制造有限公司")
+        let card4 = Card(key: "",name: "赵六", tel: "15625855252", job: "BOSS", address: "广东省广州市越秀区", email: "nice098@163.com", com: "如来重金属有限公司")
         self.cards.append(card1)
         self.cards.append(card2)
         self.cards.append(card3)

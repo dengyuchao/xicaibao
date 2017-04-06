@@ -151,6 +151,7 @@ class EditCardTableViewController: UITableViewController {
         // API patch 更新
         guard let uuid = LoginManager.defaultManager.uuid else { return }
         guard let token = LoginManager.defaultManager.authToken else { return }
+        
         ApiManager().patchCard(card: self.card!, forUser: uuid, token: token, successBlock: { (card) in
             // 更新成功
             self.navigationController!.popViewController(animated: true)

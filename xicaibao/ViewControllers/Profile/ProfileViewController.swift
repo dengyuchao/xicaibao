@@ -12,6 +12,7 @@ import MessageUI
 
 class ProfileTableViewController: UITableViewController{
     
+    @IBOutlet weak var cardLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
@@ -72,6 +73,12 @@ class ProfileTableViewController: UITableViewController{
                 photoImageView.af_setImage(withURL: imageUrl!)
             } else {
                 photoImageView.image = placeholderImage
+            }
+            
+            if self.user?.card != nil {
+                cardLabel.text = "编辑名片"
+            } else {
+                cardLabel.text = "创建名片"
             }
         }
     }
@@ -138,21 +145,21 @@ extension ProfileTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 创建&&编辑名片
         if indexPath.section == 2 && indexPath.row == 0 {
-//            if self.user?.card == nil {
-//                
-//            }
             
-            // 创建名片
-            let storyBoard = UIStoryboard(name: "CreateCard", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: "idCreate") as! CreateCardTableViewController
-            self.navigationController?.pushViewController(vc, animated: true)
+            if self.user?.card == nil {
+                // 创建名片
+                let storyBoard = UIStoryboard(name: "CreateCard", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "idCreate") as! CreateCardTableViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                
+                //  // 编辑名片
+                let storyBoard = UIStoryboard(name: "CreateCard", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "idEdit") as! EditCardTableViewController
+                vc.card = self.user?.card
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             
-            
-//            // 编辑名片
-//            let storyBoard = UIStoryboard(name: "CreateCard", bundle: nil)
-//            let vc = storyBoard.instantiateViewController(withIdentifier: "idEdit") as! EditCardTableViewController
-//            vc.card = self.user?.card
-//            self.navigationController?.pushViewController(vc, animated: true)
         }
         
         // 意见反馈

@@ -30,6 +30,10 @@
 		9DA760C41E94DD520049E2E4 /* AddFriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA760C21E94DD520049E2E4 /* AddFriendTableViewController.swift */; };
 		9DA760C61E94DD680049E2E4 /* AddFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA760C51E94DD680049E2E4 /* AddFriend.storyboard */; };
 		9DA760C71E94DD680049E2E4 /* AddFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA760C51E94DD680049E2E4 /* AddFriend.storyboard */; };
+		9DA760CA1E94EC8A0049E2E4 /* ChatRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA760C91E94EC8A0049E2E4 /* ChatRoom.storyboard */; };
+		9DA760CB1E94EC8A0049E2E4 /* ChatRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA760C91E94EC8A0049E2E4 /* ChatRoom.storyboard */; };
+		9DA760CD1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA760CC1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift */; };
+		9DA760CE1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA760CC1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift */; };
 		9DB57F821E8CFB32007AC25F /* SendMailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */; };
 		9DB57F831E8CFB32007AC25F /* SendMailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */; };
 		9DB57F851E8D090B007AC25F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F841E8D090B007AC25F /* AboutViewController.swift */; };
@@ -157,6 +161,8 @@
 		9DA760BF1E94C19F0049E2E4 /* InitiateChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitiateChatTableViewController.swift; sourceTree = "<group>"; };
 		9DA760C21E94DD520049E2E4 /* AddFriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendTableViewController.swift; sourceTree = "<group>"; };
 		9DA760C51E94DD680049E2E4 /* AddFriend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFriend.storyboard; sourceTree = "<group>"; };
+		9DA760C91E94EC8A0049E2E4 /* ChatRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatRoom.storyboard; sourceTree = "<group>"; };
+		9DA760CC1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
 		9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailHelper.swift; sourceTree = "<group>"; };
 		9DB57F841E8D090B007AC25F /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9DCE922A1E8E3F0700198FA7 /* BankCardListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankCardListTableViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +331,15 @@
 			path = xicaibao;
 			sourceTree = "<group>";
 		};
+		9DA760C81E94EC7A0049E2E4 /* chatRoom */ = {
+			isa = PBXGroup;
+			children = (
+				9DA760C91E94EC8A0049E2E4 /* ChatRoom.storyboard */,
+				9DA760CC1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift */,
+			);
+			path = chatRoom;
+			sourceTree = "<group>";
+		};
 		9DCE923F1E8E52CA00198FA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +402,7 @@
 		9DECCABD1E8B56850012CAA4 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				9DA760C81E94EC7A0049E2E4 /* chatRoom */,
 				9DECCABE1E8B56850012CAA4 /* Chat.storyboard */,
 				9DECCABF1E8B56850012CAA4 /* ChatViewController.swift */,
 				9DFEE8961E8F8DF50098C54F /* Search.storyboard */,
@@ -670,6 +686,7 @@
 				9DECCAE41E8B56850012CAA4 /* ResetPassword.storyboard in Resources */,
 				9DECCAFE1E8BA8D70012CAA4 /* AccountSetting.storyboard in Resources */,
 				9DCE92411E8E52EC00198FA7 /* CardListCellTableViewCell.xib in Resources */,
+				9DA760CA1E94EC8A0049E2E4 /* ChatRoom.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +701,7 @@
 				9DCE924B1E8E556E00198FA7 /* Live.storyboard in Resources */,
 				9DFF90031E84F939004A5E00 /* xicaibao-QA.plist in Resources */,
 				9DECCAFF1E8BA8D70012CAA4 /* AccountSetting.storyboard in Resources */,
+				9DA760CB1E94EC8A0049E2E4 /* ChatRoom.storyboard in Resources */,
 				9DA760C71E94DD680049E2E4 /* AddFriend.storyboard in Resources */,
 				9DFF8FF41E84F773004A5E00 /* LaunchScreen.storyboard in Resources */,
 				9DCE92321E8E490100198FA7 /* AddBankCard.storyboard in Resources */,
@@ -801,6 +819,7 @@
 				9DECCAB61E8B53330012CAA4 /* LoginManager.swift in Sources */,
 				9DFEE89D1E8F97360098C54F /* CarouselView.swift in Sources */,
 				9DECCB0A1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
+				9DA760CD1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift in Sources */,
 				9DECCADE1E8B56850012CAA4 /* MainViewController.swift in Sources */,
 				9DECCAFB1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
 				9DCE923A1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */,
@@ -870,6 +889,7 @@
 				9DFEE8951E8F5A970098C54F /* UIImage+RCImage.m in Sources */,
 				9DCE92381E8E4A8900198FA7 /* CrashViewController.swift in Sources */,
 				9DA760C41E94DD520049E2E4 /* AddFriendTableViewController.swift in Sources */,
+				9DA760CE1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift in Sources */,
 				9DFEE89E1E8F97360098C54F /* CarouselView.swift in Sources */,
 				9DECCB0B1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
 			);

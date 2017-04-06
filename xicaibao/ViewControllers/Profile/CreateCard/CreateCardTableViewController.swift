@@ -119,7 +119,7 @@ class CreateCardTableViewController: UITableViewController {
         guard let com: String = self.comTextField.text else { return }
         guard let address: String = self.addressTextView.text else { return }
         
-        let card = Card(name: name, tel: tel, job: job, address: address, email: email, com: com)
+        let card = Card(key: "", name: name, tel: tel, job: job, address: address, email: email, com: com)
         
         //  API请求  post  保存至服务器
         guard let uuid = LoginManager.defaultManager.uuid else { return }

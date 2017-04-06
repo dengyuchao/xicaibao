@@ -11,24 +11,37 @@ class User {
     
     // model variables
     let uuid: String
+    var authToken: String
     
     var userName: String?
     var userTel: String?
     var imageUrl: String?
     
-    var card: Card?
+    
+    var card: Card?  //自己的名片
+    
+    var friends: [User]?  // 好友
+    
+    var receivedCards: [Card]?  // 收到的名片
+    
     
     // init methods
-    init(uuid: String) {
+    init(uuid: String, authToken: String) {
         self.uuid = uuid
+        self.authToken = authToken
     }
     
-    init(uuid: String, userName: String?, userTel: String?, imageUrl:String?, card: Card?) {
+    init(uuid: String, authToken: String, userName: String?, userTel: String?, imageUrl:String?, card: Card?) {
         self.uuid = uuid
+        self.authToken = authToken
         self.userName = userName
         self.userTel = userTel
         self.imageUrl = imageUrl
         self.card = card
+        
+        // associations
+        self.friends = []
+        self.receivedCards = []
     }
     
     // MARK: instantiate from json
@@ -37,6 +50,11 @@ class User {
         guard let uuid = dict["uuid"] as? String else {
             throw ModelDataError.jsonInvalid
         }
+        
+        guard let authToken = dict["currentToken"] as? String else {
+            throw ModelDataError.jsonInvalid
+        }
+        
         let userName = dict["user_name"] as? String
         let userTel = dict["user_tel"] as? String
         let imageUrl = dict["image_url"] as? String
@@ -47,7 +65,18 @@ class User {
             card = try Card.fromJson(json: cardDict)
         }
         
-        let user = User(uuid: uuid, userName: userName, userTel: userTel, imageUrl: imageUrl,card: card)
+        let user = User(uuid: uuid, authToken: authToken, userName: userName, userTel: userTel, imageUrl: imageUrl,card: card)
+        
+        // friends
+        if let array = dict["friends"] as? [Dictionary<String, AnyObject>] {
+            for json in array {
+                let friend = try User.fromJson(json: json)
+                user.friends?.append(friend)
+            }
+        }
+        
+        // received cards
+        
         
         return user
     }
@@ -59,9 +88,10 @@ class User {
             json["user_name"] = username as AnyObject?
         }
         
-        if let usertel = self.userTel {
-            json["user_tel"] = usertel as AnyObject?
-        }
+        
+//        if let usertel = self.userTel {
+//            json["user_tel"] = usertel as AnyObject?
+//        }
         
         return json
     }
@@ -77,6 +107,4 @@ class User {
         
         return authToken
     }
-    
-    
 }

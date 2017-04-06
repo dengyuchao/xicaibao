@@ -20,7 +20,7 @@ class ApiManager {
                    successBlock: @escaping (_ user: User, _ authToken: String) ->Void,errorBlock: @escaping (_ error:Error?) -> Void){
         
         let params = ["tel": tel, "password": password]
-        let url = URL(string: "\(self.apiUrl)/users/sign_in/")!
+        let url = URL(string: "\(self.apiUrl)/xcb/login/")!
         let headers = ApiManager.headersJsonOnly()
         
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
@@ -32,18 +32,20 @@ class ApiManager {
             
             // parse JSON response
             if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
-                
                 do {
-                    let authToken = try User.authFromJson(json: jsonObj)
-                    // 查看返回的json格式
-//                    guard let userJson = jsonObj["user"] as? Dictionary<String, AnyObject> else {
-//                        throw ModelDataError.jsonInvalid
-//                    }
-//                    let user = try User.fromJson(json: userJson)
                     
-                    let user = try User.fromJson(json: jsonObj)
+                    // 字典 data 里面存的才是数据
+                    var data: Dictionary<String, AnyObject>?
+                    for js in jsonObj {
+                        
+                        if js.key == "data" {
+                            data = js.value as? Dictionary<String, AnyObject>
+                        }
+                    }
                     
-                    successBlock(user, authToken)
+                    let user = try User.fromJson(json: data!)
+                    
+                    successBlock(user, user.authToken)
                     
                 } catch let error as Error {
                     errorBlock(error)
@@ -77,51 +79,58 @@ class ApiManager {
     
     private func postSignupParams(withParams params: Dictionary<String, AnyObject>,successBlock: @escaping (_ user: User, _ authToken: String) -> Void,errorBlock: @escaping (_ error:Error) -> Void) {
         
-        let url = URL(string: "\(self.apiUrl)/users/")!
+        let url = URL(string: "\(self.apiUrl)/xcb/signup")!
         
         let headers = ApiManager.headersJsonOnly()
         
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
             
             // manually catch error status
-            let validStatusCodes = 200..<300
-            let responseStatus = response.response?.statusCode ?? -1
-            if !validStatusCodes.contains(responseStatus) {
-                
-                // parse json for error message
-                if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
-                    // show first error
-                    let title = jsonObj.keys.first ?? ""
-                    let errors = jsonObj[title] as! [String]
-                    let message = errors[0]  // error messages returns as array
-                    
-                    let userInfo = ModelErrorManager.localizedUserInfo("[\(title)] \(message)", reason: "", recovery: "")
-                    let error = NSError(domain: "RegistrationError", code: responseStatus, userInfo: userInfo)
-                    errorBlock(error)
-                    return
-                } else {
-                    // fallback with General Error, response is not valid status code, and includes network error.
-                    let error = ModelErrorManager.errorWithType(ModelDataError.generalError)
-                    errorBlock(error)
-                    return
-                }
+//            let validStatusCodes = 200..<300
+//            let responseStatus = response.response?.statusCode ?? -1
+//            if !validStatusCodes.contains(responseStatus) {
+//                
+//                // parse json for error message
+//                if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
+//                    // show first error
+//                    let title = jsonObj.keys.first ?? ""
+//                    let errors = jsonObj[title] as! [String]
+//                    let message = errors[0]  // error messages returns as array
+//                    
+//                    let userInfo = ModelErrorManager.localizedUserInfo("[\(title)] \(message)", reason: "", recovery: "")
+//                    let error = NSError(domain: "RegistrationError", code: responseStatus, userInfo: userInfo)
+//                    errorBlock(error)
+//                    return
+//                } else {
+//                    // fallback with General Error, response is not valid status code, and includes network error.
+//                    let error = ModelErrorManager.errorWithType(ModelDataError.generalError)
+//                    errorBlock(error)
+//                    return
+//                }
+//            }
+            
+            
+            if let error = response.result.error {
+                errorBlock(error as Error)
+                return
             }
             
             // parse JSON response as user data
             if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
                 
                 do {
-                    let authToken = try User.authFromJson(json: jsonObj)
-                    //                    let userStore = try UserStore.upsert(json: jsonObj)
-                    //                    let user = userStore.toData()
                     
-//                    guard let userJson = jsonObj["user"] as? Dictionary<String, AnyObject> else {
-//                        throw ModelDataError.jsonInvalid
-//                    }
-//                    let user = try User.fromJson(json: userJson)
+                    // 字典 data 里面存的才是数据
+                    var data: Dictionary<String, AnyObject>?
+                    for js in jsonObj {
+                        
+                        if js.key == "data" {
+                            data = js.value as? Dictionary<String, AnyObject>
+                        }
+                    }
                     
-                    let user = try User.fromJson(json: jsonObj)
-                    successBlock(user, authToken)
+                    let user = try User.fromJson(json: data!)
+                    successBlock(user, user.authToken)
                     return
                     
                 } catch let error as Error {
@@ -140,7 +149,7 @@ class ApiManager {
     func resetPassword(_ tel: String, password: String, code: String,successBlock: @escaping (_ user: User, _ authToken: String) -> Void,errorBlock: @escaping (_ error: Error?) -> Void) {
         
         let params = ["user_tel": tel, "password": password, "code": code]
-        let url = URL(string: "\(self.apiUrl)/users/password")!
+        let url = URL(string: "\(self.apiUrl)/xcb/resetPassword")!
         let headers = ApiManager.headersJsonOnly()
         
         Alamofire.request(url, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
@@ -153,9 +162,17 @@ class ApiManager {
             if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
                 
                 do {
-                    let authToken = try User.authFromJson(json: jsonObj)
-                    let user = try User.fromJson(json: jsonObj)
-                    successBlock(user, authToken)
+                    // 字典 data 里面存的才是数据
+                    var data: Dictionary<String, AnyObject>?
+                    for js in jsonObj {
+                        
+                        if js.key == "data" {
+                            data = js.value as? Dictionary<String, AnyObject>
+                        }
+                    }
+                    
+                    let user = try User.fromJson(json: data!)
+                    successBlock(user, user.authToken)
                     
                 } catch let error as Error{
                     errorBlock(error)
@@ -173,7 +190,7 @@ class ApiManager {
     
     func postDevice(_ params: Dictionary<String, AnyObject>, forUser uuid: String, token: String, successBlock: @escaping (() -> Void), errorBlock: @escaping (_ error: Error) -> Void) {
         
-        let request_url = URL(string: "\(self.apiUrl)/devices/")!
+        let request_url = URL(string: "\(self.apiUrl)/xcb/devices/")!
         let headers = ApiManager.headers(uuid, token: token)
         
         print("[ApiManager postDevice] requestURL: \(request_url), params: \(params), headers: \(headers)")
@@ -200,7 +217,7 @@ class ApiManager {
     // MARK:获取用户信息
     // GET /profile
     func getProfile(_ uuid: String, token: String, successBlock: @escaping ((_ user: User) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
-        let requestURL = URL(string: "\(self.apiUrl)/profile/")!
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/profile/")!
         let headers = ApiManager.headers(uuid, token: token)
         
         Alamofire.request(requestURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
@@ -213,7 +230,16 @@ class ApiManager {
             
             if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
                 
-                let user = try! User.fromJson(json: jsonObj)
+                // 字典 data 里面存的才是数据
+                var data: Dictionary<String, AnyObject>?
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = js.value as? Dictionary<String, AnyObject>
+                    }
+                }
+                
+                let user = try! User.fromJson(json: data!)
                 successBlock(user)
                 
             } else {
@@ -230,10 +256,10 @@ class ApiManager {
     // MARK: PATCH/ profile
     func patchProfile(_ user: User, uuid: String, token: String, successBlock: @escaping ((_ user: User) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
         
-        let requestURL = URL(string: "\(self.apiUrl)/profile/update")!
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/profile/update")!
         
         let headers = ApiManager.headers(uuid, token: token)
-        let params: Dictionary<String, AnyObject> = ["user": user.toJson() as AnyObject]
+        let params = user.toJson()
         
         Alamofire.request(requestURL, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
             
@@ -245,7 +271,16 @@ class ApiManager {
             
             if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
                 
-                let user = try! User.fromJson(json: jsonObj)
+                // 字典 data 里面存的才是数据
+                var data: Dictionary<String, AnyObject>?
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = js.value as? Dictionary<String, AnyObject>
+                    }
+                }
+                
+                let user = try! User.fromJson(json: data!)
                 successBlock(user)
                 
             } else {
@@ -262,7 +297,7 @@ class ApiManager {
     // 上传照片到服务器
     func patchProfilePhoto(_ photoImage: Data, uuid: String, token: String, successBlock: @escaping ((_ user: User) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
         
-        let requestURL = URL(string: "\(self.apiUrl)/profile/update")!
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/profile/photo")!
         let headers = ApiManager.headersForm(uuid, token: token)
         
         
@@ -284,7 +319,16 @@ class ApiManager {
                     
                     if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
                         
-                        let user = try! User.fromJson(json: jsonObj)
+                        // 字典 data 里面存的才是数据
+                        var data: Dictionary<String, AnyObject>?
+                        for js in jsonObj {
+                            
+                            if js.key == "data" {
+                                data = js.value as? Dictionary<String, AnyObject>
+                            }
+                        }
+                        
+                        let user = try! User.fromJson(json: data!)
                         successBlock(user)
                         
                     } else {
@@ -308,7 +352,7 @@ class ApiManager {
     // 创建名片post
     func postCard(card: Card, forUser uuid: String, token: String, successBlock: @escaping ((_ card: Card)->Void), errorBlock: @escaping (_ error: Error) -> Void) {
         
-        let requestURL = URL(string: "\(self.apiUrl)/card")!
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/createCard")!
         // authentication headers
         let headers = ApiManager.headers(uuid, token: token)
         
@@ -325,7 +369,16 @@ class ApiManager {
             //parse JSON response
             if let jsonObj = response.result.value as? Dictionary<String,AnyObject> {
                 
-                let card = try! Card.fromJson(json: jsonObj)
+                // 字典 data 里面存的才是数据
+                var data: Dictionary<String, AnyObject>?
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = js.value as? Dictionary<String, AnyObject>
+                    }
+                }
+                
+                let card = try! Card.fromJson(json: data!)
                 successBlock(card)
                 
             } else {
@@ -333,15 +386,13 @@ class ApiManager {
                 let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
                 errorBlock(error)
             }
-            
         }
-
     }
     
     // 更新名片信息  patch
     func patchCard(card: Card, forUser uuid: String, token: String, successBlock: @escaping ((_ card: Card)->Void), errorBlock: @escaping (_ error: Error) -> Void) {
         
-        let requestURL = URL(string: "\(self.apiUrl)/card/\(card.key)")!
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/card/card.key")!
         
         let headers = ApiManager.headers(uuid, token: token)
         
@@ -358,7 +409,16 @@ class ApiManager {
             //parse JSON response
             if let jsonObj = response.result.value as? Dictionary<String,AnyObject> {
                 
-                let card = try! Card.fromJson(json: jsonObj)
+                // 字典 data 里面存的才是数据
+                var data: Dictionary<String, AnyObject>?
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = js.value as? Dictionary<String, AnyObject>
+                    }
+                }
+                
+                let card = try! Card.fromJson(json: data!)
                 successBlock(card)
                 
             } else {
