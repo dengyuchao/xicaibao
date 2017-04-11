@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="z1R-k5-xLH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Friend Detail View Controller-->
+        <scene sceneID="dso-Kf-Vkm">
+            <objects>
+                <viewController id="z1R-k5-xLH" customClass="AddFriendDetailViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ea8-Dj-GfS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zv7-Ki-BJO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rm3-MM-odE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ye3-nI-WL0">
+                                <rect key="frame" x="0.0" y="20" width="375" height="78"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tongxunlu_touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="mEg-Hw-HKc">
+                                        <rect key="frame" x="16" y="19" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="mEg-Hw-HKc" secondAttribute="height" multiplier="1:1" id="iEQ-E1-zOP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfq-to-jNu">
+                                        <rect key="frame" x="72" y="30" width="40" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mEg-Hw-HKc" firstAttribute="centerY" secondItem="ye3-nI-WL0" secondAttribute="centerY" id="9Wd-3A-QLK"/>
+                                    <constraint firstItem="Rfq-to-jNu" firstAttribute="leading" secondItem="mEg-Hw-HKc" secondAttribute="trailing" constant="16" id="BQK-oy-yLs"/>
+                                    <constraint firstItem="Rfq-to-jNu" firstAttribute="centerY" secondItem="ye3-nI-WL0" secondAttribute="centerY" id="FvS-I1-gML"/>
+                                    <constraint firstItem="mEg-Hw-HKc" firstAttribute="leading" secondItem="ye3-nI-WL0" secondAttribute="leading" constant="16" id="GTI-wv-4DC"/>
+                                    <constraint firstAttribute="height" constant="78" id="upR-nN-zoW"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx9-WU-TDq">
+                                <rect key="frame" x="32" y="130" width="311" height="44"/>
+                                <color key="backgroundColor" red="0.43137254899999999" green="0.69803921570000005" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OCH-dG-Hqv"/>
+                                </constraints>
+                                <state key="normal" title="添加好友">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFriendBtAction:" destination="z1R-k5-xLH" eventType="touchUpInside" id="TOB-et-XsX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ye3-nI-WL0" firstAttribute="top" secondItem="ea8-Dj-GfS" secondAttribute="bottom" id="5JG-rP-kRj"/>
+                            <constraint firstItem="Dx9-WU-TDq" firstAttribute="top" secondItem="ye3-nI-WL0" secondAttribute="bottom" constant="32" id="5LQ-Wq-j4C"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dx9-WU-TDq" secondAttribute="trailing" constant="16" id="NtQ-L3-TAU"/>
+                            <constraint firstItem="ye3-nI-WL0" firstAttribute="centerX" secondItem="rm3-MM-odE" secondAttribute="centerX" id="XJL-94-8zN"/>
+                            <constraint firstItem="Dx9-WU-TDq" firstAttribute="leading" secondItem="rm3-MM-odE" secondAttribute="leadingMargin" constant="16" id="YjQ-Ix-CdK"/>
+                            <constraint firstItem="ye3-nI-WL0" firstAttribute="width" secondItem="rm3-MM-odE" secondAttribute="width" id="aik-fC-5l2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="Dx9-WU-TDq" id="VLr-lg-B9s"/>
+                        <outlet property="friendImageView" destination="mEg-Hw-HKc" id="A85-Sa-vsc"/>
+                        <outlet property="friendNameLabel" destination="Rfq-to-jNu" id="HJK-ki-5Hn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rqt-7b-jFB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1981.5999999999999" y="55.322338830584712"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tongxunlu_touxiang" width="40" height="40"/>
+    </resources>
+</document>

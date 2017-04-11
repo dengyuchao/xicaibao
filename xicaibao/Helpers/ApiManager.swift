@@ -428,7 +428,185 @@ class ApiManager {
             }
         }
     }
-
+    
+    // 搜索好友
+    func searchNewFriend(tel: String?, forUser uuid: String, token: String, successBlock: @escaping ((_ friend: User)->Void), errorBlock: @escaping (_ error: Error) -> Void) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/searchNewFriend")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        let params = ["tel": tel as AnyObject]
+        
+        Alamofire.request(requestURL, method: .get, parameters: params as Dictionary<String, AnyObject>, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager searchNewFriend] error: \(error.localizedDescription)")
+                errorBlock(error as Error)
+                return
+            }
+            
+            //parse JSON response
+            if let jsonObj = response.result.value as? Dictionary<String,AnyObject> {
+                
+                // 字典 data 里面存的才是数据
+                var data: Dictionary<String, AnyObject>?
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = js.value as? Dictionary<String, AnyObject>
+                    }
+                }
+                
+                let friend = try! User.fromJson(json: data!)
+                successBlock(friend)
+                
+            } else {
+                print("[ApiManager searchNewFriend] resonse json error")
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                errorBlock(error)
+            }
+        }
+    }
+    
+    // 添加好友
+    func postAddFriend(friend: User, forUser uuid: String, token: String, successBlock: @escaping ((_ friend: User)->Void), errorBlock: @escaping (_ error: Error) -> Void) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/addFriend")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        let params: Dictionary<String, AnyObject> = friend.toJson()
+        
+        Alamofire.request(requestURL, method: .post, parameters: params , encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager postAddFriend] error: \(error.localizedDescription)")
+                errorBlock(error as Error)
+                return
+            }
+            
+            //parse JSON response
+            if let jsonObj = response.result.value as? Dictionary<String,AnyObject> {
+                
+                // 字典 data 里面存的才是数据
+                var data: Dictionary<String, AnyObject>?
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = js.value as? Dictionary<String, AnyObject>
+                    }
+                }
+                
+                let friend = try! User.fromJson(json: data!)
+                successBlock(friend)
+                
+            } else {
+                print("[ApiManager postAddFriend] resonse json error")
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                errorBlock(error)
+            }
+        }
+    }
+    
+    // 获取通讯录列表
+    func getContacts(forUser uuid: String, token: String, successBlock: @escaping ((_ friends: [User])->Void), errorBlock: @escaping (_ error: Error) -> Void) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/getContacts")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        Alamofire.request(requestURL, method: .get, parameters: nil , encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager getContacts] error: \(error.localizedDescription)")
+                errorBlock(error as Error)
+                return
+            }
+            
+            //parse JSON response
+            if let jsonObj = response.result.value as? Dictionary<String,AnyObject> {
+                
+                // 字典 data 里面存的才是数据
+                var data: [Dictionary<String, AnyObject>?]? = nil
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = (js.value as? [Dictionary<String, AnyObject>])!
+                    }
+                }
+                
+                var friends: [User] = [User]()
+                for obj in data! {
+                    let friend = try! User.fromJson(json: obj!)
+                    friends.append(friend)
+                }
+                successBlock(friends)
+                
+            } else {
+                print("[ApiManager getContacts] resonse json error")
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                errorBlock(error)
+            }
+        }
+    }
+    
+    // 更新好友备注名
+    func patchFriendNickName(_ friend: User, uuid: String, token: String, successBlock: @escaping ((_ friend: User) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/friendNickName/update")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        let params = friend.toJson()
+        
+        Alamofire.request(requestURL, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager patchFriendNickName] Error: " + error.localizedDescription)
+                errorBlock(error as Error)
+                return
+            }
+            
+            if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
+                
+                // 字典 data 里面存的才是数据
+                var data: Dictionary<String, AnyObject>?
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = js.value as? Dictionary<String, AnyObject>
+                    }
+                }
+                
+                let friend = try! User.fromJson(json: data!)
+                successBlock(friend)
+                
+            } else {
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                print("[ApiManager patchFriendNickName] response json error: " + error.localizedDescription)
+                errorBlock(error)
+            }
+        }
+    }
+    
+    // 加入黑名单
+    func postBlock(friendId: String,uuid: String, token: String, successBlock: @escaping (() -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/postBlock/")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        let params = ["friendId": friendId]
+        
+        Alamofire.request(requestURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager postBlock] Error: " + error.localizedDescription)
+                errorBlock(error as Error)
+                return
+            }
+                successBlock()
+        }
+    }
 }
 
 

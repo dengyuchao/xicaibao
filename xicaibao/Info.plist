@@ -2,16 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>NSCameraUsageDescription</key>
-    <string>请允许访问相机拍照上传照片</string>
-    <key>NSLocationUsageDescription</key>
-    <string>请允许访问您的位置推荐附近的空间</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>请允许应用程序使用期间访问您的位置</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>请允许访问相册上传照片</string>
-    <key>NSContactsUsageDescription</key>
-    <string>请允许访问通讯录</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>请允许访问相机拍照上传照片</string>
+	<key>NSLocationUsageDescription</key>
+	<string>请允许访问您的位置推荐附近的空间</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>请允许应用程序使用期间访问您的位置</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>请允许访问相册上传照片</string>
+	<key>NSContactsUsageDescription</key>
+	<string>请允许访问通讯录</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

@@ -16,6 +16,7 @@ class User {
     var userName: String?
     var userTel: String?
     var imageUrl: String?
+    var nickName: String?
     
     
     var card: Card?  //自己的名片
@@ -31,18 +32,20 @@ class User {
         self.authToken = authToken
     }
     
-    init(uuid: String, authToken: String, userName: String?, userTel: String?, imageUrl:String?, card: Card?) {
+    init(uuid: String, authToken: String, userName: String?, userTel: String?, imageUrl:String?, nickName: String?, card: Card?) {
         self.uuid = uuid
         self.authToken = authToken
         self.userName = userName
         self.userTel = userTel
         self.imageUrl = imageUrl
+        self.nickName = nickName
         self.card = card
         
         // associations
         self.friends = []
         self.receivedCards = []
     }
+    
     
     // MARK: instantiate from json
     class func fromJson(json dict: Dictionary<String, AnyObject>) throws -> User {
@@ -58,6 +61,7 @@ class User {
         let userName = dict["user_name"] as? String
         let userTel = dict["user_tel"] as? String
         let imageUrl = dict["image_url"] as? String
+        let nickName = dict["nick_name"] as? String
         
         var card: Card? = nil
         
@@ -65,7 +69,7 @@ class User {
             card = try Card.fromJson(json: cardDict)
         }
         
-        let user = User(uuid: uuid, authToken: authToken, userName: userName, userTel: userTel, imageUrl: imageUrl,card: card)
+        let user = User(uuid: uuid, authToken: authToken, userName: userName, userTel: userTel, imageUrl: imageUrl,nickName: nickName,card: card)
         
         // friends
         if let array = dict["friends"] as? [Dictionary<String, AnyObject>] {
@@ -86,6 +90,10 @@ class User {
         
         if let username = self.userName {
             json["user_name"] = username as AnyObject?
+        }
+        
+        if let nickName = self.nickName {
+            json["nick_name"] = nickName as AnyObject?
         }
         
         

@@ -15,6 +15,23 @@ class AddFriendTableViewController: UITableViewController {
         
         title = "添加好友"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "addFriendSearch" {
+            
+            if let searchVC = segue.destination as? AddFriendSearchViewController {
+                
+                // 搜索好友
+            }
+        }
+    }
 
 }
 
@@ -22,7 +39,7 @@ extension AddFriendTableViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         
-        performSegue(withIdentifier: "searchFriend", sender: "nil")
+        performSegue(withIdentifier: "addFriendSearch", sender: "nil")
         
         return false
     }

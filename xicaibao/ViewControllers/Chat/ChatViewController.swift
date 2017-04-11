@@ -42,9 +42,10 @@ class ChatViewController: UITableViewController {
         
         if segue.identifier == "charSearchVC" {
             
-//            if let searchVC = segue.destination as? ChatSearchViewController {
-//        
-//            }
+            if let searchVC = segue.destination as? ChatSearchViewController {
+                
+                // 搜索已经添加的好友
+            }
         }
     }
     

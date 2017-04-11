@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8ab-C1-TCb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8ab-C1-TCb">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,28 +29,8 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="52"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="k3C-Q7-6dU" id="lDt-vm-gn1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tongxunlu_touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="sPn-7B-Rae">
-                                            <rect key="frame" x="24" y="6" width="40" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="sPn-7B-Rae" secondAttribute="height" multiplier="1:1" id="YFu-B4-o5D"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新朋友" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMt-1j-Yqb">
-                                            <rect key="frame" x="80" y="15.5" width="52" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.32156862745098036" green="0.32156862745098036" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="sPn-7B-Rae" firstAttribute="leading" secondItem="lDt-vm-gn1" secondAttribute="leadingMargin" constant="16" id="CTM-3W-09g"/>
-                                        <constraint firstItem="sPn-7B-Rae" firstAttribute="centerY" secondItem="lDt-vm-gn1" secondAttribute="centerY" id="Rwp-y5-sjI"/>
-                                        <constraint firstItem="XMt-1j-Yqb" firstAttribute="leading" secondItem="sPn-7B-Rae" secondAttribute="trailing" constant="16" id="SGm-YL-oFZ"/>
-                                        <constraint firstItem="XMt-1j-Yqb" firstAttribute="centerY" secondItem="lDt-vm-gn1" secondAttribute="centerY" id="dJ1-jy-okb"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -63,11 +41,12 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="通讯录" image="contact_icon" selectedImage="contact_icon_hover" id="wVV-pz-pGc"/>
-                    <navigationItem key="navigationItem" id="DAf-Qq-h4b"/>
+                    <navigationItem key="navigationItem" title="通讯录" id="DAf-Qq-h4b"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="Dvg-pd-72A" id="Qib-fW-Zre"/>
                         <segue destination="ro3-rF-jAB" kind="presentation" identifier="searchVC" id="1a2-aQ-H3E"/>
+                        <segue destination="JXJ-Rl-vKz" kind="show" identifier="friendDetailVC" id="MUS-QU-al6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXI-i8-c9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,6 +60,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMI-Fa-HPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1654" y="-148"/>
+        </scene>
+        <!--FriendDetail-->
+        <scene sceneID="BMH-b1-N4c">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FriendDetail" id="JXJ-Rl-vKz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6Y-21-pSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1678" y="-3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VL5-VP-V1U">
@@ -104,6 +91,5 @@
     <resources>
         <image name="contact_icon" width="22" height="22"/>
         <image name="contact_icon_hover" width="22" height="22"/>
-        <image name="tongxunlu_touxiang" width="40" height="40"/>
     </resources>
 </document>
