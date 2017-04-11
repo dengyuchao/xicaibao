@@ -13,9 +13,34 @@ class ChatViewController: UITableViewController {
     @IBOutlet weak var addButtonItem: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    let chatTableViewCellNibName = "ChatTableViewCell"
+    let chatTableViewCellID = "chatCellTableViewCellIdentifier"
+    
+    
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupView()
+        self.getUser()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+        
+        // MARK: 判断使用是否登录,如果没有登录，先弹出登录界面
+        LoginManager.defaultManager.checkForLogin(target: self, onSuccess: {
+            
+        }) {
+            
+        }
+    }
+    
+    private func setupView() {
         // 导航栏颜色、标题颜色
         self.navigationController?.navigationBar.barTintColor = UIColor.kThemeColor()
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -24,25 +49,30 @@ class ChatViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.rowHeight = 74
         
+        // cell
+        tableView.register(UINib(nibName: chatTableViewCellNibName, bundle: nil), forCellReuseIdentifier: chatTableViewCellID)
+    }
+    
+    
+    // 获取当前user
+    func getUser() {
+        guard let uuid = LoginManager.defaultManager.uuid else { return }
+        guard let token = LoginManager.defaultManager.authToken else { return }
+        
+        ApiManager().getProfile(uuid, token: token, successBlock: { (user) in
+            self.user = user
+        }) { (error) in
+            
+            print("[ContactSearchViewController getUser] getProfile failed: \(error.localizedDescription)")
+        }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // MARK: 判断使用是否登录,如果没有登录，先弹出登录界面
-        LoginManager.defaultManager.checkForLogin(target: self, onSuccess: { 
-            
-        }) { 
-            
-        }
-    
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "charSearchVC" {
+        if segue.identifier == "ChatSearch" {
             
-            if let searchVC = segue.destination as? ChatSearchViewController {
+            if let searchVC = segue.destination as? ContactSearchViewController {
                 
                 // 搜索已经添加的好友
             }
@@ -56,7 +86,7 @@ class ChatViewController: UITableViewController {
         var menuItems = [KxMenuItem]()
         
         // TODO: 添加对应的 target action
-        let chatMenuItem = KxMenuItem.init("发起聊天", image: UIImage(named: "startchat_icon"), target: self, action: #selector(ChatViewController.pushChat))
+        let chatMenuItem = KxMenuItem.init("发起群聊", image: UIImage(named: "startchat_icon"), target: self, action: #selector(ChatViewController.pushChat))
         
         let groupMenuItem = KxMenuItem.init("创建群组", image: UIImage(named: "creategroup_icon"), target: self, action: #selector(ChatViewController.createGroup))
         let addFriendMenuItem = KxMenuItem.init("添加好友", image: UIImage(named: "addfriend_icon"), target: self, action: #selector(ChatViewController.addFriend))
@@ -122,7 +152,7 @@ extension ChatViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "chatListCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: chatTableViewCellID, for: indexPath)
         
         return cell
     }
@@ -132,7 +162,7 @@ extension ChatViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         
-        performSegue(withIdentifier: "charSearchVC", sender: "nil")
+        performSegue(withIdentifier: "ChatSearch", sender: "nil")
         
         return false
     }

@@ -27,6 +27,12 @@ class ContactViewController: UITableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    
     func getContactList() {
         
         guard let uuid = LoginManager.defaultManager.uuid else { return }
@@ -164,7 +170,7 @@ extension ContactViewController: UISearchBarDelegate {
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
         
-        performSegue(withIdentifier: "searchVC", sender: "nil")
+        performSegue(withIdentifier: "contactSearchVC", sender: "nil")
         
         return false
     }

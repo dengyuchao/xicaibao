@@ -58,6 +58,17 @@ class CardTableViewController: UITableViewController {
         self.cards.append(card2)
         self.cards.append(card3)
         self.cards.append(card4)
+        
+        guard let uuid = LoginManager.defaultManager.uuid else { return }
+        guard let token = LoginManager.defaultManager.authToken else { return }
+        
+        ApiManager().getCards(forUser: uuid, token: token, successBlock: { (cards) in
+            
+            self.cards = cards
+        }) { (error) in
+            
+            print("[CardTableViewController getCards] failed: \(error.localizedDescription)")
+        }
     }
     
     

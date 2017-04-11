@@ -45,21 +45,21 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="searchBar" destination="Dvg-pd-72A" id="Qib-fW-Zre"/>
-                        <segue destination="ro3-rF-jAB" kind="presentation" identifier="searchVC" id="1a2-aQ-H3E"/>
                         <segue destination="JXJ-Rl-vKz" kind="show" identifier="friendDetailVC" id="MUS-QU-al6"/>
+                        <segue destination="XFg-Sx-hRw" kind="show" identifier="contactSearchVC" id="9ut-h2-dmw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXI-i8-c9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="991.20000000000005" y="-49.925037481259373"/>
         </scene>
-        <!--Search-->
-        <scene sceneID="HXJ-iO-89y">
+        <!--ContactSearch-->
+        <scene sceneID="GjD-U4-AFW">
             <objects>
-                <viewControllerPlaceholder storyboardName="Search" id="ro3-rF-jAB" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FMI-Fa-HPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ContactSearch" id="XFg-Sx-hRw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tl9-D5-ODe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1654" y="-148"/>
+            <point key="canvasLocation" x="1590" y="-242"/>
         </scene>
         <!--FriendDetail-->
         <scene sceneID="BMH-b1-N4c">

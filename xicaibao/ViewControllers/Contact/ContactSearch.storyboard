@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MWP-i0-MDu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contact Search View Controller-->
+        <scene sceneID="xBT-Un-doI">
+            <objects>
+                <viewController storyboardIdentifier="idSearch" id="MWP-i0-MDu" customClass="ContactSearchViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0y6-wf-UTi"/>
+                        <viewControllerLayoutGuide type="bottom" id="6c8-pa-lhH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Inj-en-h5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v8w-fD-3zK">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="搜索" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZKO-ux-njm">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                        <connections>
+                                            <outlet property="delegate" destination="MWP-i0-MDu" id="j7X-Gr-NXc"/>
+                                        </connections>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="ZKO-ux-njm" firstAttribute="width" secondItem="v8w-fD-3zK" secondAttribute="width" id="BFN-L4-sUA"/>
+                                    <constraint firstAttribute="height" constant="44" id="Fe7-bI-Sy4"/>
+                                    <constraint firstItem="ZKO-ux-njm" firstAttribute="height" secondItem="v8w-fD-3zK" secondAttribute="height" id="Hgb-PR-buO"/>
+                                    <constraint firstItem="ZKO-ux-njm" firstAttribute="centerX" secondItem="v8w-fD-3zK" secondAttribute="centerX" id="SeT-5m-ykA"/>
+                                    <constraint firstItem="ZKO-ux-njm" firstAttribute="centerY" secondItem="v8w-fD-3zK" secondAttribute="centerY" id="sFM-Kp-icr"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="I2g-dF-m5v">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactSearchCell" rowHeight="52" id="MRh-Nc-6tB">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="52"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MRh-Nc-6tB" id="tcq-Jj-3lC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MWP-i0-MDu" id="3eM-FY-aP5"/>
+                                    <outlet property="delegate" destination="MWP-i0-MDu" id="i8n-lG-0Bk"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I2g-dF-m5v" firstAttribute="width" secondItem="Inj-en-h5Z" secondAttribute="width" id="1zc-bC-9Ym"/>
+                            <constraint firstItem="v8w-fD-3zK" firstAttribute="centerX" secondItem="Inj-en-h5Z" secondAttribute="centerX" id="4dy-MD-S2J"/>
+                            <constraint firstItem="I2g-dF-m5v" firstAttribute="top" secondItem="ZKO-ux-njm" secondAttribute="bottom" id="6E8-4U-wxh"/>
+                            <constraint firstItem="6c8-pa-lhH" firstAttribute="top" secondItem="I2g-dF-m5v" secondAttribute="bottom" id="XSj-kw-brl"/>
+                            <constraint firstItem="v8w-fD-3zK" firstAttribute="top" secondItem="0y6-wf-UTi" secondAttribute="bottom" id="c5C-ao-wT0"/>
+                            <constraint firstItem="v8w-fD-3zK" firstAttribute="width" secondItem="Inj-en-h5Z" secondAttribute="width" id="jtn-eu-OvQ"/>
+                            <constraint firstItem="I2g-dF-m5v" firstAttribute="centerX" secondItem="Inj-en-h5Z" secondAttribute="centerX" id="ptL-6D-vfI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xcx-JU-gVD"/>
+                    <connections>
+                        <outlet property="searchBar" destination="ZKO-ux-njm" id="akB-U8-3ZO"/>
+                        <outlet property="tableView" destination="I2g-dF-m5v" id="6UH-OC-w8y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BpW-XJ-iEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1711" y="-38"/>
+        </scene>
+    </scenes>
+</document>

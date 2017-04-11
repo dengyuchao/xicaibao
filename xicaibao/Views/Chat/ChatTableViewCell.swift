@@ -1,15 +1,21 @@
 //
-//  ContactTableViewCell.swift
+//  ChatTableViewCell.swift
 //  xicaibao
 //
-//  Created by impressly on 2017/4/7.
+//  Created by impressly on 2017/4/11.
 //  Copyright © 2017年 impressly. All rights reserved.
 //
 
 import UIKit
 
-class ContactTableViewCell: UITableViewCell {
+class ChatTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

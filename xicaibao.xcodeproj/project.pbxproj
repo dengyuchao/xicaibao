@@ -25,16 +25,20 @@
 		9D28539C1E9B802500CC7275 /* SetNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28539B1E9B802500CC7275 /* SetNickNameViewController.swift */; };
 		9D28539D1E9B802500CC7275 /* SetNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28539B1E9B802500CC7275 /* SetNickNameViewController.swift */; };
 		9D41C9AA1E8364520083FF65 /* AppSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A91E8364520083FF65 /* AppSecrets.swift */; };
+		9D508F841E9CB90D00B42CF5 /* ContactSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D508F831E9CB90D00B42CF5 /* ContactSearchViewController.swift */; };
+		9D508F851E9CB90D00B42CF5 /* ContactSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D508F831E9CB90D00B42CF5 /* ContactSearchViewController.swift */; };
+		9D508F871E9CC16B00B42CF5 /* ContactSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D508F861E9CC16B00B42CF5 /* ContactSearch.storyboard */; };
+		9D508F881E9CC16B00B42CF5 /* ContactSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D508F861E9CC16B00B42CF5 /* ContactSearch.storyboard */; };
+		9D508F8C1E9CC69200B42CF5 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D508F8A1E9CC69200B42CF5 /* ChatTableViewCell.swift */; };
+		9D508F8D1E9CC69200B42CF5 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D508F8A1E9CC69200B42CF5 /* ChatTableViewCell.swift */; };
+		9D508F8E1E9CC69200B42CF5 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D508F8B1E9CC69200B42CF5 /* ChatTableViewCell.xib */; };
+		9D508F8F1E9CC69200B42CF5 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D508F8B1E9CC69200B42CF5 /* ChatTableViewCell.xib */; };
 		9D59683B1E972F0800268D84 /* AddFriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D59683A1E972F0800268D84 /* AddFriendSearchViewController.swift */; };
 		9D59683C1E972F0800268D84 /* AddFriendSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D59683A1E972F0800268D84 /* AddFriendSearchViewController.swift */; };
 		9D59683E1E9769F200268D84 /* AddFriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D59683D1E9769F200268D84 /* AddFriendDetailViewController.swift */; };
 		9D59683F1E9769F200268D84 /* AddFriendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D59683D1E9769F200268D84 /* AddFriendDetailViewController.swift */; };
 		9D5968411E97769F00268D84 /* AddFriendDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5968401E97769F00268D84 /* AddFriendDetail.storyboard */; };
 		9D5968421E97769F00268D84 /* AddFriendDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D5968401E97769F00268D84 /* AddFriendDetail.storyboard */; };
-		9D5968471E979A1600268D84 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5968451E979A1600268D84 /* ContactTableViewCell.swift */; };
-		9D5968481E979A1600268D84 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5968451E979A1600268D84 /* ContactTableViewCell.swift */; };
-		9D5968491E979A1600268D84 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D5968461E979A1600268D84 /* ContactTableViewCell.xib */; };
-		9D59684A1E979A1600268D84 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D5968461E979A1600268D84 /* ContactTableViewCell.xib */; };
 		9D59684D1E979B7900268D84 /* CardListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D59684B1E979B7900268D84 /* CardListCellTableViewCell.xib */; };
 		9D59684E1E979B7900268D84 /* CardListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D59684B1E979B7900268D84 /* CardListCellTableViewCell.xib */; };
 		9D59684F1E979B7900268D84 /* CardListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D59684C1E979B7900268D84 /* CardListCellTableViewCell.swift */; };
@@ -116,16 +120,12 @@
 		9DECCB0B1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB091E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift */; };
 		9DECCB0D1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */; };
 		9DECCB0E1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */; };
-		9DFEE8871E8F44DB0098C54F /* ChatSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE8861E8F44DB0098C54F /* ChatSearchViewController.swift */; };
-		9DFEE8881E8F44DB0098C54F /* ChatSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE8861E8F44DB0098C54F /* ChatSearchViewController.swift */; };
 		9DFEE88C1E8F59CD0098C54F /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE88B1E8F59CD0098C54F /* KxMenu.m */; };
 		9DFEE88D1E8F59CD0098C54F /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE88B1E8F59CD0098C54F /* KxMenu.m */; };
 		9DFEE8901E8F5A6B0098C54F /* UIColor+RCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE88F1E8F5A6B0098C54F /* UIColor+RCColor.m */; };
 		9DFEE8911E8F5A6B0098C54F /* UIColor+RCColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE88F1E8F5A6B0098C54F /* UIColor+RCColor.m */; };
 		9DFEE8941E8F5A970098C54F /* UIImage+RCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE8931E8F5A970098C54F /* UIImage+RCImage.m */; };
 		9DFEE8951E8F5A970098C54F /* UIImage+RCImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE8931E8F5A970098C54F /* UIImage+RCImage.m */; };
-		9DFEE8971E8F8DF50098C54F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFEE8961E8F8DF50098C54F /* Search.storyboard */; };
-		9DFEE8981E8F8DF50098C54F /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFEE8961E8F8DF50098C54F /* Search.storyboard */; };
 		9DFEE89D1E8F97360098C54F /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE89A1E8F97360098C54F /* CarouselView.swift */; };
 		9DFEE89E1E8F97360098C54F /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DFEE89A1E8F97360098C54F /* CarouselView.swift */; };
 		9DFEE8A11E8F97360098C54F /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DFEE89C1E8F97360098C54F /* CarouselView.xib */; };
@@ -171,11 +171,13 @@
 		9D28539B1E9B802500CC7275 /* SetNickNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNickNameViewController.swift; sourceTree = "<group>"; };
 		9D41C9A91E8364520083FF65 /* AppSecrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSecrets.swift; sourceTree = "<group>"; };
 		9D41C9AB1E8365EA0083FF65 /* xicaibao-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "xicaibao-Bridging-Header.h"; sourceTree = "<group>"; };
+		9D508F831E9CB90D00B42CF5 /* ContactSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactSearchViewController.swift; sourceTree = "<group>"; };
+		9D508F861E9CC16B00B42CF5 /* ContactSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContactSearch.storyboard; sourceTree = "<group>"; };
+		9D508F8A1E9CC69200B42CF5 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		9D508F8B1E9CC69200B42CF5 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
 		9D59683A1E972F0800268D84 /* AddFriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendSearchViewController.swift; sourceTree = "<group>"; };
 		9D59683D1E9769F200268D84 /* AddFriendDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendDetailViewController.swift; sourceTree = "<group>"; };
 		9D5968401E97769F00268D84 /* AddFriendDetail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddFriendDetail.storyboard; sourceTree = "<group>"; };
-		9D5968451E979A1600268D84 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
-		9D5968461E979A1600268D84 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		9D59684B1E979B7900268D84 /* CardListCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardListCellTableViewCell.xib; sourceTree = "<group>"; };
 		9D59684C1E979B7900268D84 /* CardListCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardListCellTableViewCell.swift; sourceTree = "<group>"; };
 		9D6B77601E825313001AB48C /* xicaibao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xicaibao.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,14 +235,12 @@
 		9DECCAFD1E8BA8D70012CAA4 /* AccountSetting.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AccountSetting.storyboard; sourceTree = "<group>"; };
 		9DECCB091E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageSettingTableViewController.swift; sourceTree = "<group>"; };
 		9DECCB0C1E8BB0640012CAA4 /* NoMessageSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoMessageSettingTableViewController.swift; sourceTree = "<group>"; };
-		9DFEE8861E8F44DB0098C54F /* ChatSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatSearchViewController.swift; sourceTree = "<group>"; };
 		9DFEE88A1E8F59CD0098C54F /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
 		9DFEE88B1E8F59CD0098C54F /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		9DFEE88E1E8F5A6B0098C54F /* UIColor+RCColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RCColor.h"; sourceTree = "<group>"; };
 		9DFEE88F1E8F5A6B0098C54F /* UIColor+RCColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RCColor.m"; sourceTree = "<group>"; };
 		9DFEE8921E8F5A970098C54F /* UIImage+RCImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RCImage.h"; sourceTree = "<group>"; };
 		9DFEE8931E8F5A970098C54F /* UIImage+RCImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RCImage.m"; sourceTree = "<group>"; };
-		9DFEE8961E8F8DF50098C54F /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		9DFEE89A1E8F97360098C54F /* CarouselView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		9DFEE89C1E8F97360098C54F /* CarouselView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
 		9DFF90001E84F773004A5E00 /* xicaibao-QA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "xicaibao-QA.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,6 +317,15 @@
 			path = Wallet;
 			sourceTree = "<group>";
 		};
+		9D508F891E9CC66100B42CF5 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				9D508F8A1E9CC69200B42CF5 /* ChatTableViewCell.swift */,
+				9D508F8B1E9CC69200B42CF5 /* ChatTableViewCell.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		9D5968391E972EDC00268D84 /* AddFriend */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,8 +350,6 @@
 		9D5968441E97996D00268D84 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				9D5968451E979A1600268D84 /* ContactTableViewCell.swift */,
-				9D5968461E979A1600268D84 /* ContactTableViewCell.xib */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -397,6 +404,7 @@
 		9DCE923F1E8E52CA00198FA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D508F891E9CC66100B42CF5 /* Chat */,
 				9D5968441E97996D00268D84 /* Contact */,
 				9D5968431E97996600268D84 /* Card */,
 			);
@@ -460,8 +468,6 @@
 				9DA760C81E94EC7A0049E2E4 /* chatRoom */,
 				9DECCABE1E8B56850012CAA4 /* Chat.storyboard */,
 				9DECCABF1E8B56850012CAA4 /* ChatViewController.swift */,
-				9DFEE8961E8F8DF50098C54F /* Search.storyboard */,
-				9DFEE8861E8F44DB0098C54F /* ChatSearchViewController.swift */,
 				9DA760BC1E94C1030049E2E4 /* InitiateChat.storyboard */,
 				9DA760BF1E94C19F0049E2E4 /* InitiateChatTableViewController.swift */,
 			);
@@ -476,6 +482,8 @@
 				9D2853981E9B689F00CC7275 /* FriendDetail.storyboard */,
 				9D2853951E9B688C00CC7275 /* FriendDetailViewController.swift */,
 				9D28539B1E9B802500CC7275 /* SetNickNameViewController.swift */,
+				9D508F861E9CC16B00B42CF5 /* ContactSearch.storyboard */,
+				9D508F831E9CB90D00B42CF5 /* ContactSearchViewController.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -728,6 +736,8 @@
 				9DECCADD1E8B56850012CAA4 /* Main.storyboard in Resources */,
 				9DECCAF11E8B86C70012CAA4 /* CreateCard.storyboard in Resources */,
 				9DECCAD71E8B56850012CAA4 /* Card.storyboard in Resources */,
+				9D508F871E9CC16B00B42CF5 /* ContactSearch.storyboard in Resources */,
+				9D508F8E1E9CC69200B42CF5 /* ChatTableViewCell.xib in Resources */,
 				9DCE92341E8E4A6000198FA7 /* Crash.storyboard in Resources */,
 				9DECCADB1E8B56850012CAA4 /* Contact.storyboard in Resources */,
 				9D6B776E1E825313001AB48C /* LaunchScreen.storyboard in Resources */,
@@ -737,8 +747,6 @@
 				9DECCAE21E8B56850012CAA4 /* Profile.storyboard in Resources */,
 				9DECCAD91E8B56850012CAA4 /* Chat.storyboard in Resources */,
 				9DFF90021E84F936004A5E00 /* Info.plist in Resources */,
-				9D5968491E979A1600268D84 /* ContactTableViewCell.xib in Resources */,
-				9DFEE8971E8F8DF50098C54F /* Search.storyboard in Resources */,
 				9DCE92311E8E490100198FA7 /* AddBankCard.storyboard in Resources */,
 				9D0DCE941E8E081800F392D7 /* Recharge.storyboard in Resources */,
 				9DECCAE41E8B56850012CAA4 /* ResetPassword.storyboard in Resources */,
@@ -753,7 +761,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D59684A1E979A1600268D84 /* ContactTableViewCell.xib in Resources */,
 				9D0DCE951E8E081800F392D7 /* Recharge.storyboard in Resources */,
 				9DA760BE1E94C1030049E2E4 /* InitiateChat.storyboard in Resources */,
 				9DFEE8A21E8F97360098C54F /* CarouselView.xib in Resources */,
@@ -762,14 +769,15 @@
 				9D28539A1E9B689F00CC7275 /* FriendDetail.storyboard in Resources */,
 				9DECCAFF1E8BA8D70012CAA4 /* AccountSetting.storyboard in Resources */,
 				9DA760CB1E94EC8A0049E2E4 /* ChatRoom.storyboard in Resources */,
+				9D508F8F1E9CC69200B42CF5 /* ChatTableViewCell.xib in Resources */,
 				9D5968421E97769F00268D84 /* AddFriendDetail.storyboard in Resources */,
 				9DA760C71E94DD680049E2E4 /* AddFriend.storyboard in Resources */,
 				9DFF8FF41E84F773004A5E00 /* LaunchScreen.storyboard in Resources */,
 				9DCE92321E8E490100198FA7 /* AddBankCard.storyboard in Resources */,
+				9D508F881E9CC16B00B42CF5 /* ContactSearch.storyboard in Resources */,
 				9DCE92351E8E4A6000198FA7 /* Crash.storyboard in Resources */,
 				9DECCAF21E8B86C70012CAA4 /* CreateCard.storyboard in Resources */,
 				9DFF8FF61E84F773004A5E00 /* Assets.xcassets in Resources */,
-				9DFEE8981E8F8DF50098C54F /* Search.storyboard in Resources */,
 				9D0DCE8C1E8DE7C500F392D7 /* Wallet.storyboard in Resources */,
 				9D59684E1E979B7900268D84 /* CardListCellTableViewCell.xib in Resources */,
 			);
@@ -877,12 +885,12 @@
 			files = (
 				9DECCAE51E8B56850012CAA4 /* ResetPasswordTableViewController.swift in Sources */,
 				9DECCAE71E8B56850012CAA4 /* SignupTableViewController.swift in Sources */,
-				9DFEE8871E8F44DB0098C54F /* ChatSearchViewController.swift in Sources */,
 				9DECCAB61E8B53330012CAA4 /* LoginManager.swift in Sources */,
 				9DFEE89D1E8F97360098C54F /* CarouselView.swift in Sources */,
 				9DECCB0A1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
 				9DA760CD1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift in Sources */,
 				9DECCADE1E8B56850012CAA4 /* MainViewController.swift in Sources */,
+				9D508F8C1E9CC69200B42CF5 /* ChatTableViewCell.swift in Sources */,
 				9DECCAFB1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
 				9DCE923A1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */,
 				9DCE92371E8E4A8900198FA7 /* CrashViewController.swift in Sources */,
@@ -912,7 +920,6 @@
 				9D2853961E9B688C00CC7275 /* FriendDetailViewController.swift in Sources */,
 				9DECCAB41E8B53330012CAA4 /* ColorValue.swift in Sources */,
 				9DCE922E1E8E419B00198FA7 /* BankCardData.swift in Sources */,
-				9D5968471E979A1600268D84 /* ContactTableViewCell.swift in Sources */,
 				9DECCAB31E8B53330012CAA4 /* ApiManager.swift in Sources */,
 				9D28539C1E9B802500CC7275 /* SetNickNameViewController.swift in Sources */,
 				9D59683E1E9769F200268D84 /* AddFriendDetailViewController.swift in Sources */,
@@ -923,6 +930,7 @@
 				9DECCAEB1E8B5FA30012CAA4 /* Card.swift in Sources */,
 				9D6B77641E825313001AB48C /* AppDelegate.swift in Sources */,
 				9DECCAB81E8B53330012CAA4 /* SystemPathHelper.swift in Sources */,
+				9D508F841E9CB90D00B42CF5 /* ContactSearchViewController.swift in Sources */,
 				9DECCAE01E8B56850012CAA4 /* LoginNavigationController.swift in Sources */,
 				9DECCAEE1E8B86A50012CAA4 /* CreateCardTableViewController.swift in Sources */,
 			);
@@ -940,10 +948,10 @@
 				9DCE923B1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */,
 				9D59683F1E9769F200268D84 /* AddFriendDetailViewController.swift in Sources */,
 				9DECCAF51E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */,
-				9D5968481E979A1600268D84 /* ContactTableViewCell.swift in Sources */,
 				9DFEE8911E8F5A6B0098C54F /* UIColor+RCColor.m in Sources */,
 				9DFEE88D1E8F59CD0098C54F /* KxMenu.m in Sources */,
 				9D28539D1E9B802500CC7275 /* SetNickNameViewController.swift in Sources */,
+				9D508F851E9CB90D00B42CF5 /* ContactSearchViewController.swift in Sources */,
 				9D0DCE921E8E07C700F392D7 /* RechargeViewController.swift in Sources */,
 				9DB57F861E8D090B007AC25F /* AboutViewController.swift in Sources */,
 				9DECCAEF1E8B86A50012CAA4 /* CreateCardTableViewController.swift in Sources */,
@@ -953,7 +961,7 @@
 				9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */,
 				9D0DCE981E8E366F00F392D7 /* AddBankCardViewController.swift in Sources */,
 				9DECCAFC1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
-				9DFEE8881E8F44DB0098C54F /* ChatSearchViewController.swift in Sources */,
+				9D508F8D1E9CC69200B42CF5 /* ChatTableViewCell.swift in Sources */,
 				9DCE923E1E8E528C00198FA7 /* CardTableViewController.swift in Sources */,
 				9DCE922C1E8E3F0700198FA7 /* BankCardListTableViewController.swift in Sources */,
 				9D0DCE8F1E8E046800F392D7 /* WalletTableViewController.swift in Sources */,

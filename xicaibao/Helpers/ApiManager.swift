@@ -429,6 +429,48 @@ class ApiManager {
         }
     }
     
+    // 获取名片列表
+    func getCards(forUser uuid: String, token: String, successBlock: @escaping ((_ cards: [Card])->Void), errorBlock: @escaping (_ error: Error) -> Void) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/getCards")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        Alamofire.request(requestURL, method: .get, parameters: nil , encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager getCards] error: \(error.localizedDescription)")
+                errorBlock(error as Error)
+                return
+            }
+            
+            //parse JSON response
+            if let jsonObj = response.result.value as? Dictionary<String,AnyObject> {
+                
+                // 字典 data 里面存的才是数据
+                var data: [Dictionary<String, AnyObject>?]? = nil
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = (js.value as? [Dictionary<String, AnyObject>])!
+                    }
+                }
+                
+                var cards: [Card] = [Card]()
+                for obj in data! {
+                    let card = try! Card.fromJson(json: obj!)
+                    cards.append(card)
+                }
+                successBlock(cards)
+                
+            } else {
+                print("[ApiManager getCards] resonse json error")
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                errorBlock(error)
+            }
+        }
+    }
+    
     // 搜索好友
     func searchNewFriend(tel: String?, forUser uuid: String, token: String, successBlock: @escaping ((_ friend: User)->Void), errorBlock: @escaping (_ error: Error) -> Void) {
         
@@ -554,7 +596,7 @@ class ApiManager {
     // 更新好友备注名
     func patchFriendNickName(_ friend: User, uuid: String, token: String, successBlock: @escaping ((_ friend: User) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
         
-        let requestURL = URL(string: "\(self.apiUrl)/xcb/friendNickName/update")!
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/friendNickname/update")!
         
         let headers = ApiManager.headers(uuid, token: token)
         let params = friend.toJson()
@@ -592,10 +634,10 @@ class ApiManager {
     // 加入黑名单
     func postBlock(friendId: String,uuid: String, token: String, successBlock: @escaping (() -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
         
-        let requestURL = URL(string: "\(self.apiUrl)/xcb/postBlock/")!
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/postBlock")!
         
         let headers = ApiManager.headers(uuid, token: token)
-        let params = ["friendId": friendId]
+        let params = ["friend_id": friendId]
         
         Alamofire.request(requestURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
             
@@ -605,6 +647,50 @@ class ApiManager {
                 return
             }
                 successBlock()
+        }
+    }
+    
+    // 搜索联系人
+    func searchContact(searchString: String, forUser uuid: String, token: String, successBlock: @escaping ((_ friends: [User])->Void), errorBlock: @escaping (_ error: Error) -> Void) {
+        
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/searchContact")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        let params = ["search_string": searchString]
+        
+        Alamofire.request(requestURL, method: .get, parameters: params , encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager searchContact] error: \(error.localizedDescription)")
+                errorBlock(error as Error)
+                return
+            }
+            
+            //parse JSON response
+            if let jsonObj = response.result.value as? Dictionary<String,AnyObject> {
+                
+                // 字典 data 里面存的才是数据
+                var data: [Dictionary<String, AnyObject>?]? = nil
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = (js.value as? [Dictionary<String, AnyObject>])!
+                    }
+                }
+                
+                var friends: [User] = [User]()
+                for obj in data! {
+                    let friend = try! User.fromJson(json: obj!)
+                    friends.append(friend)
+                }
+                successBlock(friends)
+                
+            } else {
+                print("[ApiManager searchContact] resonse json error")
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                errorBlock(error)
+            }
         }
     }
 }
