@@ -42,7 +42,7 @@ class User {
         self.card = card
         
         // associations
-        self.friends = []
+//        self.friends = []
         self.receivedCards = []
     }
     
@@ -72,12 +72,12 @@ class User {
         let user = User(uuid: uuid, authToken: authToken, userName: userName, userTel: userTel, imageUrl: imageUrl,nickName: nickName,card: card)
         
         // friends
-        if let array = dict["friends"] as? [Dictionary<String, AnyObject>] {
-            for json in array {
-                let friend = try User.fromJson(json: json)
-                user.friends?.append(friend)
-            }
-        }
+//        if let array = dict["friends"] as? [Dictionary<String, AnyObject>] {
+//            for json in array {
+//                let friend = try User.fromJson(json: json)
+//                user.friends?.append(friend)
+//            }
+//        }
         
         // received cards
         

@@ -1,10 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fRb-7P-MsO">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--聊天室-->
+        <scene sceneID="YvF-nD-Emr">
+            <objects>
+                <viewController storyboardIdentifier="chatRoomMessages" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fRb-7P-MsO" customClass="ChatRoomTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wne-hB-20K"/>
+                        <viewControllerLayoutGuide type="bottom" id="l7n-bq-TwK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="frA-Vm-Hrk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oun-xU-45u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qjc-hH-aQD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="619"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eAa-Lj-Fk8">
+                                        <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                        <subviews>
+                                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01I-Az-1zX">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                                <items/>
+                                            </toolbar>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-6A-SIt" customClass="ChatMessagesTextView" customModule="xicaibao" customModuleProvider="target">
+                                                <rect key="frame" x="8" y="7" width="311" height="34"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1RC-dU-xnd" customClass="ChatMessagesSendButton" customModule="xicaibao" customModuleProvider="target">
+                                                <rect key="frame" x="327" y="8" width="40" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="QPj-Md-peb"/>
+                                                    <constraint firstAttribute="height" constant="32" id="sFR-GB-l4P"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <state key="normal" title="发送"/>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="01I-Az-1zX" firstAttribute="width" secondItem="eAa-Lj-Fk8" secondAttribute="width" id="0Ql-qh-X0Q"/>
+                                            <constraint firstItem="01I-Az-1zX" firstAttribute="centerY" secondItem="eAa-Lj-Fk8" secondAttribute="centerY" id="2CK-hi-qb3"/>
+                                            <constraint firstItem="1RC-dU-xnd" firstAttribute="top" secondItem="eAa-Lj-Fk8" secondAttribute="top" constant="8" id="4E4-le-5sO"/>
+                                            <constraint firstAttribute="trailing" secondItem="1RC-dU-xnd" secondAttribute="trailing" constant="8" id="Fpp-k3-H2b"/>
+                                            <constraint firstAttribute="bottom" secondItem="1RC-dU-xnd" secondAttribute="bottom" constant="8" id="Iy3-Jn-3ms"/>
+                                            <constraint firstItem="Rdf-6A-SIt" firstAttribute="top" secondItem="eAa-Lj-Fk8" secondAttribute="top" constant="7" id="Yt8-NR-7PI"/>
+                                            <constraint firstItem="01I-Az-1zX" firstAttribute="centerX" secondItem="eAa-Lj-Fk8" secondAttribute="centerX" id="cDn-AK-G8D"/>
+                                            <constraint firstItem="Rdf-6A-SIt" firstAttribute="leading" secondItem="eAa-Lj-Fk8" secondAttribute="leading" constant="8" id="hIV-EX-9Qo"/>
+                                            <constraint firstItem="01I-Az-1zX" firstAttribute="height" secondItem="eAa-Lj-Fk8" secondAttribute="height" id="ljz-ZM-hAU"/>
+                                            <constraint firstAttribute="bottom" secondItem="Rdf-6A-SIt" secondAttribute="bottom" constant="7" id="nAE-0v-Xdi"/>
+                                            <constraint firstItem="1RC-dU-xnd" firstAttribute="leading" secondItem="Rdf-6A-SIt" secondAttribute="trailing" constant="8" id="qLs-xe-i9v"/>
+                                            <constraint firstAttribute="height" constant="48" id="ya8-SU-Roe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Qjc-hH-aQD" firstAttribute="top" secondItem="oun-xU-45u" secondAttribute="top" id="0Pa-sr-zc9"/>
+                                    <constraint firstAttribute="trailing" secondItem="eAa-Lj-Fk8" secondAttribute="trailing" id="7O3-g0-UtG"/>
+                                    <constraint firstItem="eAa-Lj-Fk8" firstAttribute="leading" secondItem="oun-xU-45u" secondAttribute="leading" id="BQN-M6-hrT"/>
+                                    <constraint firstItem="eAa-Lj-Fk8" firstAttribute="top" secondItem="Qjc-hH-aQD" secondAttribute="bottom" id="DRx-bL-jN8"/>
+                                    <constraint firstAttribute="bottom" secondItem="eAa-Lj-Fk8" secondAttribute="bottom" id="ENa-tV-xGZ"/>
+                                    <constraint firstItem="Qjc-hH-aQD" firstAttribute="leading" secondItem="oun-xU-45u" secondAttribute="leading" id="ISJ-Xy-skL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qjc-hH-aQD" secondAttribute="trailing" id="Ot2-95-6f3"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oun-xU-45u" firstAttribute="width" secondItem="frA-Vm-Hrk" secondAttribute="width" id="1Dk-KI-xQP"/>
+                            <constraint firstItem="oun-xU-45u" firstAttribute="centerY" secondItem="frA-Vm-Hrk" secondAttribute="centerY" id="7JO-Sp-7pU"/>
+                            <constraint firstItem="oun-xU-45u" firstAttribute="height" secondItem="frA-Vm-Hrk" secondAttribute="height" id="gNb-TX-24Z"/>
+                            <constraint firstItem="oun-xU-45u" firstAttribute="centerX" secondItem="frA-Vm-Hrk" secondAttribute="centerX" id="wUP-58-15a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="聊天室" id="AZb-Vr-bWZ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="chatMessageBottomConstraint" destination="ENa-tV-xGZ" id="HmA-rt-SHO"/>
+                        <outlet property="inputViewHeightConstraint" destination="ya8-SU-Roe" id="RaI-uL-xnx"/>
+                        <outlet property="sendButton" destination="1RC-dU-xnd" id="Mo1-rr-A8U"/>
+                        <outlet property="tableView" destination="Qjc-hH-aQD" id="aLU-LG-vQ0"/>
+                        <outlet property="textView" destination="Rdf-6A-SIt" id="Fly-jE-62Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jRj-er-rI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2704.6875" y="210.9375"/>
+        </scene>
+    </scenes>
 </document>

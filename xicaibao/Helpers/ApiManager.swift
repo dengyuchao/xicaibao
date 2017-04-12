@@ -693,6 +693,100 @@ class ApiManager {
             }
         }
     }
+    
+    // 获取会话列表
+    func getChatRooms(forUser uuid: String, token: String, successBlock: @escaping ((_ chatRooms: [ChatRoom]) -> Void) , errorBlock: @escaping (_ error: Error) -> Void) {
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/chatRooms")!
+        
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        Alamofire.request(requestURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            if let error = response.result.error {
+                print("[ApiManager getChatRooms] Error: " + error.localizedDescription)
+                errorBlock(error as Error)
+                return
+            }
+            
+            var chatRooms = [ChatRoom]()
+            
+            if let jsonArray = response.result.value as? [Dictionary<String, AnyObject>] {
+                
+                for jsonObj in jsonArray {
+                    let chatRoom = try! ChatRoom.fromJson(json: jsonObj)
+                    chatRooms.append(chatRoom)
+                }
+                successBlock(chatRooms)
+            } else {
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                print("[ApiManager getChatRooms] response json error: " + error.localizedDescription)
+                errorBlock(error)
+            }
+        }
+    }
+    
+    // 获取聊天消息
+    func getChatMessages(_ page: Int?, forChatRoom chatRoomKey: String, forUser uuid: String, token: String, successBlock: @escaping ((_ chatMessages: [ChatMessage]) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/getChatMessages")!
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        // page params
+        let params: Dictionary<String, AnyObject> = ["chat_room_id": chatRoomKey as AnyObject, "page": (page as AnyObject? ?? 1 as AnyObject)]
+        Alamofire.request(requestURL, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager getChatMessages] Error: " + error.localizedDescription)
+                errorBlock(error as Error)
+                return
+            }
+            
+            var chatMessages = [ChatMessage]()
+            
+            if let jsonArray = response.result.value as? [Dictionary<String, AnyObject>] {
+                
+                for jsonObj in jsonArray {
+                    let chatMessage = try! ChatMessage.fromJson(json: jsonObj)
+                    chatMessages.append(chatMessage)
+                }
+                successBlock(chatMessages)
+                
+            } else {
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                print("[ApiManager getChatMessages] response json error: " + error.localizedDescription)
+                errorBlock(error)
+            }
+            
+        }
+    }
+    
+    // 发送聊天信息
+    func postChatMessage(_ chatMessage: ChatMessage, chatRoom: ChatRoom, forUser uuid: String, token: String, successBlock: @escaping ((_ chatMessage: ChatMessage) -> Void), errorBlock: @escaping ((_ error: Error) -> Void)) {
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/postChatMessages")!
+        let params: Dictionary<String, AnyObject> = [
+            "chat_room_id": chatRoom.key as AnyObject,
+            "chat_message": chatMessage.toJson() as AnyObject
+        ]
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        Alamofire.request(requestURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            
+            if let error = response.result.error {
+                print("[ApiManager postChatMessage] Error: " + error.localizedDescription)
+                errorBlock(error as Error)
+                return
+            }
+            
+            if let json = response.result.value as? Dictionary<String, AnyObject> {
+                
+                let chatMessage = try! ChatMessage.fromJson(json: json)
+                successBlock(chatMessage)
+                
+            } else {
+                let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
+                print("[ApiManager postChatMessage] response json error: " + error.localizedDescription)
+                errorBlock(error)
+            }
+        }
+    }
 }
 
 

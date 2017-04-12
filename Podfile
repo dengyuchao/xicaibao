@@ -7,5 +7,6 @@ target 'xicaibao' do
     pod 'Alamofire'
     pod 'AlamofireImage'
     pod 'SAMKeychain'
+    pod 'DZNEmptyDataSet'
    
 end

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewCell_Right" customModule="xicaibao" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MerchantChatMessagesOutgoingCellID" rowHeight="132" id="KGk-i7-Jjw" customClass="ChatMessageCell_Outgoing" customModule="xicaibao" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="131.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天13:03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihw-Gp-1YM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="IaP-Dg-123"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqS-cm-mXW">
+                        <rect key="frame" x="42" y="38" width="270" height="75.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KZ0-mQ-kTu">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="75.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3r-Rd-Ddy">
+                                <rect key="frame" x="16" y="38" width="238" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KZ0-mQ-kTu" firstAttribute="height" secondItem="dqS-cm-mXW" secondAttribute="height" id="GDc-QN-kfL"/>
+                            <constraint firstItem="x3r-Rd-Ddy" firstAttribute="centerX" secondItem="dqS-cm-mXW" secondAttribute="centerX" id="Ihv-RQ-0vF"/>
+                            <constraint firstItem="x3r-Rd-Ddy" firstAttribute="centerY" secondItem="dqS-cm-mXW" secondAttribute="centerY" id="MO6-tR-zX8"/>
+                            <constraint firstItem="KZ0-mQ-kTu" firstAttribute="centerX" secondItem="dqS-cm-mXW" secondAttribute="centerX" id="MXv-DN-VEA"/>
+                            <constraint firstItem="KZ0-mQ-kTu" firstAttribute="width" secondItem="dqS-cm-mXW" secondAttribute="width" id="N1p-5q-Erw"/>
+                            <constraint firstItem="x3r-Rd-Ddy" firstAttribute="leading" secondItem="dqS-cm-mXW" secondAttribute="leading" constant="16" id="Qtx-0G-kYE"/>
+                            <constraint firstItem="KZ0-mQ-kTu" firstAttribute="centerY" secondItem="dqS-cm-mXW" secondAttribute="centerY" id="SdG-Nr-rhN"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4B-jv-C4a">
+                        <rect key="frame" x="8" y="112.5" width="32" height="1"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="CLe-aV-Pp1"/>
+                            <constraint firstAttribute="width" constant="32" id="yVa-qq-KBb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="dqS-cm-mXW" firstAttribute="leading" secondItem="k4B-jv-C4a" secondAttribute="trailing" constant="2" id="6P9-LQ-q76"/>
+                    <constraint firstItem="dqS-cm-mXW" firstAttribute="top" secondItem="ihw-Gp-1YM" secondAttribute="bottom" id="80y-kv-9iX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="dqS-cm-mXW" secondAttribute="trailing" id="AOE-dn-l4V"/>
+                    <constraint firstItem="ihw-Gp-1YM" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="CB6-Fs-ZV5"/>
+                    <constraint firstItem="ihw-Gp-1YM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Rpq-tw-o5Y"/>
+                    <constraint firstAttribute="bottom" secondItem="k4B-jv-C4a" secondAttribute="bottom" constant="18" id="XYN-Sy-T3J"/>
+                    <constraint firstItem="ihw-Gp-1YM" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Ynd-pk-2Oq"/>
+                    <constraint firstAttribute="bottom" secondItem="dqS-cm-mXW" secondAttribute="bottom" constant="18" id="c5v-RM-dHM"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="k4B-jv-C4a" secondAttribute="leading" id="rdF-qi-1hc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bubbleImageView" destination="KZ0-mQ-kTu" id="fe6-BZ-97y"/>
+                <outlet property="cellTopLabel" destination="ihw-Gp-1YM" id="gcW-We-lG9"/>
+                <outlet property="cellTopLabelHeightConstraint" destination="IaP-Dg-123" id="t78-qD-ZDJ"/>
+                <outlet property="constraintView" destination="dqS-cm-mXW" id="Ga5-nX-xfz"/>
+                <outlet property="containerViewLeftConstraint" destination="6P9-LQ-q76" id="Cxe-d6-vVF"/>
+                <outlet property="messageLabel" destination="x3r-Rd-Ddy" id="Qbl-O0-jFU"/>
+            </connections>
+            <point key="canvasLocation" x="431" y="340"/>
+        </tableViewCell>
+    </objects>
+</document>

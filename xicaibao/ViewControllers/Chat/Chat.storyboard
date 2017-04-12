@@ -5,8 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -30,53 +28,6 @@
                                 <outlet property="delegate" destination="Mzl-h0-9qw" id="P4m-C3-KYd"/>
                             </connections>
                         </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatListCell" rowHeight="74" id="TZ2-Io-atn">
-                                <rect key="frame" x="0.0" y="72" width="375" height="74"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TZ2-Io-atn" id="vTu-Jd-3fB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tongxunlu_touxiang" translatesAutoresizingMaskIntoConstraints="NO" id="dp1-NH-0lX">
-                                            <rect key="frame" x="24" y="7" width="58" height="58"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="58" id="OSw-hz-Xri"/>
-                                                <constraint firstAttribute="width" secondItem="dp1-NH-0lX" secondAttribute="height" multiplier="1:1" id="vWr-8n-07f"/>
-                                            </constraints>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgx-oY-RWH">
-                                            <rect key="frame" x="98" y="16" width="42.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="new message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhs-Ba-kZs">
-                                            <rect key="frame" x="98" y="36.5" width="105" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.32156862749999998" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2017/3/31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaX-Eu-v6X">
-                                            <rect key="frame" x="283" y="18" width="68" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" red="0.32156862749999998" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Dgx-oY-RWH" firstAttribute="top" secondItem="vTu-Jd-3fB" secondAttribute="topMargin" constant="8" id="3QW-Jo-Xyh"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="bhs-Ba-kZs" secondAttribute="bottom" constant="8" id="E8r-0i-pJo"/>
-                                        <constraint firstItem="Dgx-oY-RWH" firstAttribute="leading" secondItem="dp1-NH-0lX" secondAttribute="trailing" constant="16" id="Qrj-Ck-Fo5"/>
-                                        <constraint firstItem="dp1-NH-0lX" firstAttribute="centerY" secondItem="vTu-Jd-3fB" secondAttribute="centerY" id="WS7-l9-8Y2"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="NaX-Eu-v6X" secondAttribute="trailing" constant="16" id="YAj-sx-XBI"/>
-                                        <constraint firstItem="NaX-Eu-v6X" firstAttribute="centerY" secondItem="Dgx-oY-RWH" secondAttribute="centerY" id="aQt-W2-kHx"/>
-                                        <constraint firstItem="dp1-NH-0lX" firstAttribute="leading" secondItem="vTu-Jd-3fB" secondAttribute="leadingMargin" constant="16" id="ogP-qL-lq0"/>
-                                        <constraint firstItem="bhs-Ba-kZs" firstAttribute="leading" secondItem="dp1-NH-0lX" secondAttribute="trailing" constant="16" id="wd2-yZ-AuM"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Mzl-h0-9qw" id="Qf9-jb-eL3"/>
                             <outlet property="delegate" destination="Mzl-h0-9qw" id="v45-bJ-Tj0"/>
@@ -96,6 +47,7 @@
                         <outlet property="addButtonItem" destination="oZb-tn-o4K" id="8f2-9R-hHZ"/>
                         <outlet property="searchBar" destination="7dj-zh-FeT" id="zhB-3f-tzf"/>
                         <segue destination="Ynj-zd-kIQ" kind="show" identifier="ChatSearch" id="g3Q-s5-i9p"/>
+                        <segue destination="Jwf-Si-lwR" kind="show" identifier="chatRoomVC" id="gL5-dj-MWs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbM-qs-VJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -109,6 +61,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2C-hX-d5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2051" y="280"/>
+        </scene>
+        <!--ChatRoom-->
+        <scene sceneID="m5c-AT-NBg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChatRoom" id="Jwf-Si-lwR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cVx-9W-bSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1972" y="184"/>
         </scene>
         <!--icon_chat-->
         <scene sceneID="UbW-Zc-O91">
@@ -133,6 +93,5 @@
     <resources>
         <image name="icon_chat" width="22" height="22"/>
         <image name="icon_chat_hover" width="22" height="22"/>
-        <image name="tongxunlu_touxiang" width="40" height="40"/>
     </resources>
 </document>

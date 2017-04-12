@@ -8,7 +8,55 @@
 
 import UIKit
 
-class ChatViewController: UITableViewController {
+struct ChatRoomCellData {
+    var chatRoom: ChatRoom? // 用于传递到 ChatMessagesVC
+    var avatarUrl: String?  // 头像
+    var chatRoomName: String?   // 对方 Name
+    var unreadCount: Int?   // 未读消息数量
+    
+    // 最近信息
+    func message() -> String? {
+        return chatRoom?.lastMessage()?.message
+    }
+    
+    // 最近信息日期
+    func messageDate() -> Date? {
+        return chatRoom?.lastMessage()?.createdAt as Date?
+    }
+}
+
+extension ChatRoom {
+    
+    // get counterparty of chatroom
+    // @params
+    // me: user uuid
+    // @returns tuple of (username: String, avatarUrl: String) of counterparty
+    func counterparty(_ me: String) -> (username: String, avatarUrl: String?) {
+        for user in users {
+            if user.uuid == me {
+                continue
+            }
+            
+            let username = user.userName ?? "对方聊天"
+            let avatarUrl = user.imageUrl
+            
+            return (username, avatarUrl)
+        }
+        return ("对方聊天", nil)
+    }
+    
+    func toCellData(forUser me: String) -> ChatRoomCellData {
+        let (username, avatarUrl) = self.counterparty(me)
+        
+        // 生成 chatRoomCellData 用于 cell 显示用
+        let chatRoomCellData = ChatRoomCellData(chatRoom: self, avatarUrl: avatarUrl, chatRoomName: username, unreadCount: self.unreadCount)
+        
+        return chatRoomCellData
+    }
+}
+
+
+class ChatViewController: BaseTableViewController {
 
     @IBOutlet weak var addButtonItem: UIBarButtonItem!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -16,6 +64,7 @@ class ChatViewController: UITableViewController {
     let chatTableViewCellNibName = "ChatTableViewCell"
     let chatTableViewCellID = "chatCellTableViewCellIdentifier"
     
+    var chatRoomCellDataList: [ChatRoomCellData] = []
     
     var user: User?
     
@@ -23,6 +72,7 @@ class ChatViewController: UITableViewController {
         super.viewDidLoad()
         
         self.setupView()
+        self.setupEmptyViewModel()
         self.getUser()
     }
     
@@ -40,6 +90,13 @@ class ChatViewController: UITableViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 获取数据
+        self.getRecentChatRooms()
+    }
+    
     private func setupView() {
         // 导航栏颜色、标题颜色
         self.navigationController?.navigationBar.barTintColor = UIColor.kThemeColor()
@@ -47,10 +104,14 @@ class ChatViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
         tableView.tableFooterView = UIView()
-        tableView.rowHeight = 74
+        tableView.rowHeight = 66
         
         // cell
         tableView.register(UINib(nibName: chatTableViewCellNibName, bundle: nil), forCellReuseIdentifier: chatTableViewCellID)
+    }
+    
+    private func setupEmptyViewModel() {
+        emptyViewModel = EmptyViewModel(alert: "暂时没有会话", prompt: "点击右上角发起聊天")
     }
     
     
@@ -66,6 +127,53 @@ class ChatViewController: UITableViewController {
             print("[ContactSearchViewController getUser] getProfile failed: \(error.localizedDescription)")
         }
     }
+    
+    // 获取聊天列表
+    private func getRecentChatRooms() {
+        guard let uuid = LoginManager.defaultManager.uuid
+            else { return }
+        guard let token = LoginManager.defaultManager.authToken
+            else { return }
+        
+        ApiManager().getChatRooms(forUser: uuid, token: token, successBlock: { (chatRooms: [ChatRoom]) in
+            
+            self.setupChatRoomCellData(chatRooms)
+            self.refresh()
+            
+        }) { (error) in
+            print("[ChatViewController getRecentChatRooms] \(error.localizedDescription)")
+        }
+    }
+    
+    // maintain array of ChatRoomData for use in view cells
+    private func setupChatRoomCellData(_ chatRooms: [ChatRoom]) {
+        
+        guard let uuid = LoginManager.defaultManager.uuid
+            else { return }
+        
+        self.chatRoomCellDataList = []
+        
+        for chatRoom in chatRooms {
+            let chatRoomCellData = chatRoom.toCellData(forUser: uuid)
+            self.chatRoomCellDataList.append(chatRoomCellData)
+        }
+    }
+    
+    private func refresh() {
+        
+        // sort by date
+        self.chatRoomCellDataList.sort(by: {(first, second) -> Bool in
+            guard let firstDate = first.messageDate() else {
+                return true // if nil push to top
+            }
+            guard let secondDate = second.messageDate() else {
+                return false // if nil push second to top
+            }
+            return firstDate.isGreaterThanDate(secondDate) // descending order
+        })
+        
+        tableView.reloadData()
+    }
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,6 +184,12 @@ class ChatViewController: UITableViewController {
                 
                 // 搜索已经添加的好友
             }
+        }
+        
+        if segue.identifier == "chatRoomVC" {
+            guard let indexPath = sender as? IndexPath else { return }
+            let chatRoomVC = segue.destination as! ChatRoomTableViewController
+            
         }
     }
     
@@ -136,25 +250,30 @@ class ChatViewController: UITableViewController {
         // TODO:传值
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
 
 extension ChatViewController {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return chatRoomCellDataList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: chatTableViewCellID, for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: chatTableViewCellID, for: indexPath) as! ChatTableViewCell
+        cell.chatRoomCellData = chatRoomCellDataList[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "chatRoomVC", sender: indexPath)
     }
 }
 

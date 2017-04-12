@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableViewCell_Left" customModule="xicaibao" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MerchantChatMessagesIncomingCellID" rowHeight="132" id="KGk-i7-Jjw" customClass="ChatMessageCell_Incoming" customModule="xicaibao" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="131.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天13:03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ki-Cb-mww">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="38" id="PyC-qq-h6r"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpJ-ca-gkN">
+                        <rect key="frame" x="42" y="38" width="270" height="75.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wei-lW-YUa">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="75.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gz-Yo-r1E">
+                                <rect key="frame" x="16" y="38" width="238" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="6gz-Yo-r1E" firstAttribute="centerX" secondItem="cpJ-ca-gkN" secondAttribute="centerX" id="2AK-FX-abn"/>
+                            <constraint firstItem="Wei-lW-YUa" firstAttribute="height" secondItem="cpJ-ca-gkN" secondAttribute="height" id="DYx-W3-rJB"/>
+                            <constraint firstItem="Wei-lW-YUa" firstAttribute="centerY" secondItem="cpJ-ca-gkN" secondAttribute="centerY" id="IkK-Gf-DS2"/>
+                            <constraint firstItem="6gz-Yo-r1E" firstAttribute="leading" secondItem="cpJ-ca-gkN" secondAttribute="leading" constant="16" id="NM1-uf-2Ey"/>
+                            <constraint firstItem="Wei-lW-YUa" firstAttribute="width" secondItem="cpJ-ca-gkN" secondAttribute="width" id="ZEv-F6-S8Y"/>
+                            <constraint firstItem="6gz-Yo-r1E" firstAttribute="centerY" secondItem="cpJ-ca-gkN" secondAttribute="centerY" id="e0l-GA-7Pc"/>
+                            <constraint firstItem="Wei-lW-YUa" firstAttribute="centerX" secondItem="cpJ-ca-gkN" secondAttribute="centerX" id="pOo-h7-KjL"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zx3-eT-Jyb">
+                        <rect key="frame" x="8" y="81.5" width="32" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="zx3-eT-Jyb" secondAttribute="height" multiplier="1:1" id="0JR-9H-R5q"/>
+                            <constraint firstAttribute="width" constant="32" id="pvM-BX-kdm"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9Ki-Cb-mww" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="6vN-ZD-X4v"/>
+                    <constraint firstAttribute="bottom" secondItem="zx3-eT-Jyb" secondAttribute="bottom" constant="18" id="DTQ-uT-Qz3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="cpJ-ca-gkN" secondAttribute="trailing" id="Ly4-4Z-cjd"/>
+                    <constraint firstItem="9Ki-Cb-mww" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="OFg-Ex-q9O"/>
+                    <constraint firstAttribute="bottom" secondItem="cpJ-ca-gkN" secondAttribute="bottom" constant="18" id="avo-fC-8Sd"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="zx3-eT-Jyb" secondAttribute="leading" id="dlb-Oh-AaI"/>
+                    <constraint firstItem="zx3-eT-Jyb" firstAttribute="width" secondItem="zx3-eT-Jyb" secondAttribute="height" multiplier="1:1" id="guE-7c-xqA"/>
+                    <constraint firstItem="cpJ-ca-gkN" firstAttribute="top" secondItem="9Ki-Cb-mww" secondAttribute="bottom" id="k9V-Im-KB0"/>
+                    <constraint firstItem="cpJ-ca-gkN" firstAttribute="leading" secondItem="zx3-eT-Jyb" secondAttribute="trailing" constant="2" id="ouX-zA-Dkx"/>
+                    <constraint firstItem="9Ki-Cb-mww" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pxR-YI-6lx"/>
+                    <constraint firstItem="cpJ-ca-gkN" firstAttribute="top" secondItem="9Ki-Cb-mww" secondAttribute="bottom" id="zFe-O0-xf5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="avatarImageView" destination="zx3-eT-Jyb" id="yjy-vL-xgu"/>
+                <outlet property="bubbleImageView" destination="Wei-lW-YUa" id="a8a-vC-M0R"/>
+                <outlet property="cellTopLabel" destination="9Ki-Cb-mww" id="8vg-3l-aex"/>
+                <outlet property="cellTopLabelHeightConstraint" destination="PyC-qq-h6r" id="g8V-21-qwj"/>
+                <outlet property="constraintView" destination="cpJ-ca-gkN" id="DoO-z3-Zpm"/>
+                <outlet property="containerViewRightConstraint" destination="Ly4-4Z-cjd" id="yIA-Qg-yLA"/>
+                <outlet property="messageLabel" destination="6gz-Yo-r1E" id="lXg-qv-quK"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>
