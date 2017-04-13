@@ -787,6 +787,26 @@ class ApiManager {
             }
         }
     }
+    
+    
+    // GET /chat_rooms/:key/mark  通知服务器已读消息
+    func markChatRoom(_ key: String, forUser uuid: String, token: String, successBlock: @escaping (() -> Void) , errorBlock: @escaping (_ error: Error) -> Void) {
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/chatRoomsRead")!
+        let headers = ApiManager.headers(uuid, token: token)
+        
+        let params = ["chat_room_id": key]
+        
+        Alamofire.request(requestURL, method: .get, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+            if let error = response.result.error {
+                print("[ApiManager markChatRoom] Error: " + error.localizedDescription)
+                errorBlock(error as Error)
+                return
+            }
+            
+            // no content
+            successBlock()
+        }
+    }
 }
 
 

@@ -89,8 +89,8 @@
 		9DA760C71E94DD680049E2E4 /* AddFriend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA760C51E94DD680049E2E4 /* AddFriend.storyboard */; };
 		9DA760CA1E94EC8A0049E2E4 /* ChatRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA760C91E94EC8A0049E2E4 /* ChatRoom.storyboard */; };
 		9DA760CB1E94EC8A0049E2E4 /* ChatRoom.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA760C91E94EC8A0049E2E4 /* ChatRoom.storyboard */; };
-		9DA760CD1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA760CC1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift */; };
-		9DA760CE1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA760CC1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift */; };
+		9DA760CD1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA760CC1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift */; };
+		9DA760CE1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA760CC1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift */; };
 		9DB57F821E8CFB32007AC25F /* SendMailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */; };
 		9DB57F831E8CFB32007AC25F /* SendMailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */; };
 		9DB57F851E8D090B007AC25F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F841E8D090B007AC25F /* AboutViewController.swift */; };
@@ -239,7 +239,7 @@
 		9DA760C21E94DD520049E2E4 /* AddFriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendTableViewController.swift; path = xicaibao/ViewControllers/Chat/AddFriendTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		9DA760C51E94DD680049E2E4 /* AddFriend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddFriend.storyboard; path = xicaibao/ViewControllers/Chat/AddFriend.storyboard; sourceTree = SOURCE_ROOT; };
 		9DA760C91E94EC8A0049E2E4 /* ChatRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatRoom.storyboard; sourceTree = "<group>"; };
-		9DA760CC1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
+		9DA760CC1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomMessageViewController.swift; sourceTree = "<group>"; };
 		9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailHelper.swift; sourceTree = "<group>"; };
 		9DB57F841E8D090B007AC25F /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9DCE922A1E8E3F0700198FA7 /* BankCardListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankCardListTableViewController.swift; sourceTree = "<group>"; };
@@ -465,7 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				9DA760C91E94EC8A0049E2E4 /* ChatRoom.storyboard */,
-				9DA760CC1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift */,
+				9DA760CC1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift */,
 			);
 			name = ChatRoom;
 			path = chatRoom;
@@ -918,7 +918,7 @@
 				9DFEE89D1E8F97360098C54F /* CarouselView.swift in Sources */,
 				9D5F27771E9E182500FF3DCD /* ChatMessageCell_Incoming.swift in Sources */,
 				9DECCB0A1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
-				9DA760CD1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift in Sources */,
+				9DA760CD1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift in Sources */,
 				9DECCADE1E8B56850012CAA4 /* MainViewController.swift in Sources */,
 				9DECCAFB1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
 				9D5F27831E9E1AC200FF3DCD /* ChatMessageCell_Outgoing.swift in Sources */,
@@ -1025,7 +1025,7 @@
 				9D5F27781E9E182500FF3DCD /* ChatMessageCell_Incoming.swift in Sources */,
 				9DCE92381E8E4A8900198FA7 /* CrashViewController.swift in Sources */,
 				9DA760C41E94DD520049E2E4 /* AddFriendTableViewController.swift in Sources */,
-				9DA760CE1E94EC9E0049E2E4 /* ChatRoomTableViewController.swift in Sources */,
+				9DA760CE1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift in Sources */,
 				9D59683C1E972F0800268D84 /* AddFriendSearchViewController.swift in Sources */,
 				9DFEE89E1E8F97360098C54F /* CarouselView.swift in Sources */,
 				9DECCB0B1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,

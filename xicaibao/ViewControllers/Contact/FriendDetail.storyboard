@@ -126,6 +126,10 @@
                                                     <state key="normal" title="发起会话">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="initChatAction:" destination="6Ii-QW-1hF" eventType="touchUpInside" id="Ilq-co-Ujq"/>
+                                                        <segue destination="kcN-1t-esl" kind="show" identifier="chatRoomMSVC" id="13B-mM-K8o"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -167,6 +171,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Npm-nF-bq6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1289" y="-77"/>
+        </scene>
+        <!--ChatRoom-->
+        <scene sceneID="6xB-vq-mOJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ChatRoom" id="kcN-1t-esl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZkT-x3-Wrx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-823" y="175"/>
         </scene>
         <!--设置备注-->
         <scene sceneID="ASk-kE-Rgm">
@@ -224,7 +236,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6KD-IG-uQT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455.19999999999999" y="-18.440779610194905"/>
+            <point key="canvasLocation" x="-479" y="-156"/>
         </scene>
     </scenes>
     <resources>

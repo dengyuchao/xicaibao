@@ -12,30 +12,30 @@ class ChatMessageCell_Incoming: UITableViewCell {
     @IBOutlet var containerViewRightConstraint: NSLayoutConstraint!
     @IBOutlet var cellTopLabelHeightConstraint: NSLayoutConstraint!
     
-//    var chatMessageCellData: ChatMessageCellData? {
-//        didSet {
-//            guard let m = chatMessageCellData else { return }
-//            messageLabel.text = m.message()
-//            cellTopLabelHeightConstraint.constant = m.isShowDate ? ZSY_ChatMessagesSize.cellTopLabelHeight : 0.0
-//            if m.isShowDate {
-//                cellTopLabel.text = m.messageDate().toMessageDate()
-//            }
-//        }
-//    }
-//    
-//    var incomingAvatarUrl: String? {
-//        didSet {
-//            let emptyAvatarImage = UIImage(named: kEmpty_AvatarImage)
-//            if let url = incomingAvatarUrl {
-//                avatarImageView.sd_setImage(with: URL(string: url), placeholderImage: emptyAvatarImage)
-//            } else {
-//                avatarImageView.image = emptyAvatarImage
-//            }
-//            
-//            // avatarImageView.height / 2
-//            avatarImageView.layer.cornerRadius = 32.0 / 2.0
-//        }
-//    }
+    var chatMessageCellData: ChatMessageCellData? {
+        didSet {
+            guard let m = chatMessageCellData else { return }
+            messageLabel.text = m.message()
+            cellTopLabelHeightConstraint.constant = m.isShowDate ? ZSY_ChatMessagesSize.cellTopLabelHeight : 0.0
+            if m.isShowDate {
+                cellTopLabel.text = m.messageDate().toMessageDate()
+            }
+        }
+    }
+    
+    var incomingAvatarUrl: String? {
+        didSet {
+            let emptyAvatarImage = UIImage(named: "tongxunlu_touxiang")
+            if let url = incomingAvatarUrl {
+                avatarImageView.af_setImage(withURL: URL(string: url)!)
+            } else {
+                avatarImageView.image = emptyAvatarImage
+            }
+            
+            // avatarImageView.height / 2
+            avatarImageView.layer.cornerRadius = 32.0 / 2.0
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -56,7 +56,7 @@ class ChatMessageCell_Incoming: UITableViewCell {
     private func getMessagesLabelTextWidth() -> CGFloat {
         let contentViewWidth: CGFloat = kScreenWidth - ZSY_ChatMessagesSize.avatarWidth - ZSY_ChatMessagesSize.cellBoderWidth * 2 - ZSY_ChatMessagesSize.contentViewLeftLayoutConstraint
         let textMaxWidth: CGFloat = contentViewWidth - ZSY_ChatMessagesSize.messageLabelBoderLayoutConstraint * 2
-        let textViewSize = CGSize(width: textMaxWidth, height: 20)
+        let textViewSize = CGSize(width: textMaxWidth, height: frame.size.height)
         return messageLabel.sizeThatFits(textViewSize).width
     }
 }

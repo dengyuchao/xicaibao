@@ -27,7 +27,7 @@ struct ChatRoomCellData {
 
 extension ChatRoom {
     
-    // get counterparty of chatroom
+    // get counterparty of chatroom 获取会话好友
     // @params
     // me: user uuid
     // @returns tuple of (username: String, avatarUrl: String) of counterparty
@@ -176,24 +176,6 @@ class ChatViewController: BaseTableViewController {
     }
 
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "ChatSearch" {
-            
-            if let searchVC = segue.destination as? ContactSearchViewController {
-                
-                // 搜索已经添加的好友
-            }
-        }
-        
-        if segue.identifier == "chatRoomVC" {
-            guard let indexPath = sender as? IndexPath else { return }
-            let chatRoomVC = segue.destination as! ChatRoomTableViewController
-            
-        }
-    }
-    
-    
     // action 弹出菜单按钮
     @IBAction func addBtAction(_ sender: UIBarButtonItem) {
         
@@ -251,6 +233,35 @@ class ChatViewController: BaseTableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ChatSearch" {
+            
+            if let searchVC = segue.destination as? ContactSearchViewController {
+                
+                // 搜索已经添加的好友
+            }
+        }
+        
+        if segue.identifier == "chatRoomVC" {
+            guard let indexPath = sender as? IndexPath else { return }
+            let chatRoomMessageVC = segue.destination as! ChatRoomMessageViewController
+            
+            if let chatRoomName = chatRoomCellDataList[indexPath.row].chatRoomName {
+                chatRoomMessageVC.title = chatRoomName
+            }
+            
+            if let chatRoom = chatRoomCellDataList[indexPath.row].chatRoom {
+                chatRoomMessageVC.chatRoom = chatRoom
+            }
+            
+            if let avatarUrl = chatRoomCellDataList[indexPath.row].avatarUrl {
+                chatRoomMessageVC.incomingAvatarUrl = avatarUrl
+            }
+        }
+    }
+    
 }
 
 extension ChatViewController {
@@ -268,7 +279,11 @@ extension ChatViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: chatTableViewCellID, for: indexPath) as! ChatTableViewCell
-        cell.chatRoomCellData = chatRoomCellDataList[indexPath.row]
+        
+        if chatRoomCellDataList.count > 0 {
+            cell.chatRoomCellData = chatRoomCellDataList[indexPath.row]
+        }
+        
         return cell
     }
     

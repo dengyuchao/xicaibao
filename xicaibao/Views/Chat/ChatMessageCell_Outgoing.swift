@@ -12,16 +12,16 @@ class ChatMessageCell_Outgoing: UITableViewCell {
     @IBOutlet var containerViewLeftConstraint: NSLayoutConstraint!
     @IBOutlet var cellTopLabelHeightConstraint: NSLayoutConstraint!
     
-//    var chatMessageCellData: ChatMessageCellData? {
-//        didSet {
-//            guard let m = chatMessageCellData else { return }
-//            messageLabel.text = m.message()
-//            cellTopLabelHeightConstraint.constant = m.isShowDate ? ZSY_ChatMessagesSize.cellTopLabelHeight : 0.0
-//            if m.isShowDate {
-//                cellTopLabel.text = m.messageDate().toMessageDate()
-//            }
-//        }
-//    }
+    var chatMessageCellData: ChatMessageCellData? {
+        didSet {
+            guard let m = chatMessageCellData else { return }
+            messageLabel.text = m.message()
+            cellTopLabelHeightConstraint.constant = m.isShowDate ? ZSY_ChatMessagesSize.cellTopLabelHeight : 0.0
+            if m.isShowDate {
+                cellTopLabel.text = m.messageDate().toMessageDate()
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,7 +42,7 @@ class ChatMessageCell_Outgoing: UITableViewCell {
     fileprivate func getTextViewTextWidth() -> CGFloat {
         let contentViewWidth: CGFloat = kScreenWidth - ZSY_ChatMessagesSize.avatarWidth - ZSY_ChatMessagesSize.cellBoderWidth * 2 - ZSY_ChatMessagesSize.contentViewLeftLayoutConstraint
         let textMaxWidth: CGFloat = contentViewWidth - ZSY_ChatMessagesSize.messageLabelBoderLayoutConstraint * 2
-        let textViewSize = CGSize(width: textMaxWidth, height: 20)
+        let textViewSize = CGSize(width: textMaxWidth, height: frame.size.height)
         return messageLabel.sizeThatFits(textViewSize).width
     }
 }

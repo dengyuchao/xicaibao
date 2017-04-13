@@ -11,7 +11,7 @@
         <!--聊天室-->
         <scene sceneID="YvF-nD-Emr">
             <objects>
-                <viewController storyboardIdentifier="chatRoomMessages" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fRb-7P-MsO" customClass="ChatRoomTableViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatRoomMessages" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fRb-7P-MsO" customClass="ChatRoomMessageViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wne-hB-20K"/>
                         <viewControllerLayoutGuide type="bottom" id="l7n-bq-TwK"/>
@@ -48,6 +48,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <state key="normal" title="发送"/>
+                                                <connections>
+                                                    <action selector="didSendAction:" destination="fRb-7P-MsO" eventType="touchUpInside" id="L4d-uN-CZK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

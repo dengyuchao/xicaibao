@@ -28,6 +28,10 @@ class FriendDetailTableViewController: UITableViewController {
     var indexPath: IndexPath?
     weak var delegate: FriendDetailTableViewControllerDelegate?
     
+    var chatRoom: ChatRoom?
+    var chatRoomCellData: ChatRoomCellData?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +77,23 @@ class FriendDetailTableViewController: UITableViewController {
                 setNickNameVC.delegate = self
             }
         }
+        
+        // 进入到聊天
+        if segue.identifier == "chatRoomMSVC" {
+            let chatRoomMessageVC = segue.destination as! ChatRoomMessageViewController
+            if let chatRoomName = chatRoomCellData?.chatRoomName {
+                chatRoomMessageVC.title = chatRoomName
+            }
+            
+            if let chatRoom = chatRoomCellData?.chatRoom {
+                chatRoomMessageVC.chatRoom = chatRoom
+            }
+            
+            if let avatarUrl = chatRoomCellData?.avatarUrl {
+                chatRoomMessageVC.incomingAvatarUrl = avatarUrl
+            }
+
+        }
     }
 
     @IBAction func moreAction(_ sender: UIBarButtonItem) {
@@ -99,6 +120,14 @@ class FriendDetailTableViewController: UITableViewController {
         alertController.addAction(sureAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // 发起会话
+    @IBAction func initChatAction(_ sender: UIButton) {
+        // 创建聊天室
+        chatRoom = ChatRoom(key: nil)
+        guard let uuid = LoginManager.defaultManager.uuid else { return }
+        chatRoomCellData = chatRoom?.toCellData(forUser: uuid)
     }
     
 }
