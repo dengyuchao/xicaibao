@@ -20,7 +20,7 @@ class ApiManager {
                    successBlock: @escaping (_ user: User, _ authToken: String) ->Void,errorBlock: @escaping (_ error:Error?) -> Void){
         
         let params = ["tel": tel, "password": password]
-        let url = URL(string: "\(self.apiUrl)/xcb/login/")!
+        let url = URL(string: "\(self.apiUrl)/xcb/login")!
         let headers = ApiManager.headersJsonOnly()
         
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
@@ -43,7 +43,8 @@ class ApiManager {
                         }
                     }
                     
-                    let user = try User.fromJson(json: data!)
+                    guard let obj = data else { return }
+                    let user = try User.fromJson(json: obj)
                     
                     successBlock(user, user.authToken)
                     
@@ -129,7 +130,8 @@ class ApiManager {
                         }
                     }
                     
-                    let user = try User.fromJson(json: data!)
+                    guard let obj = data else { return }
+                    let user = try User.fromJson(json: obj)
                     successBlock(user, user.authToken)
                     return
                     
@@ -170,8 +172,8 @@ class ApiManager {
                             data = js.value as? Dictionary<String, AnyObject>
                         }
                     }
-                    
-                    let user = try User.fromJson(json: data!)
+                    guard let obj = data else { return }
+                    let user = try User.fromJson(json: obj)
                     successBlock(user, user.authToken)
                     
                 } catch let error as Error{
@@ -239,7 +241,8 @@ class ApiManager {
                     }
                 }
                 
-                let user = try! User.fromJson(json: data!)
+                guard let obj = data else { return }
+                let user = try! User.fromJson(json: obj)
                 successBlock(user)
                 
             } else {
@@ -279,8 +282,8 @@ class ApiManager {
                         data = js.value as? Dictionary<String, AnyObject>
                     }
                 }
-                
-                let user = try! User.fromJson(json: data!)
+                guard let obj = data else { return }
+                let user = try! User.fromJson(json: obj)
                 successBlock(user)
                 
             } else {
@@ -327,8 +330,8 @@ class ApiManager {
                                 data = js.value as? Dictionary<String, AnyObject>
                             }
                         }
-                        
-                        let user = try! User.fromJson(json: data!)
+                        guard let obj = data else { return }
+                        let user = try! User.fromJson(json: obj)
                         successBlock(user)
                         
                     } else {
@@ -377,8 +380,8 @@ class ApiManager {
                         data = js.value as? Dictionary<String, AnyObject>
                     }
                 }
-                
-                let card = try! Card.fromJson(json: data!)
+                guard let obj = data else { return }
+                let card = try! Card.fromJson(json: obj)
                 successBlock(card)
                 
             } else {
@@ -418,7 +421,8 @@ class ApiManager {
                     }
                 }
                 
-                let card = try! Card.fromJson(json: data!)
+                guard let obj = data else { return }
+                let card = try! Card.fromJson(json: obj)
                 successBlock(card)
                 
             } else {
@@ -456,8 +460,9 @@ class ApiManager {
                     }
                 }
                 
+                guard let datas = data else { return }
                 var cards: [Card] = [Card]()
-                for obj in data! {
+                for obj in datas {
                     let card = try! Card.fromJson(json: obj!)
                     cards.append(card)
                 }
@@ -499,8 +504,8 @@ class ApiManager {
                         data = js.value as? Dictionary<String, AnyObject>
                     }
                 }
-                
-                let friend = try! User.fromJson(json: data!)
+                guard let obj = data else { return }
+                let friend = try! User.fromJson(json: obj)
                 successBlock(friend)
                 
             } else {
@@ -539,8 +544,8 @@ class ApiManager {
                         data = js.value as? Dictionary<String, AnyObject>
                     }
                 }
-                
-                let friend = try! User.fromJson(json: data!)
+                guard let obj = data else { return }
+                let friend = try! User.fromJson(json: obj)
                 successBlock(friend)
                 
             } else {
@@ -577,9 +582,9 @@ class ApiManager {
                         data = (js.value as? [Dictionary<String, AnyObject>])!
                     }
                 }
-                
+                guard let datas = data else { return }
                 var friends: [User] = [User]()
-                for obj in data! {
+                for obj in datas {
                     let friend = try! User.fromJson(json: obj!)
                     friends.append(friend)
                 }
@@ -619,8 +624,8 @@ class ApiManager {
                         data = js.value as? Dictionary<String, AnyObject>
                     }
                 }
-                
-                let friend = try! User.fromJson(json: data!)
+                guard let obj = data else { return }
+                let friend = try! User.fromJson(json: obj)
                 successBlock(friend)
                 
             } else {
@@ -678,9 +683,9 @@ class ApiManager {
                         data = (js.value as? [Dictionary<String, AnyObject>])!
                     }
                 }
-                
+                guard let datas = data else { return }
                 var friends: [User] = [User]()
-                for obj in data! {
+                for obj in datas {
                     let friend = try! User.fromJson(json: obj!)
                     friends.append(friend)
                 }
@@ -707,15 +712,26 @@ class ApiManager {
                 return
             }
             
-            var chatRooms = [ChatRoom]()
-            
-            if let jsonArray = response.result.value as? [Dictionary<String, AnyObject>] {
+            if let jsonArray = response.result.value as? Dictionary<String, AnyObject>{
+                
+                // 字典 data 里面存的才是数据
+                var data: [Dictionary<String, AnyObject>?]? = nil
                 
                 for jsonObj in jsonArray {
-                    let chatRoom = try! ChatRoom.fromJson(json: jsonObj)
+                    
+                    if jsonObj.key == "data" {
+                        data = (jsonObj.value as? [Dictionary<String, AnyObject>])
+                    }
+                }
+                
+                var chatRooms = [ChatRoom]()
+                guard let datas = data else { return }
+                for obj in datas {
+                   let chatRoom = try! ChatRoom.fromJson(json: obj!)
                     chatRooms.append(chatRoom)
                 }
                 successBlock(chatRooms)
+                
             } else {
                 let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
                 print("[ApiManager getChatRooms] response json error: " + error.localizedDescription)
@@ -739,14 +755,26 @@ class ApiManager {
                 return
             }
             
-            var chatMessages = [ChatMessage]()
-            
-            if let jsonArray = response.result.value as? [Dictionary<String, AnyObject>] {
+            if let jsonArray = response.result.value as? Dictionary<String, AnyObject> {
+                
+                
+                // 字典 data 里面存的才是数据
+                var data: [Dictionary<String, AnyObject>?]? = nil
                 
                 for jsonObj in jsonArray {
-                    let chatMessage = try! ChatMessage.fromJson(json: jsonObj)
+                    
+                    if jsonObj.key == "data" {
+                        data = (jsonObj.value as? [Dictionary<String, AnyObject>])
+                    }
+                }
+                
+                guard let datas = data else { return }
+                var chatMessages = [ChatMessage]()
+                for obj in datas {
+                    let chatMessage = try! ChatMessage.fromJson(json: obj!)
                     chatMessages.append(chatMessage)
                 }
+                
                 successBlock(chatMessages)
                 
             } else {
@@ -775,9 +803,20 @@ class ApiManager {
                 return
             }
             
-            if let json = response.result.value as? Dictionary<String, AnyObject> {
+            if let jsonObj = response.result.value as? Dictionary<String, AnyObject> {
                 
-                let chatMessage = try! ChatMessage.fromJson(json: json)
+                // 字典 data 里面存的才是数据
+                var data: Dictionary<String, AnyObject>?
+                for js in jsonObj {
+                    
+                    if js.key == "data" {
+                        data = js.value as? Dictionary<String, AnyObject>
+                    }
+                }
+                
+                guard let obj = data else { return }
+
+                let chatMessage = try! ChatMessage.fromJson(json: obj)
                 successBlock(chatMessage)
                 
             } else {

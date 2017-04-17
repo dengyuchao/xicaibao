@@ -73,7 +73,7 @@ class ChatViewController: BaseTableViewController {
         
         self.setupView()
         self.setupEmptyViewModel()
-        self.getUser()
+//        self.getUser()
     }
     
     override func viewWillAppear(_ animated: Bool) {

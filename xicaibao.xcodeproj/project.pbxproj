@@ -26,6 +26,10 @@
 		9D28539C1E9B802500CC7275 /* SetNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28539B1E9B802500CC7275 /* SetNickNameViewController.swift */; };
 		9D28539D1E9B802500CC7275 /* SetNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D28539B1E9B802500CC7275 /* SetNickNameViewController.swift */; };
 		9D41C9AA1E8364520083FF65 /* AppSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D41C9A91E8364520083FF65 /* AppSecrets.swift */; };
+		9D491A6D1EA078C0009D5119 /* NSString+PinYin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D491A6C1EA078C0009D5119 /* NSString+PinYin.m */; };
+		9D491A6E1EA078C0009D5119 /* NSString+PinYin.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D491A6C1EA078C0009D5119 /* NSString+PinYin.m */; };
+		9D491A721EA0D1F0009D5119 /* BMChineseSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D491A711EA0D1F0009D5119 /* BMChineseSort.m */; };
+		9D491A731EA0D1F0009D5119 /* BMChineseSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D491A711EA0D1F0009D5119 /* BMChineseSort.m */; };
 		9D508F841E9CB90D00B42CF5 /* ContactSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D508F831E9CB90D00B42CF5 /* ContactSearchViewController.swift */; };
 		9D508F851E9CB90D00B42CF5 /* ContactSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D508F831E9CB90D00B42CF5 /* ContactSearchViewController.swift */; };
 		9D508F871E9CC16B00B42CF5 /* ContactSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D508F861E9CC16B00B42CF5 /* ContactSearch.storyboard */; };
@@ -204,6 +208,10 @@
 		9D28539B1E9B802500CC7275 /* SetNickNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetNickNameViewController.swift; sourceTree = "<group>"; };
 		9D41C9A91E8364520083FF65 /* AppSecrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSecrets.swift; sourceTree = "<group>"; };
 		9D41C9AB1E8365EA0083FF65 /* xicaibao-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "xicaibao-Bridging-Header.h"; sourceTree = "<group>"; };
+		9D491A6B1EA078C0009D5119 /* NSString+PinYin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin.h"; sourceTree = "<group>"; };
+		9D491A6C1EA078C0009D5119 /* NSString+PinYin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin.m"; sourceTree = "<group>"; };
+		9D491A701EA0D1F0009D5119 /* BMChineseSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMChineseSort.h; sourceTree = "<group>"; };
+		9D491A711EA0D1F0009D5119 /* BMChineseSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BMChineseSort.m; sourceTree = "<group>"; };
 		9D508F831E9CB90D00B42CF5 /* ContactSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactSearchViewController.swift; sourceTree = "<group>"; };
 		9D508F861E9CC16B00B42CF5 /* ContactSearch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContactSearch.storyboard; sourceTree = "<group>"; };
 		9D59683A1E972F0800268D84 /* AddFriendSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendSearchViewController.swift; sourceTree = "<group>"; };
@@ -363,6 +371,24 @@
 				9DCE92361E8E4A8900198FA7 /* CrashViewController.swift */,
 			);
 			path = Wallet;
+			sourceTree = "<group>";
+		};
+		9D491A6A1EA078C0009D5119 /* NSString+PinYin */ = {
+			isa = PBXGroup;
+			children = (
+				9D491A6B1EA078C0009D5119 /* NSString+PinYin.h */,
+				9D491A6C1EA078C0009D5119 /* NSString+PinYin.m */,
+			);
+			path = "NSString+PinYin";
+			sourceTree = "<group>";
+		};
+		9D491A6F1EA0D1F0009D5119 /* BMChineseStringSort */ = {
+			isa = PBXGroup;
+			children = (
+				9D491A701EA0D1F0009D5119 /* BMChineseSort.h */,
+				9D491A711EA0D1F0009D5119 /* BMChineseSort.m */,
+			);
+			path = BMChineseStringSort;
 			sourceTree = "<group>";
 		};
 		9D508F891E9CC66100B42CF5 /* Chat */ = {
@@ -668,6 +694,8 @@
 		9DFF900B1E84FFC3004A5E00 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				9D491A6F1EA0D1F0009D5119 /* BMChineseStringSort */,
+				9D491A6A1EA078C0009D5119 /* NSString+PinYin */,
 				9DFEE8991E8F97360098C54F /* CarouselView */,
 				9DFEE8891E8F59CD0098C54F /* Menu */,
 				9DFF900C1E84FFEF004A5E00 /* SMS_SDK */,
@@ -926,11 +954,13 @@
 				9D5F278E1E9E1EFB00FF3DCD /* ZSY_ChatMessagesSize.swift in Sources */,
 				9DCE923A1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */,
 				9DCE92371E8E4A8900198FA7 /* CrashViewController.swift in Sources */,
+				9D491A6D1EA078C0009D5119 /* NSString+PinYin.m in Sources */,
 				9D0DCE911E8E07C700F392D7 /* RechargeViewController.swift in Sources */,
 				9DECCAAB1E8B52F90012CAA4 /* User.swift in Sources */,
 				9DECCADA1E8B56850012CAA4 /* ChatViewController.swift in Sources */,
 				9DECCAB71E8B53330012CAA4 /* ModelErrorManager.swift in Sources */,
 				9DECCAE81E8B56850012CAA4 /* EditNameTableViewController.swift in Sources */,
+				9D491A721EA0D1F0009D5119 /* BMChineseSort.m in Sources */,
 				9DB57F851E8D090B007AC25F /* AboutViewController.swift in Sources */,
 				9D5F276D1E9DD16400FF3DCD /* BaseTableViewController.swift in Sources */,
 				9DA760C31E94DD520049E2E4 /* AddFriendTableViewController.swift in Sources */,
@@ -996,6 +1026,7 @@
 				9DFEE8911E8F5A6B0098C54F /* UIColor+RCColor.m in Sources */,
 				9D5F27641E9DCA6300FF3DCD /* DateHelper.swift in Sources */,
 				9D5F27891E9E1E0E00FF3DCD /* ZSY_BubbleImageFactory.swift in Sources */,
+				9D491A6E1EA078C0009D5119 /* NSString+PinYin.m in Sources */,
 				9DFEE88D1E8F59CD0098C54F /* KxMenu.m in Sources */,
 				9D28539D1E9B802500CC7275 /* SetNickNameViewController.swift in Sources */,
 				9D5F27951E9E24E300FF3DCD /* BaseViewController.swift in Sources */,
@@ -1014,6 +1045,7 @@
 				9DCE92481E8E555600198FA7 /* LiveViewController.swift in Sources */,
 				9DCE922F1E8E419B00198FA7 /* BankCardData.swift in Sources */,
 				9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */,
+				9D491A731EA0D1F0009D5119 /* BMChineseSort.m in Sources */,
 				9D0DCE981E8E366F00F392D7 /* AddBankCardViewController.swift in Sources */,
 				9DECCAFC1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
 				9D5F279B1E9E25C200FF3DCD /* BaseTextView.swift in Sources */,

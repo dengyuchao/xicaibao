@@ -112,7 +112,7 @@ class LoginManager: NSObject {
             successBlock(user)
             
         }) { (error) in
-            print("[LoginManager resetPassword] error: \(error)")
+            print("[LoginManager resetPassword] error: \(String(describing: error?.localizedDescription))")
             errorBlock(error!)
         }
     }
