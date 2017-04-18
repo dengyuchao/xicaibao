@@ -21,6 +21,5 @@
 // name sort
 #import "NSString+PinYin.h"
 
-#import "BMChineseSort.h"
 
 

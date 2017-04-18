@@ -18,7 +18,7 @@ struct EmptyViewModel {
 
 class BaseTableViewController: UITableViewController {
     
-    fileprivate var isHiddenStateBar = false
+//    fileprivate var isHiddenStateBar = false
     
     var emptyViewModel: EmptyViewModel? {
         willSet {
@@ -27,28 +27,27 @@ class BaseTableViewController: UITableViewController {
     }
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView.tintColor = UIColor.kThemeColor()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        guard let selectedRowIndexPath = self.tableView.indexPathForSelectedRow else { return }
-        self.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override var preferredStatusBarStyle : UIStatusBarStyle {
-        return .lightContent
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        self.tableView.tintColor = UIColor.kThemeColor()
+//    }
+//    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        guard let selectedRowIndexPath = self.tableView.indexPathForSelectedRow else { return }
+//        self.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
+//    }
+//    
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//    }
+//    
+//    override var preferredStatusBarStyle : UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     fileprivate func configEmptyView() {
-        tableView.tableHeaderView = UITableViewHeaderFooterView()
-        tableView.tableFooterView = UITableViewHeaderFooterView()
+
         tableView.emptyDataSetDelegate = self
         tableView.emptyDataSetSource = self
     }

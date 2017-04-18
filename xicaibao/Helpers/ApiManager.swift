@@ -45,8 +45,8 @@ class ApiManager {
                     
                     guard let obj = data else { return }
                     let user = try User.fromJson(json: obj)
-                    
-                    successBlock(user, user.authToken)
+                    guard let authToken = user.authToken else { return }
+                    successBlock(user, authToken)
                     
                 } catch let error as Error {
                     errorBlock(error)
@@ -132,7 +132,8 @@ class ApiManager {
                     
                     guard let obj = data else { return }
                     let user = try User.fromJson(json: obj)
-                    successBlock(user, user.authToken)
+                    guard let authToken = user.authToken else { return }
+                    successBlock(user, authToken)
                     return
                     
                 } catch let error as Error {
@@ -174,7 +175,8 @@ class ApiManager {
                     }
                     guard let obj = data else { return }
                     let user = try User.fromJson(json: obj)
-                    successBlock(user, user.authToken)
+                    guard let authToken = user.authToken else { return }
+                    successBlock(user, authToken)
                     
                 } catch let error as Error{
                     errorBlock(error)
@@ -477,15 +479,16 @@ class ApiManager {
     }
     
     // 搜索好友
-    func searchNewFriend(tel: String?, forUser uuid: String, token: String, successBlock: @escaping ((_ friend: User)->Void), errorBlock: @escaping (_ error: Error) -> Void) {
+    func searchNewFriend(tel: String, forUser uuid: String, token: String, successBlock: @escaping ((_ friend: User)->Void), errorBlock: @escaping (_ error: Error) -> Void) {
         
-        let requestURL = URL(string: "\(self.apiUrl)/xcb/searchNewFriend")!
+        // MARK: get请求  参数:? + value,如果是多个参数 &
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/searchNewFriend?tel=\(tel)")!
         
         let headers = ApiManager.headers(uuid, token: token)
         
-        let params = ["tel": tel as AnyObject]
+//        let params = ["tel": tel as AnyObject]
         
-        Alamofire.request(requestURL, method: .get, parameters: params as Dictionary<String, AnyObject>, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+        Alamofire.request(requestURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
             
             if let error = response.result.error {
                 print("[ApiManager searchNewFriend] error: \(error.localizedDescription)")
@@ -508,6 +511,7 @@ class ApiManager {
                 let friend = try! User.fromJson(json: obj)
                 successBlock(friend)
                 
+                
             } else {
                 print("[ApiManager searchNewFriend] resonse json error")
                 let error = ModelErrorManager.errorWithType(ModelDataError.jsonInvalid)
@@ -523,7 +527,7 @@ class ApiManager {
         
         let headers = ApiManager.headers(uuid, token: token)
         
-        let params: Dictionary<String, AnyObject> = friend.toJson()
+        let params: Dictionary<String, AnyObject> = ["uuid": friend.uuid as AnyObject]
         
         Alamofire.request(requestURL, method: .post, parameters: params , encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
             
@@ -604,7 +608,8 @@ class ApiManager {
         let requestURL = URL(string: "\(self.apiUrl)/xcb/friendNickname/update")!
         
         let headers = ApiManager.headers(uuid, token: token)
-        let params = friend.toJson()
+        
+        let params: Dictionary<String, AnyObject> = ["uuid": friend.uuid as AnyObject, "nick_name": friend.nickName as AnyObject]
         
         Alamofire.request(requestURL, method: .patch, parameters: params, encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
             

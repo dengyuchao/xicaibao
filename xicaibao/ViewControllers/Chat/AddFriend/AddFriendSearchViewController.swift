@@ -16,11 +16,15 @@ class AddFriendSearchViewController: UIViewController {
     var friend: User?
     var telString: String?
     
+    var friendList: [User] = [User]()
+    var oldFriend: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "添加好友"
         
         self.setupview()
+        self.getContacts()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +46,17 @@ class AddFriendSearchViewController: UIViewController {
         self.telString = searchBar.text ?? ""
     }
     
+    func getContacts() {
+        guard let uuid = LoginManager.defaultManager.uuid else { return }
+        guard let token = LoginManager.defaultManager.authToken else { return }
+        
+        ApiManager().getContacts(forUser: uuid, token: token, successBlock: { (friends) in
+            self.friendList = friends
+            
+        }) { (error) in
+            print("[AddFriendSearchViewController getContacts]\(error.localizedDescription)")
+        }
+    }
     
     func getData(searchText: String) {
         
@@ -54,6 +69,13 @@ class AddFriendSearchViewController: UIViewController {
             // reload data
             self.tableview.reloadData()
             
+            // MARK: 判断是否是已经添加的好友
+            for fr in self.friendList {
+                if self.friend?.uuid == fr.uuid {
+                    self.oldFriend = self.friend
+                }
+            }
+            
         }) { (error) in
             
             print("[AddFriendSearchViewController searchNewFriend failed] \(error.localizedDescription)")
@@ -61,16 +83,22 @@ class AddFriendSearchViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "addFriendDetailVC" {
-            if let vc = segue.destination as? AddFriendDetailViewController {
-                
-                if self.friend != nil {
-                    vc.friend = self.friend
+    
+            if segue.identifier == "addFriendDetailVC" {
+                if let vc = segue.destination as? AddFriendDetailViewController {
+                    
+                    if self.friend != nil {
+                        vc.friend = self.friend
+                    }
                 }
+            }
+       
+            if segue.identifier == "friendDesc" {
+                if let vc = segue.destination as? FriendDetailTableViewController {
+                    vc.friend = self.oldFriend
             }
         }
     }
-    
 }
 
 extension AddFriendSearchViewController: UITableViewDataSource, UITableViewDelegate {
@@ -109,6 +137,17 @@ extension AddFriendSearchViewController: UITableViewDataSource, UITableViewDeleg
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.oldFriend == nil {
+            
+            self.performSegue(withIdentifier: "addFriendDetailVC", sender: nil)
+            
+        } else {
+            
+            self.performSegue(withIdentifier: "friendDesc", sender: nil)
+        }
     }
     
 }

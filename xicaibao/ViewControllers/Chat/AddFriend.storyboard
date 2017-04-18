@@ -84,9 +84,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="T4T-kV-pHZ" kind="show" identifier="addFriendDetailVC" id="WRC-XH-IyC"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -110,6 +107,8 @@
                     <connections>
                         <outlet property="searchBar" destination="hWM-Cg-3Xb" id="IGh-CO-qMB"/>
                         <outlet property="tableview" destination="3rr-W2-AFc" id="XpE-rh-sit"/>
+                        <segue destination="QE4-4N-bOu" kind="show" identifier="friendDesc" id="Brt-9o-Wfr"/>
+                        <segue destination="T4T-kV-pHZ" kind="show" identifier="addFriendDetail" id="e5h-Sp-cnc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unQ-41-VGX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,6 +122,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dh7-QK-ogN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1660" y="50"/>
+        </scene>
+        <!--FriendDetail-->
+        <scene sceneID="bzB-ec-aNn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FriendDetail" id="QE4-4N-bOu" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Bx-SS-dDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1658" y="120"/>
         </scene>
     </scenes>
 </document>

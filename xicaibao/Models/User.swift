@@ -11,7 +11,7 @@ class User {
     
     // model variables
     let uuid: String
-    var authToken: String
+    var authToken: String?
     
     var userName: String?
     var userTel: String?
@@ -32,7 +32,7 @@ class User {
         self.authToken = authToken
     }
     
-    init(uuid: String, authToken: String, userName: String?, userTel: String?, imageUrl:String?, nickName: String?, card: Card?) {
+    init(uuid: String, authToken: String?, userName: String?, userTel: String?, imageUrl:String?, nickName: String?, card: Card?) {
         self.uuid = uuid
         self.authToken = authToken
         self.userName = userName
@@ -54,9 +54,11 @@ class User {
             throw ModelDataError.jsonInvalid
         }
         
-        guard let authToken = dict["currentToken"] as? String else {
-            throw ModelDataError.jsonInvalid
-        }
+//        guard let authToken = dict["currentToken"] as? String else {
+//            throw ModelDataError.jsonInvalid
+//        }
+        
+        let authToken = dict["currentToken"] as? String
         
         let userName = dict["user_name"] as? String
         let userTel = dict["user_tel"] as? String

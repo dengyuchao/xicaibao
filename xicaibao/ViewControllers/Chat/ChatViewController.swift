@@ -111,7 +111,7 @@ class ChatViewController: BaseTableViewController {
     }
     
     private func setupEmptyViewModel() {
-        emptyViewModel = EmptyViewModel(alert: "暂时没有会话", prompt: "点击右上角发起聊天")
+        emptyViewModel = EmptyViewModel(alert: "暂时没有会话", prompt: "点击通讯录发起聊天")
     }
     
     
@@ -182,12 +182,12 @@ class ChatViewController: BaseTableViewController {
         var menuItems = [KxMenuItem]()
         
         // TODO: 添加对应的 target action
-        let chatMenuItem = KxMenuItem.init("发起群聊", image: UIImage(named: "startchat_icon"), target: self, action: #selector(ChatViewController.pushChat))
+//        let chatMenuItem = KxMenuItem.init("发起群聊", image: UIImage(named: "startchat_icon"), target: self, action: #selector(ChatViewController.pushChat))
         
         let groupMenuItem = KxMenuItem.init("创建群组", image: UIImage(named: "creategroup_icon"), target: self, action: #selector(ChatViewController.createGroup))
         let addFriendMenuItem = KxMenuItem.init("添加好友", image: UIImage(named: "addfriend_icon"), target: self, action: #selector(ChatViewController.addFriend))
         
-        menuItems.append(chatMenuItem!)
+//        menuItems.append(chatMenuItem!)
         menuItems.append(groupMenuItem!)
         menuItems.append(addFriendMenuItem!)
         
@@ -204,25 +204,25 @@ class ChatViewController: BaseTableViewController {
     // actions
     
     // 发起聊天
-    public func pushChat() {
-        
-        let storyboard = UIStoryboard.init(name: "InitiateChat", bundle: nil)
-        let initiateChatVC = storyboard.instantiateViewController(withIdentifier: "idInitiateChat") as! InitiateChatTableViewController
-        initiateChatVC.title = "发起聊天"
-        
-        // TODO:传值
-        self.navigationController?.pushViewController(initiateChatVC, animated: true)
-    }
+//    public func pushChat() {
+//        
+//        let storyboard = UIStoryboard.init(name: "InitiateChat", bundle: nil)
+//        let initiateChatVC = storyboard.instantiateViewController(withIdentifier: "idInitiateChat") as! InitiateChatTableViewController
+//        initiateChatVC.title = "发起聊天"
+//        
+//        // TODO:传值
+//        self.navigationController?.pushViewController(initiateChatVC, animated: true)
+//    }
     
     // 创建群组
     public func createGroup() {
         
-        let storyboard = UIStoryboard.init(name: "InitiateChat", bundle: nil)
-        let initiateChatVC = storyboard.instantiateViewController(withIdentifier: "idInitiateChat") as! InitiateChatTableViewController
-        initiateChatVC.title = "选择联系人"
+        let storyboard = UIStoryboard.init(name: "CreateGroup", bundle: nil)
+        let createGroupVC = storyboard.instantiateViewController(withIdentifier: "idCreateGroup") as! CreateGroupTableViewController
+        createGroupVC.title = "选择联系人"
         
         // TODO:传值
-        self.navigationController?.pushViewController(initiateChatVC, animated: true)
+        self.navigationController?.pushViewController(createGroupVC, animated: true)
     }
     
     // 添加好友

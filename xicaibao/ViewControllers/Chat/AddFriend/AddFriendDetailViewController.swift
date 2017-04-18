@@ -44,9 +44,16 @@ class AddFriendDetailViewController: UIViewController {
         guard let token = LoginManager.defaultManager.authToken else { return }
         
         // API请求
-        ApiManager().postAddFriend(friend: self.friend!, forUser: uuid, token: token, successBlock: { (friend) in
+        guard let friend = self.friend else { return }
+        ApiManager().postAddFriend(friend: friend, forUser: uuid, token: token, successBlock: { (friend) in
             // alert
-            let alertController = UIAlertController(title: "", message: "请求已发送", preferredStyle: UIAlertControllerStyle.alert)
+            var  alertController: UIAlertController = UIAlertController()
+            if friend.uuid == uuid {
+                alertController = UIAlertController(title: "", message: "您不能将自己添加到通讯录", preferredStyle: UIAlertControllerStyle.alert)
+            } else {
+                alertController = UIAlertController(title: "", message: "请求已发送", preferredStyle: UIAlertControllerStyle.alert)
+            }
+            
             let confirmAction = UIAlertAction(title: "好的", style: UIAlertActionStyle.default, handler: nil)
             alertController.addAction(confirmAction)
             self.present(alertController, animated: true, completion: nil)

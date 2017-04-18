@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactViewController: UITableViewController {
+class ContactViewController: BaseTableViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     var friendList: [User] = [User]()
@@ -16,21 +16,19 @@ class ContactViewController: UITableViewController {
     var dataArray: NSMutableArray = NSMutableArray()
     var users: [User] = [User]()
     
-    // 最终排序的数组
-    var resultFriends: [User] = [User]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setupview()
-        
-        self.initDataSource()
- 
+        self.setupEmptyViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = false
+        
+        // 每次进来获取最新的数据
+        self.getContactList()
     }
     
     private func setupview() {
@@ -45,11 +43,14 @@ class ContactViewController: UITableViewController {
         
         // 设置右侧索引
         // 字母颜色
-        tableView.sectionIndexColor = UIColor.darkGray
-        // 背景颜色
-        tableView.sectionIndexBackgroundColor = UIColor.clear
+//        tableView.sectionIndexColor = UIColor.darkGray
+//        // 背景颜色
+//        tableView.sectionIndexBackgroundColor = UIColor.clear
     }
     
+    private func setupEmptyViewModel() {
+        emptyViewModel = EmptyViewModel(alert: "您还没有好友呢", prompt: "快去添加好友吧")
+    }
     
     func getContactList() {
         
@@ -60,6 +61,7 @@ class ContactViewController: UITableViewController {
         ApiManager().getContacts(forUser: uuid, token: token, successBlock: { (friends) in
             
             self.friendList = friends
+            self.tableView.reloadData()
             
         }) { (error) in
             print("[ContactViewController getContactList] \(error) ")
@@ -69,78 +71,80 @@ class ContactViewController: UITableViewController {
     func initDataSource() {
         
         // API获取数据
-        //        self.getContactList()
+        self.getContactList()
         
-//        var users: [User] = [User]()
-        let u1 = User(uuid: "", authToken: "", userName: "张三", userTel: "", imageUrl: "", nickName: nil, card: nil)
-        let u2 = User(uuid: "", authToken: "", userName: "李晓霞", userTel: "", imageUrl: "", nickName: nil, card: nil)
-        let u3 = User(uuid: "", authToken: "", userName: "陈小", userTel: "", imageUrl: "", nickName: nil, card: nil)
-        let u4 = User(uuid: "", authToken: "", userName: "王二", userTel: "", imageUrl: "", nickName: nil, card: nil)
-        let u5 = User(uuid: "", authToken: "", userName: "aaa", userTel: "", imageUrl: "", nickName: nil, card: nil)
-        let u6 = User(uuid: "", authToken: "", userName: "江大", userTel: "", imageUrl: "", nickName: nil, card: nil)
-        let u7 = User(uuid: "", authToken: "", userName: "江林", userTel: "", imageUrl: "", nickName: nil, card: nil)
-        let u8 = User(uuid: "", authToken: "", userName: "江小", userTel: "", imageUrl: "", nickName: nil, card: nil)
-        users.append(u1)
-        users.append(u2)
-        users.append(u3)
-        users.append(u4)
-        users.append(u5)
-        users.append(u6)
-        users.append(u7)
-        users.append(u8)
-        
-        // MARK: 获取名字数组
-        var names: [String] = [String]()
-//        guard let friends = users else { return }
-        
-        for fr in self.users {
-            var name: String?
-            
-            if (fr.nickName != nil) {
-                name = fr.nickName
-            } else {
-                name = fr.userName
-            }
-           
-            names.append(name!)
-        }
-        
-        
-        
-        let nsArray = names as NSArray
-        // name sort
-        if let indexArray = nsArray.withPinYinFirstLetterFormat() {
-            self.dataArray = NSMutableArray(array: indexArray)
-//            self.tableView.reloadData()
-        }
-    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "friendDetailVC" {
+////        var users: [User] = [User]()
+//        let u1 = User(uuid: "", authToken: "", userName: "张三", userTel: "", imageUrl: "", nickName: nil, card: nil)
+//        let u2 = User(uuid: "", authToken: "", userName: "李晓霞", userTel: "", imageUrl: "", nickName: nil, card: nil)
+//        let u3 = User(uuid: "", authToken: "", userName: "陈小", userTel: "", imageUrl: "", nickName: nil, card: nil)
+//        let u4 = User(uuid: "", authToken: "", userName: "王二", userTel: "", imageUrl: "", nickName: nil, card: nil)
+//        let u5 = User(uuid: "", authToken: "", userName: "aaa", userTel: "", imageUrl: "", nickName: nil, card: nil)
+//        let u6 = User(uuid: "", authToken: "", userName: "江大", userTel: "", imageUrl: "", nickName: nil, card: nil)
+//        let u7 = User(uuid: "", authToken: "", userName: "江林", userTel: "", imageUrl: "", nickName: nil, card: nil)
+//        let u8 = User(uuid: "", authToken: "", userName: "江小", userTel: "", imageUrl: "", nickName: nil, card: nil)
+//        users.append(u1)
+//        users.append(u2)
+//        users.append(u3)
+//        users.append(u4)
+//        users.append(u5)
+//        users.append(u6)
+//        users.append(u7)
+//        users.append(u8)
+//        
+//        // MARK: 获取名字数组
+//        var names: [String] = [String]()
+////        guard let friends = users else { return }
+//        
+//        for fr in self.users {
+//            var name: String?
 //            
-//            if let indexPath = self.tableView.indexPathForSelectedRow {
-//                
-//                let friend = self.resultFriends[indexPath.row]
-//                
-//                let friendDetailVC = segue.destination as? FriendDetailTableViewController
-//                friendDetailVC?.friend = friend
-//                friendDetailVC?.indexPath = indexPath
-//                friendDetailVC?.delegate = self
+//            if (fr.nickName != nil) {
+//                name = fr.nickName
+//            } else {
+//                name = fr.userName
 //            }
+//           
+//            names.append(name!)
 //        }
-//    }
-    
+//        
+//        
+//        
+//        let nsArray = names as NSArray
+//        // name sort
+//        if let indexArray = nsArray.withPinYinFirstLetterFormat() {
+//            self.dataArray = NSMutableArray(array: indexArray)
+////            self.tableView.reloadData()
+//        }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "friendDetailVC" {
+            
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                
+                let friend = self.friendList[indexPath.row]
+                
+                let friendDetailVC = segue.destination as? FriendDetailTableViewController
+                friendDetailVC?.friend = friend
+                friendDetailVC?.indexPath = indexPath
+                friendDetailVC?.delegate = self
+            }
+        }
+    }
+    
+}
 
 extension ContactViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         
-        if self.dataArray.count > 0 {
-            return self.dataArray.count + 1
-        } else {
-            return 1
-        }
+//        if self.dataArray.count > 0 {
+//            return self.dataArray.count + 1
+//        } else {
+//            return 1
+//        }
+        
+        return 2
     
     }
     
@@ -150,9 +154,10 @@ extension ContactViewController {
         if section == 0 {
             rows = 3
         } else {
-            let dict: NSDictionary = self.dataArray[section - 1] as! NSDictionary
-            let contentArray: NSMutableArray = dict["content"] as! NSMutableArray
-            rows = contentArray.count
+//            let dict: NSDictionary = self.dataArray[section - 1] as! NSDictionary
+//            let contentArray: NSMutableArray = dict["content"] as! NSMutableArray
+//            rows = contentArray.count
+            rows = self.friendList.count
         }
        return rows
         
@@ -182,25 +187,24 @@ extension ContactViewController {
             let placeholderImage = UIImage(named: "tongxunlu_touxiang")
             cell.imageView?.layer.masksToBounds = true
             cell.imageView?.layer.cornerRadius = (cell.imageView?.layer.bounds.height)! / 2
-            cell.imageView?.image = placeholderImage
             
-            let dict: NSDictionary = self.dataArray[indexPath.section - 1] as! NSDictionary
-            let contentArray: NSMutableArray = dict["content"] as! NSMutableArray
             
-            let name = contentArray[indexPath.row] as? String
-            cell.textLabel?.text = name
-        
-            // 遍历数组，获取对应的头像
-            for fr in self.users {
-                if fr.nickName == name || fr.userName == name {
-//                    if let imageUrl = fr.imageUrl {
-//                        cell.imageView?.af_setImage(withURL: URL(string: imageUrl)!)
-//                    } else {
-//                        cell.imageView?.image = placeholderImage
-//                    }
-//                    
-
-                }
+//            let dict: NSDictionary = self.dataArray[indexPath.section - 1] as! NSDictionary
+//            let contentArray: NSMutableArray = dict["content"] as! NSMutableArray
+//            
+//            let name = contentArray[indexPath.row] as? String
+//            cell.textLabel?.text = name
+            
+            if let name = self.friendList[indexPath.row].nickName {
+                cell.textLabel?.text = name
+            } else {
+                cell.textLabel?.text = self.friendList[indexPath.row].userName
+            }
+            
+            if let imageUrl = self.friendList[indexPath.row].imageUrl {
+                cell.imageView?.af_setImage(withURL: URL(string: imageUrl)!)
+            } else {
+                cell.imageView?.image = placeholderImage
             }
             
         }
@@ -215,7 +219,7 @@ extension ContactViewController {
             
         } else {
             
-            self.performSegue(withIdentifier: "friendDetailVC", sender: "")
+            self.performSegue(withIdentifier: "friendDetailVC", sender: "nil")
         }
     }
     
@@ -236,43 +240,45 @@ extension ContactViewController {
             return nil
         } else {
             
-            let dict: NSDictionary = self.dataArray[section - 1] as! NSDictionary
-            let title = dict["firstLetter"] as! String
-            return title
+//            let dict: NSDictionary = self.dataArray[section - 1] as! NSDictionary
+//            let title = dict["firstLetter"] as! String
+//            return title
+            
+            return "联系人"
         }
     }
     
-    // 添加索引栏标题数组
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        
-        if self.dataArray.count > 0 {
-            let resultArray = NSMutableArray(array: [UITableViewIndexSearch])
-            for data in self.dataArray {
-                
-                let dict: NSDictionary = data as! NSDictionary
-                let title: String = dict["firstLetter"] as! String
-                resultArray.add(title)
-            }
-            
-            return resultArray as? [String]
-        } else {
-            return nil
-        }
-    }
-    
-    // 点击索引栏标题时执行
-    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-        
-        if title == UITableViewIndexSearch {
-            // tabview移至顶部
-            tableView.setContentOffset(CGPoint.zero, animated: false)
-            
-            return NSNotFound;
-        } else {
-            // -1 添加了搜索标识
-            return UILocalizedIndexedCollation.current().section(forSectionIndexTitle: index - 1)
-        }
-    }
+//    // 添加索引栏标题数组
+//    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+//        
+//        if self.dataArray.count > 0 {
+//            let resultArray = NSMutableArray(array: [UITableViewIndexSearch])
+//            for data in self.dataArray {
+//                
+//                let dict: NSDictionary = data as! NSDictionary
+//                let title: String = dict["firstLetter"] as! String
+//                resultArray.add(title)
+//            }
+//            
+//            return resultArray as? [String]
+//        } else {
+//            return nil
+//        }
+//    }
+//    
+//    // 点击索引栏标题时执行
+//    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+//        
+//        if title == UITableViewIndexSearch {
+//            // tabview移至顶部
+//            tableView.setContentOffset(CGPoint.zero, animated: false)
+//            
+//            return NSNotFound;
+//        } else {
+//            // -1 添加了搜索标识
+//            return UILocalizedIndexedCollation.current().section(forSectionIndexTitle: index - 1)
+//        }
+//    }
     
     
 }
@@ -296,7 +302,9 @@ extension ContactViewController: FriendDetailTableViewControllerDelegate {
     
     func didPostBolck(indexPath: IndexPath) {
         // 加入黑名单之后删除对应的cell
-        tableView.deleteRows(at: [indexPath], with: .none)
-        tableView.reloadData()
+        // TODO:
+        
+//        tableView.deleteRows(at: [indexPath], with: .none)
+//        tableView.reloadData()
     }
 }
