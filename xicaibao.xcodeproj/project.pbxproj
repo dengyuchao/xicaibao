@@ -81,6 +81,8 @@
 		9D6B77641E825313001AB48C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6B77631E825313001AB48C /* AppDelegate.swift */; };
 		9D6B776B1E825313001AB48C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B776A1E825313001AB48C /* Assets.xcassets */; };
 		9D6B776E1E825313001AB48C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6B776C1E825313001AB48C /* LaunchScreen.storyboard */; };
+		9D6FEEB41EA757870079B0D8 /* GroupSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FEEB31EA757870079B0D8 /* GroupSettingViewController.swift */; };
+		9D6FEEB51EA757870079B0D8 /* GroupSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6FEEB31EA757870079B0D8 /* GroupSettingViewController.swift */; };
 		9DA760BD1E94C1030049E2E4 /* CreateGroup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA760BC1E94C1030049E2E4 /* CreateGroup.storyboard */; };
 		9DA760BE1E94C1030049E2E4 /* CreateGroup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA760BC1E94C1030049E2E4 /* CreateGroup.storyboard */; };
 		9DA760C01E94C19F0049E2E4 /* CreateGroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA760BF1E94C19F0049E2E4 /* CreateGroupTableViewController.swift */; };
@@ -238,8 +240,10 @@
 		9D6B776A1E825313001AB48C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D6B776D1E825313001AB48C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D6B776F1E825313001AB48C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DA760BC1E94C1030049E2E4 /* CreateGroup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateGroup.storyboard; sourceTree = "<group>"; };
-		9DA760BF1E94C19F0049E2E4 /* CreateGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupTableViewController.swift; sourceTree = "<group>"; };
+		9D6FEEB31EA757870079B0D8 /* GroupSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSettingViewController.swift; sourceTree = "<group>"; };
+		9D6FEEB61EA761C20079B0D8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9DA760BC1E94C1030049E2E4 /* CreateGroup.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CreateGroup.storyboard; path = ../../CreateGroup.storyboard; sourceTree = "<group>"; };
+		9DA760BF1E94C19F0049E2E4 /* CreateGroupTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateGroupTableViewController.swift; path = ../../CreateGroupTableViewController.swift; sourceTree = "<group>"; };
 		9DA760C21E94DD520049E2E4 /* AddFriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddFriendTableViewController.swift; path = xicaibao/ViewControllers/Chat/AddFriendTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		9DA760C51E94DD680049E2E4 /* AddFriend.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AddFriend.storyboard; path = xicaibao/ViewControllers/Chat/AddFriend.storyboard; sourceTree = SOURCE_ROOT; };
 		9DA760C91E94EC8A0049E2E4 /* ChatRoom.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatRoom.storyboard; sourceTree = "<group>"; };
@@ -474,6 +478,17 @@
 			path = xicaibao;
 			sourceTree = "<group>";
 		};
+		9D6FEEB21EA74AE30079B0D8 /* CreateGroup */ = {
+			isa = PBXGroup;
+			children = (
+				9DA760BC1E94C1030049E2E4 /* CreateGroup.storyboard */,
+				9DA760BF1E94C19F0049E2E4 /* CreateGroupTableViewController.swift */,
+				9D6FEEB31EA757870079B0D8 /* GroupSettingViewController.swift */,
+			);
+			name = CreateGroup;
+			path = chatRoom/CreateGroup;
+			sourceTree = "<group>";
+		};
 		9DA760C81E94EC7A0049E2E4 /* ChatRoom */ = {
 			isa = PBXGroup;
 			children = (
@@ -552,10 +567,9 @@
 			children = (
 				9D5968391E972EDC00268D84 /* AddFriend */,
 				9DA760C81E94EC7A0049E2E4 /* ChatRoom */,
+				9D6FEEB21EA74AE30079B0D8 /* CreateGroup */,
 				9DECCABE1E8B56850012CAA4 /* Chat.storyboard */,
 				9DECCABF1E8B56850012CAA4 /* ChatViewController.swift */,
-				9DA760BC1E94C1030049E2E4 /* CreateGroup.storyboard */,
-				9DA760BF1E94C19F0049E2E4 /* CreateGroupTableViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -944,6 +958,7 @@
 				9D0DCE911E8E07C700F392D7 /* RechargeViewController.swift in Sources */,
 				9DECCAAB1E8B52F90012CAA4 /* User.swift in Sources */,
 				9DECCADA1E8B56850012CAA4 /* ChatViewController.swift in Sources */,
+				9D6FEEB41EA757870079B0D8 /* GroupSettingViewController.swift in Sources */,
 				9DECCAB71E8B53330012CAA4 /* ModelErrorManager.swift in Sources */,
 				9DECCAE81E8B56850012CAA4 /* EditNameTableViewController.swift in Sources */,
 				9DB57F851E8D090B007AC25F /* AboutViewController.swift in Sources */,
@@ -1040,6 +1055,7 @@
 				9DFEE8951E8F5A970098C54F /* UIImage+RCImage.m in Sources */,
 				9D5F27781E9E182500FF3DCD /* ChatMessageCell_Incoming.swift in Sources */,
 				9DCE92381E8E4A8900198FA7 /* CrashViewController.swift in Sources */,
+				9D6FEEB51EA757870079B0D8 /* GroupSettingViewController.swift in Sources */,
 				9DA760C41E94DD520049E2E4 /* AddFriendTableViewController.swift in Sources */,
 				9DA760CE1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift in Sources */,
 				9D59683C1E972F0800268D84 /* AddFriendSearchViewController.swift in Sources */,
@@ -1055,6 +1071,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9D6B776D1E825313001AB48C /* Base */,
+				9D6FEEB61EA761C20079B0D8 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1066,6 +1083,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1116,6 +1134,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

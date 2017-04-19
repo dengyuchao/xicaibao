@@ -13,7 +13,11 @@ class CreateGroupTableViewController: BaseTableViewController {
     @IBOutlet weak var sureButton: UIBarButtonItem!
     
     var friends: [User] = [User]()
-    var addGroupMembers: [User]?
+    var addGroupMembers: [User] = [User]() {
+        didSet {
+            self.buttonState()
+        }
+    }
     var selectIndexPath: IndexPath?
     
      override func viewDidLoad() {
@@ -29,8 +33,9 @@ class CreateGroupTableViewController: BaseTableViewController {
         self.tableView.allowsMultipleSelection = true
         self.tableView.isEditing = true
         self.tableView.rowHeight = 52.0
+        self.tableView.tableFooterView = UIView()
         
-        self.sureButton.isEnabled = false
+//        self.sureButton.isEnabled = false
     }
     
     private func setupEmptyViewModel() {
@@ -48,7 +53,33 @@ class CreateGroupTableViewController: BaseTableViewController {
         }) { (error) in
             print("[CreateGroupTableViewController getContacts]\(error.localizedDescription)")
         }
-    }}
+    }
+    
+    // 确定按钮的状态
+    func buttonState() {
+        self.sureButton.isEnabled = self.addGroupMembers.count > 0
+        if self.addGroupMembers.count > 0 {
+            self.sureButton.title = "确定(\(self.addGroupMembers.count))"
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)  {
+        if segue.identifier == "groupSettingVC" {
+            if let groupSetVC = segue.destination as? GroupSettingViewController {
+                if self.addGroupMembers.count > 0 {
+                    groupSetVC.groups = self.addGroupMembers
+                }
+            }
+        }
+    }
+    
+    @IBAction func sureButtonAction(_ sender: UIBarButtonItem) {
+        
+        self.performSegue(withIdentifier: "groupSettingVC", sender: nil)
+    }
+}
+
+
 
 extension CreateGroupTableViewController {
     
@@ -91,6 +122,22 @@ extension CreateGroupTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // 选中添加到数组
+        if self.friends.count > 0 {
+            let user = self.friends[indexPath.row]
+            self.addGroupMembers.append(user)
+        }
+        
     }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        // 从选中中取消
+        if (self.addGroupMembers.count) > 0 {
+            self.addGroupMembers.remove(at: indexPath.row)
+        }
+        
+    }
+    
 }
 

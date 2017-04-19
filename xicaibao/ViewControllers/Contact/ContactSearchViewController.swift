@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class ContactSearchViewController: UIViewController {
 
@@ -14,14 +15,19 @@ class ContactSearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var searchString: String?
-    var friends: [User]?
+    
+    var friends: [User]? {
+        willSet {
+            configEmptyView()
+        }
+    }
     
     var user: User?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getUser()
+//        self.getUser()
         self.setupview()
     }
     
@@ -40,8 +46,16 @@ class ContactSearchViewController: UIViewController {
         
         tableView.rowHeight = 52.0
         
+        
         self.searchString = searchBar.text ?? ""
     }
+    
+    private func configEmptyView() {
+        
+        tableView.emptyDataSetDelegate = self
+        tableView.emptyDataSetSource = self
+    }
+    
     
     func getUser() {
         
@@ -63,13 +77,10 @@ class ContactSearchViewController: UIViewController {
         guard let uuid = LoginManager.defaultManager.uuid else { return }
         guard let token = LoginManager.defaultManager.authToken else { return }
         
-        ApiManager().getContacts(forUser: uuid, token: token, successBlock: { (friends) in
-            
+        ApiManager().searchContact(searchString: searchText, forUser: uuid, token: token, successBlock: { (friends) in
             self.friends = friends
-            self.tableView.reloadData()
-            
         }) { (error) in
-            print("[ContactSearchViewController getData] getContacts failed:\(error.localizedDescription)")
+            print("[ContactSearchViewController getData] searchContact failed:\(error.localizedDescription)")
         }
     }
 }
@@ -116,23 +127,23 @@ extension ContactSearchViewController: UITableViewDataSource, UITableViewDelegat
         return cell
     }
     
-     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        if self.friends == nil {
-            return 0
-        } else {
-            return 21.0
-        }
-    }
-    
-     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        if self.friends == nil {
-            return nil
-        } else {
-            return "联系人"
-        }
-    }
+//     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        
+//        if self.friends == nil {
+//            return 0
+//        } else {
+//            return 21.0
+//        }
+//    }
+//    
+//     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        
+//        if self.friends == nil {
+//            return nil
+//        } else {
+//            return "联系人"
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -165,4 +176,26 @@ extension ContactSearchViewController: UISearchBarDelegate {
         
         searchBar.resignFirstResponder()
     }
+}
+
+extension ContactSearchViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
+    
+    // 返回标题文字
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let stringAttributed = [NSFontAttributeName : UIFont.systemFont(ofSize: 20.0), NSForegroundColorAttributeName : UIColor.lightGray]
+        let string = NSAttributedString(string: "没有搜索结果", attributes: stringAttributed)
+        return string
+    }
+    
+    // 空白界面的背景颜色
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.white
+    }
+    
+    // 数据源为空时是否渲染和显示
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool {
+        
+        return true
+    }
+    
 }

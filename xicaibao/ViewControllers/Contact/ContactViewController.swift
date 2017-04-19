@@ -66,6 +66,7 @@ class ContactViewController: BaseTableViewController {
         }) { (error) in
             print("[ContactViewController getContactList] \(error) ")
         }
+        
     }
     
     func initDataSource() {

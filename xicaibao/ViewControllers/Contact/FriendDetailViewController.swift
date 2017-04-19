@@ -48,6 +48,7 @@ class FriendDetailTableViewController: UITableViewController {
         initChatCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, initChatCell.bounds.size.width)
         
         guard let friend = self.friend else { return }
+        telLabel.text = friend.userTel
         if let nickName = friend.nickName {
             NickNameLabel.text = nickName
             nameLabel.text = friend.userName

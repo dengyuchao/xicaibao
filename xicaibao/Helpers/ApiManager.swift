@@ -39,7 +39,9 @@ class ApiManager {
                     for js in jsonObj {
                         
                         if js.key == "data" {
-                            data = js.value as? Dictionary<String, AnyObject>
+                            if let val = js.value as? Dictionary<String, AnyObject> {
+                                data = val
+                            }
                         }
                     }
                     
@@ -126,7 +128,9 @@ class ApiManager {
                     for js in jsonObj {
                         
                         if js.key == "data" {
-                            data = js.value as? Dictionary<String, AnyObject>
+                            if let val = js.value as? Dictionary<String, AnyObject> {
+                                data = val
+                            }
                         }
                     }
                     
@@ -170,7 +174,9 @@ class ApiManager {
                     for js in jsonObj {
                         
                         if js.key == "data" {
-                            data = js.value as? Dictionary<String, AnyObject>
+                            if let val = js.value as? Dictionary<String, AnyObject> {
+                                data = val
+                            }
                         }
                     }
                     guard let obj = data else { return }
@@ -239,7 +245,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = js.value as? Dictionary<String, AnyObject>
+                        if let val = js.value as? Dictionary<String, AnyObject> {
+                            data = val
+                        }
                     }
                 }
                 
@@ -281,7 +289,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = js.value as? Dictionary<String, AnyObject>
+                        if let val = js.value as? Dictionary<String, AnyObject> {
+                            data = val
+                        }
                     }
                 }
                 guard let obj = data else { return }
@@ -329,7 +339,9 @@ class ApiManager {
                         for js in jsonObj {
                             
                             if js.key == "data" {
-                                data = js.value as? Dictionary<String, AnyObject>
+                                if let val = js.value as? Dictionary<String, AnyObject> {
+                                    data = val
+                                }
                             }
                         }
                         guard let obj = data else { return }
@@ -379,7 +391,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = js.value as? Dictionary<String, AnyObject>
+                        if let val = js.value as? Dictionary<String, AnyObject> {
+                            data = val
+                        }
                     }
                 }
                 guard let obj = data else { return }
@@ -419,7 +433,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = js.value as? Dictionary<String, AnyObject>
+                        if let val = js.value as? Dictionary<String, AnyObject> {
+                            data = val
+                        }
                     }
                 }
                 
@@ -458,7 +474,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = (js.value as? [Dictionary<String, AnyObject>])!
+                        if let val = js.value as? [Dictionary<String, AnyObject>] {
+                            data = val
+                        }
                     }
                 }
                 
@@ -504,7 +522,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = js.value as? Dictionary<String, AnyObject>
+                        if let val = js.value as? Dictionary<String, AnyObject> {
+                            data = val
+                        }
                     }
                 }
                 guard let obj = data else { return }
@@ -545,7 +565,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = js.value as? Dictionary<String, AnyObject>
+                        if let val = js.value as? Dictionary<String, AnyObject> {
+                            data = val
+                        }
                     }
                 }
                 guard let obj = data else { return }
@@ -583,7 +605,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = (js.value as? [Dictionary<String, AnyObject>])!
+                        if let val = js.value as? [Dictionary<String, AnyObject>] {
+                            data = val
+                        }
                     }
                 }
                 guard let datas = data else { return }
@@ -626,7 +650,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = js.value as? Dictionary<String, AnyObject>
+                        if let val = js.value as? Dictionary<String, AnyObject> {
+                            data = val
+                        }
                     }
                 }
                 guard let obj = data else { return }
@@ -663,13 +689,12 @@ class ApiManager {
     // 搜索联系人
     func searchContact(searchString: String, forUser uuid: String, token: String, successBlock: @escaping ((_ friends: [User])->Void), errorBlock: @escaping (_ error: Error) -> Void) {
         
-        let requestURL = URL(string: "\(self.apiUrl)/xcb/searchContact")!
+        let requestURL = URL(string: "\(self.apiUrl)/xcb/searchContact?search_string=\(searchString)")!
         
         let headers = ApiManager.headers(uuid, token: token)
         
-        let params = ["search_string": searchString]
         
-        Alamofire.request(requestURL, method: .get, parameters: params , encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
+        Alamofire.request(requestURL, method: .get, parameters: nil , encoding: JSONEncoding.default, headers: headers).validate().responseJSON { (response) in
             
             if let error = response.result.error {
                 print("[ApiManager searchContact] error: \(error.localizedDescription)")
@@ -685,7 +710,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = (js.value as? [Dictionary<String, AnyObject>])!
+                        if let val = (js.value as? [Dictionary<String, AnyObject>]) {
+                            data = val
+                        }
                     }
                 }
                 guard let datas = data else { return }
@@ -725,7 +752,9 @@ class ApiManager {
                 for jsonObj in jsonArray {
                     
                     if jsonObj.key == "data" {
-                        data = (jsonObj.value as? [Dictionary<String, AnyObject>])
+                        if let val = (jsonObj.value as? [Dictionary<String, AnyObject>]) {
+                            data = val
+                        }
                     }
                 }
                 
@@ -769,7 +798,9 @@ class ApiManager {
                 for jsonObj in jsonArray {
                     
                     if jsonObj.key == "data" {
-                        data = (jsonObj.value as? [Dictionary<String, AnyObject>])
+                        if let val = (jsonObj.value as? [Dictionary<String, AnyObject>]) {
+                            data = val
+                        }
                     }
                 }
                 
@@ -815,7 +846,9 @@ class ApiManager {
                 for js in jsonObj {
                     
                     if js.key == "data" {
-                        data = js.value as? Dictionary<String, AnyObject>
+                        if let val = js.value as? Dictionary<String, AnyObject> {
+                            data = val
+                        }
                     }
                 }
                 

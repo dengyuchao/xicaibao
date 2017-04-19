@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,16 +34,95 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="选择联系人" id="S3G-PY-3qe">
-                        <barButtonItem key="rightBarButtonItem" title="确定" id="l8Y-eM-0tA"/>
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="l8Y-eM-0tA">
+                            <connections>
+                                <action selector="sureButtonAction:" destination="6oP-3X-5mb" id="Ctb-6t-cJE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="sureButton" destination="l8Y-eM-0tA" id="3UK-df-vFf"/>
+                        <segue destination="OGA-s8-YG0" kind="show" identifier="groupSettingVC" id="wkt-MX-7H1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3j-MI-hup" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-31.199999999999999" y="-116.49175412293854"/>
         </scene>
+        <!--群设置-->
+        <scene sceneID="siL-c9-Y54">
+            <objects>
+                <viewController id="OGA-s8-YG0" customClass="GroupSettingViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xz1-F9-HcZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="SE7-2B-XkG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hfl-0W-fXA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="填写群名称（2到10个字符）" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="xwX-UX-qPR">
+                                <rect key="frame" x="32" y="318.5" width="311" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OGA-s8-YG0" id="PuQ-rt-8db"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q5a-dK-YuR">
+                                <rect key="frame" x="0.0" y="20" width="375" height="298.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xR7-BZ-BZk">
+                                        <rect key="frame" x="147.5" y="109" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="8Iv-76-k5B"/>
+                                            <constraint firstAttribute="height" constant="80" id="YfU-fG-oNv"/>
+                                        </constraints>
+                                        <state key="normal" image="AddPhotoDefault"/>
+                                        <connections>
+                                            <action selector="addPhotoAction:" destination="OGA-s8-YG0" eventType="touchUpInside" id="WZi-KH-D31"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="xR7-BZ-BZk" firstAttribute="centerX" secondItem="q5a-dK-YuR" secondAttribute="centerX" id="5o3-2v-Gk3"/>
+                                    <constraint firstItem="xR7-BZ-BZk" firstAttribute="centerY" secondItem="q5a-dK-YuR" secondAttribute="centerY" id="QHw-2A-AGt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q5a-dK-YuR" firstAttribute="centerX" secondItem="hfl-0W-fXA" secondAttribute="centerX" id="0sl-n7-bnp"/>
+                            <constraint firstItem="q5a-dK-YuR" firstAttribute="width" secondItem="hfl-0W-fXA" secondAttribute="width" id="2mu-BZ-pqW"/>
+                            <constraint firstItem="xwX-UX-qPR" firstAttribute="centerY" secondItem="hfl-0W-fXA" secondAttribute="centerY" id="4k0-lJ-TZv"/>
+                            <constraint firstItem="q5a-dK-YuR" firstAttribute="top" secondItem="xz1-F9-HcZ" secondAttribute="bottom" id="fEj-rE-05O"/>
+                            <constraint firstItem="xwX-UX-qPR" firstAttribute="leading" secondItem="hfl-0W-fXA" secondAttribute="leadingMargin" constant="16" id="hwO-pg-bkd"/>
+                            <constraint firstItem="xwX-UX-qPR" firstAttribute="top" secondItem="q5a-dK-YuR" secondAttribute="bottom" id="ks2-CY-5GU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xwX-UX-qPR" secondAttribute="trailing" constant="16" id="lGB-Ad-foz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="群设置" id="yTA-IL-TW9">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="5LO-FU-DxE">
+                            <connections>
+                                <action selector="doneButtonAction:" destination="OGA-s8-YG0" id="gqM-B9-UbM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="xR7-BZ-BZk" id="AsM-4G-aKf"/>
+                        <outlet property="doneButton" destination="5LO-FU-DxE" id="WIE-Gf-dJ1"/>
+                        <outlet property="groupNameLabel" destination="xwX-UX-qPR" id="HF6-Yc-jvs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vui-bl-ahe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813.60000000000002" y="-122.78860569715144"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="AddPhotoDefault" width="70" height="70"/>
+    </resources>
 </document>

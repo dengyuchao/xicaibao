@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class AddFriendSearchViewController: UIViewController {
     
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var friend: User?
     var telString: String?
-    
     var friendList: [User] = [User]()
+    
+    var friend: User?
+    
     var oldFriend: User?
     
     override func viewDidLoad() {
@@ -45,6 +47,7 @@ class AddFriendSearchViewController: UIViewController {
         
         self.telString = searchBar.text ?? ""
     }
+    
     
     func getContacts() {
         guard let uuid = LoginManager.defaultManager.uuid else { return }
@@ -108,13 +111,12 @@ extension AddFriendSearchViewController: UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if (self.friend != nil) {
-//            return 1
-//        } else {
-//            return 0
-//        }
         
-        return 1
+        if self.friend != nil  || self.oldFriend != nil {
+            return 1
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -142,7 +144,7 @@ extension AddFriendSearchViewController: UITableViewDataSource, UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if self.oldFriend == nil {
             
-            self.performSegue(withIdentifier: "addFriendDetailVC", sender: nil)
+            self.performSegue(withIdentifier: "addFriendDetail", sender: nil)
             
         } else {
             
@@ -177,3 +179,4 @@ extension AddFriendSearchViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
     }
 }
+

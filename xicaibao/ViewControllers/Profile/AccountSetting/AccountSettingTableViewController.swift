@@ -116,6 +116,7 @@ extension AccountSettingTableViewController {
                 // 清除成功
                 if self.clearCache() {
                     self.cacheLabel.text = "0.0 MB"
+                    tableView.reloadData()
                 }
             }
             alert.addAction(alertConfirm)
