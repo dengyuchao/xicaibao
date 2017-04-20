@@ -23,7 +23,7 @@ struct AppSecrets {
     static let kAppItunesURL = ""
     
     //  Feedback Email  公司邮箱 接收意见
-    static let kSetToRecipients = "543940962@qq.com"
+    static let kSetToRecipients = "xicaibao@test.com"
 
     #else
     

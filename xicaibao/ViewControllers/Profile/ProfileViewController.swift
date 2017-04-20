@@ -96,7 +96,7 @@ class ProfileTableViewController: UITableViewController{
             present(mailPicker, animated: true, completion: nil)
             
         } else {
-            let alertController = UIAlertController(title: "提示", message: "您还没有设置登录邮箱", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "无法发送邮件", message: "您的设备尚未设置邮箱，请在“邮件”应用中设置后再尝试发送", preferredStyle: UIAlertControllerStyle.alert)
             let confirmAction = UIAlertAction(title: "好", style: UIAlertActionStyle.default, handler: { (UIAlertAction) -> Void in
             })
             alertController.addAction(confirmAction)

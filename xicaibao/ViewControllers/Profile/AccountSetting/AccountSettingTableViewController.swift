@@ -12,7 +12,6 @@ import UIKit
 class AccountSettingTableViewController: UITableViewController {
     
     @IBOutlet weak var cacheLabel: UILabel!
-    @IBOutlet weak var clearActivity: UIActivityIndicatorView!
     
     var user: User?
     var totalSize: Float = 0.0
@@ -24,7 +23,7 @@ class AccountSettingTableViewController: UITableViewController {
     }
     
     //计算缓存大小
-    func caculateCache() ->String{
+    func caculateCache() ->String {
         let basePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory,FileManager.SearchPathDomainMask.userDomainMask,true).first
         
         let fileManager = FileManager.default
@@ -57,8 +56,8 @@ class AccountSettingTableViewController: UITableViewController {
     }
     
     //清除缓存
-    public func clearCache() ->Bool {
-        var result = true
+    public func clearCache() {
+        
         let basePath = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory,FileManager.SearchPathDomainMask.userDomainMask,true).first
         
         
@@ -69,13 +68,12 @@ class AccountSettingTableViewController: UITableViewController {
                 let cachePath = basePath?.appending("/").appending(childPath)
                 do {
                     try fileManager.removeItem(atPath: cachePath!)
+                    self.cacheLabel.text = self.caculateCache()
                 } catch {
-                    result = false
+//                    print("[AccountSettingTableViewController clearCache] failed")
                 }
             }  
-        }  
-        
-        return result  
+        }
     }
     
     //跳转到应用的AppStore页面
@@ -105,7 +103,6 @@ extension AccountSettingTableViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         
-        
         // 清除缓存
         if indexPath.section == 1 {
             //提示框
@@ -113,11 +110,8 @@ extension AccountSettingTableViewController {
             let alert = UIAlertController(title: "清除缓存", message: message, preferredStyle:UIAlertControllerStyle.alert)
             let alertConfirm = UIAlertAction(title: "确定", style:UIAlertActionStyle.default) { (alertConfirm) ->Void in
                 
-                // 清除成功
-                if self.clearCache() {
-                    self.cacheLabel.text = "0.0 MB"
-                    tableView.reloadData()
-                }
+                // 清除
+                self.clearCache()
             }
             alert.addAction(alertConfirm)
             

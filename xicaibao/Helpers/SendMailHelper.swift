@@ -18,7 +18,7 @@ class SendMailHelper: NSObject {
         let strSystemVersion = currentDevice.systemVersion //当前系统版本
         let key = "CFBundleShortVersionString"
         let currentVersion = Bundle.main.infoDictionary![key] as! String
-        let messageBody = "联系方式(Tel)：\n联系方式(QQ)：\n\n问题描述：\n\n\n\n新空间App 版本信息：\n[PopSpaces \(currentVersion), \(strSystemName), \(strSystemVersion),  \(uuid)]"
+        let messageBody = "联系方式(Tel)：\n联系方式(QQ)：\n\n问题描述：\n\n\n\n喜财宝App 版本信息：\n[PopSpaces \(currentVersion), \(strSystemName), \(strSystemVersion),  \(uuid)]"
         
         let mailPicker = MFMailComposeViewController()
         

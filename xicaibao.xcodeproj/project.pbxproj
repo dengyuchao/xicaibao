@@ -99,6 +99,12 @@
 		9DB57F831E8CFB32007AC25F /* SendMailHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */; };
 		9DB57F851E8D090B007AC25F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F841E8D090B007AC25F /* AboutViewController.swift */; };
 		9DB57F861E8D090B007AC25F /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB57F841E8D090B007AC25F /* AboutViewController.swift */; };
+		9DC306471EA88E0C004DC84B /* MyWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC306461EA88E0C004DC84B /* MyWalletViewController.swift */; };
+		9DC306481EA88E0C004DC84B /* MyWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC306461EA88E0C004DC84B /* MyWalletViewController.swift */; };
+		9DC3064B1EA8B234004DC84B /* LoadDataAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC306491EA8B234004DC84B /* LoadDataAnimationView.swift */; };
+		9DC3064C1EA8B234004DC84B /* LoadDataAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC306491EA8B234004DC84B /* LoadDataAnimationView.swift */; };
+		9DC3064D1EA8B234004DC84B /* LoadDataAnimationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DC3064A1EA8B234004DC84B /* LoadDataAnimationView.xib */; };
+		9DC3064E1EA8B234004DC84B /* LoadDataAnimationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DC3064A1EA8B234004DC84B /* LoadDataAnimationView.xib */; };
 		9DCE922B1E8E3F0700198FA7 /* BankCardListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE922A1E8E3F0700198FA7 /* BankCardListTableViewController.swift */; };
 		9DCE922C1E8E3F0700198FA7 /* BankCardListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE922A1E8E3F0700198FA7 /* BankCardListTableViewController.swift */; };
 		9DCE922E1E8E419B00198FA7 /* BankCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCE922D1E8E419B00198FA7 /* BankCardData.swift */; };
@@ -250,6 +256,9 @@
 		9DA760CC1E94EC9E0049E2E4 /* ChatRoomMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomMessageViewController.swift; sourceTree = "<group>"; };
 		9DB57F811E8CFB32007AC25F /* SendMailHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMailHelper.swift; sourceTree = "<group>"; };
 		9DB57F841E8D090B007AC25F /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		9DC306461EA88E0C004DC84B /* MyWalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyWalletViewController.swift; sourceTree = "<group>"; };
+		9DC306491EA8B234004DC84B /* LoadDataAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadDataAnimationView.swift; sourceTree = "<group>"; };
+		9DC3064A1EA8B234004DC84B /* LoadDataAnimationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadDataAnimationView.xib; sourceTree = "<group>"; };
 		9DCE922A1E8E3F0700198FA7 /* BankCardListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankCardListTableViewController.swift; sourceTree = "<group>"; };
 		9DCE922D1E8E419B00198FA7 /* BankCardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankCardData.swift; sourceTree = "<group>"; };
 		9DCE92301E8E490100198FA7 /* AddBankCard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddBankCard.storyboard; sourceTree = "<group>"; };
@@ -426,6 +435,8 @@
 		9D5F276B1E9DD13C00FF3DCD /* BaseViews */ = {
 			isa = PBXGroup;
 			children = (
+				9DC306491EA8B234004DC84B /* LoadDataAnimationView.swift */,
+				9DC3064A1EA8B234004DC84B /* LoadDataAnimationView.xib */,
 				9D5F27871E9E1E0E00FF3DCD /* ZSY_BubbleImageFactory.swift */,
 				9D5F278A1E9E1E4700FF3DCD /* ZSY_MessageBubbleImage.swift */,
 				9D5F278D1E9E1EFB00FF3DCD /* ZSY_ChatMessagesSize.swift */,
@@ -607,6 +618,7 @@
 				9DECCACE1E8B56850012CAA4 /* ResetPassword */,
 				9DECCAD11E8B56850012CAA4 /* Signup */,
 				9DECCAD41E8B56850012CAA4 /* UserInfo */,
+				9DC306461EA88E0C004DC84B /* MyWalletViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -840,6 +852,7 @@
 				9DCE92341E8E4A6000198FA7 /* Crash.storyboard in Resources */,
 				9DECCADB1E8B56850012CAA4 /* Contact.storyboard in Resources */,
 				9D5F27791E9E182500FF3DCD /* ChatMessageCell_Incoming.xib in Resources */,
+				9DC3064D1EA8B234004DC84B /* LoadDataAnimationView.xib in Resources */,
 				9D6B776E1E825313001AB48C /* LaunchScreen.storyboard in Resources */,
 				9DECCAE61E8B56850012CAA4 /* Signup.storyboard in Resources */,
 				9D6B776B1E825313001AB48C /* Assets.xcassets in Resources */,
@@ -864,6 +877,7 @@
 				9D5F27861E9E1AC200FF3DCD /* ChatMessageCell_Outgoing.xib in Resources */,
 				9D0DCE951E8E081800F392D7 /* Recharge.storyboard in Resources */,
 				9D5F277A1E9E182500FF3DCD /* ChatMessageCell_Incoming.xib in Resources */,
+				9DC3064E1EA8B234004DC84B /* LoadDataAnimationView.xib in Resources */,
 				9DA760BE1E94C1030049E2E4 /* CreateGroup.storyboard in Resources */,
 				9DFEE8A21E8F97360098C54F /* CarouselView.xib in Resources */,
 				9DCE924B1E8E556E00198FA7 /* Live.storyboard in Resources */,
@@ -943,6 +957,7 @@
 				9DECCAE51E8B56850012CAA4 /* ResetPasswordTableViewController.swift in Sources */,
 				9DECCAE71E8B56850012CAA4 /* SignupTableViewController.swift in Sources */,
 				9DECCAB61E8B53330012CAA4 /* LoginManager.swift in Sources */,
+				9DC306471EA88E0C004DC84B /* MyWalletViewController.swift in Sources */,
 				9DFEE89D1E8F97360098C54F /* CarouselView.swift in Sources */,
 				9D5F27771E9E182500FF3DCD /* ChatMessageCell_Incoming.swift in Sources */,
 				9DECCB0A1E8BAFF70012CAA4 /* NewMessageSettingTableViewController.swift in Sources */,
@@ -970,6 +985,7 @@
 				9DECCAE11E8B56850012CAA4 /* LoginTableViewController.swift in Sources */,
 				9D5F27911E9E1F7A00FF3DCD /* ScreenMacro.swift in Sources */,
 				9DFEE8941E8F5A970098C54F /* UIImage+RCImage.m in Sources */,
+				9DC3064B1EA8B234004DC84B /* LoadDataAnimationView.swift in Sources */,
 				9D5F278B1E9E1E4700FF3DCD /* ZSY_MessageBubbleImage.swift in Sources */,
 				9DECCAE31E8B56850012CAA4 /* ProfileViewController.swift in Sources */,
 				9DA760C01E94C19F0049E2E4 /* CreateGroupTableViewController.swift in Sources */,
@@ -1021,6 +1037,7 @@
 				9DFF8FE81E84F773004A5E00 /* AppSecrets.swift in Sources */,
 				9D2853971E9B688C00CC7275 /* FriendDetailViewController.swift in Sources */,
 				9DCE923B1E8E527900198FA7 /* CardDetailTableViewController.swift in Sources */,
+				9DC306481EA88E0C004DC84B /* MyWalletViewController.swift in Sources */,
 				9D59683F1E9769F200268D84 /* AddFriendDetailViewController.swift in Sources */,
 				9DECCAF51E8B86EA0012CAA4 /* EditCardTableViewController.swift in Sources */,
 				9DFEE8911E8F5A6B0098C54F /* UIColor+RCColor.m in Sources */,
@@ -1047,6 +1064,7 @@
 				9DFF8FE91E84F773004A5E00 /* AppDelegate.swift in Sources */,
 				9D0DCE981E8E366F00F392D7 /* AddBankCardViewController.swift in Sources */,
 				9DECCAFC1E8BA87E0012CAA4 /* AccountSettingTableViewController.swift in Sources */,
+				9DC3064C1EA8B234004DC84B /* LoadDataAnimationView.swift in Sources */,
 				9D5F279B1E9E25C200FF3DCD /* BaseTextView.swift in Sources */,
 				9D5F278F1E9E1EFB00FF3DCD /* ZSY_ChatMessagesSize.swift in Sources */,
 				9DCE923E1E8E528C00198FA7 /* CardTableViewController.swift in Sources */,

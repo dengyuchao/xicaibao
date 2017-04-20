@@ -116,7 +116,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="AAB-es-ldl" kind="show" identifier="walletVC" id="ORe-oF-OMH"/>
+                                            <segue destination="uXy-tq-gUS" kind="show" id="pje-Xf-djB"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -480,6 +480,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pZ-oN-BYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="573.60000000000002" y="-194.75262368815595"/>
+        </scene>
+        <!--My Wallet View Controller-->
+        <scene sceneID="GpJ-Na-UAJ">
+            <objects>
+                <viewController id="uXy-tq-gUS" customClass="MyWalletViewController" customModule="xicaibao" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IIU-Ki-5Rq"/>
+                        <viewControllerLayoutGuide type="bottom" id="XUe-i3-hoA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yB2-oX-35Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j6E-8p-XI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108" y="442.12893553223392"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="ptF-CG-hxS">
