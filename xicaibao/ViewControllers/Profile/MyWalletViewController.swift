@@ -84,10 +84,10 @@ class MyWalletViewController: UIViewController {
 extension MyWalletViewController: UIWebViewDelegate {
     
     func webViewDidStartLoad(_ webView: UIWebView) {
-//        self.loadDataView?.show()
+        self.loadDataView?.show()
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
         self.loadDataView?.dismiss()
-//        backBt?.isHidden = false
+        backBt?.isHidden = false
     }
 }
