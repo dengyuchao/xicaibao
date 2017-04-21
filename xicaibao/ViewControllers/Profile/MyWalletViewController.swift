@@ -10,9 +10,11 @@ import UIKit
 
 class MyWalletViewController: UIViewController {
     
-    var webView: UIWebView?
-    var backBt: UIButton?
     
+    @IBOutlet weak var webView: UIWebView!
+    var backBt: UIButton?
+    var buttonRight: UIButton?
+    var a = 3
     // 刷新动画
     var loadDataView: LoadDataAnimationView?
     
@@ -20,7 +22,9 @@ class MyWalletViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupview()
+        self.loadWebView()
         self.createLoadDateView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,17 +45,13 @@ class MyWalletViewController: UIViewController {
     
     private func  setupview() {
         
-        self.webView = UIWebView(frame: self.view.bounds)
-        self.view.addSubview(self.webView!)
-        self.webView?.delegate = self
-        self.loadWebView()
-        
-        backBt = UIButton(frame: CGRect(x: 16, y: 20, width: 36, height: 36))
+        backBt = UIButton(frame: CGRect(x: 16, y: 25, width: 36, height: 36))
         backBt?.setImage(UIImage(named: "back_bt"), for: .normal)
         self.view.addSubview(backBt!)
         backBt?.addTarget(self, action:  #selector(MyWalletViewController.popAction), for: UIControlEvents.touchUpInside)
         backBt?.isHidden = true
     }
+    
     
     func loadWebView() {
         
@@ -60,14 +60,6 @@ class MyWalletViewController: UIViewController {
         
         let request: URLRequest = NSURLRequest(url: url!) as URLRequest
         self.webView?.loadRequest(request)
-    }
-    
-    func popAction() {
-        if (self.webView?.canGoBack)! {
-            self.webView?.goBack()
-        } else {
-            self.navigationController?.popViewController(animated: true)
-        }
     }
     
     // 加载动画
@@ -79,15 +71,23 @@ class MyWalletViewController: UIViewController {
         let loadDataViewAm = LoadDataAnimationView(frame: frame, title: "正在玩命加载数据")
         loadDataView = loadDataViewAm
     }
-
+    
+    func popAction() {
+        if (self.webView?.canGoBack)! {
+            self.webView?.goBack()
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }
 
 extension MyWalletViewController: UIWebViewDelegate {
     
     func webViewDidStartLoad(_ webView: UIWebView) {
-        self.loadDataView?.show()
+//        self.loadDataView?.show()
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
         self.loadDataView?.dismiss()
+//        backBt?.isHidden = false
     }
 }
