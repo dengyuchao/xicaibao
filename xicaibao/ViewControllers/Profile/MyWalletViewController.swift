@@ -18,7 +18,6 @@ class MyWalletViewController: UIViewController {
     // 刷新动画
     var loadDataView: LoadDataAnimationView?
     
-    @IBOutlet weak var activity: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupview()
